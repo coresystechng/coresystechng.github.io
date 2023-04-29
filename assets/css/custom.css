@@ -920,7 +920,7 @@ ol {
   bottom: 0;
   height: 4px;
   width: 80px;
-  background: #473BF0;
+  background: #134074;
   border-radius: 5px;
 }
 
@@ -969,7 +969,7 @@ ol {
 }
 
 .breadcrumbs .breadcrumb-nav li a:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .breadcrumbs .breadcrumb-nav li a:after {
@@ -999,7 +999,7 @@ ol {
 
 .section-title span {
   text-transform: uppercase;
-  color: #473BF0;
+  color: #134074;
   display: inline-block;
   margin-bottom: 10px;
   font-size: 14px;
@@ -1035,7 +1035,7 @@ ol {
 .section-title h3.gray-bg {
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-color: #473bf0 !important;
+  -webkit-text-stroke-color: #134074 !important;
   opacity: 0.1 !important;
 }
 
@@ -1075,7 +1075,7 @@ ol {
   bottom: -1px;
   height: 2px;
   width: 50px;
-  background: #473BF0;
+  background: #134074;
   content: "";
 }
 
@@ -1144,7 +1144,7 @@ ol {
   width: 50px;
   height: 50px;
   line-height: 50px;
-  background: #473BF0;
+  background: #134074;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1226,8 +1226,8 @@ ol {
 
 .pagination .pagination-list li a {
   background: transparent;
-  color: #473BF0;
-  border: 1px solid #473BF0;
+  color: #134074;
+  border: 1px solid #134074;
   padding: 0 15px;
   font-weight: 500;
   font-size: 13px;
@@ -1237,7 +1237,7 @@ ol {
 
 .pagination .pagination-list li.active a,
 .pagination .pagination-list li:hover a {
-  background: #473BF0;
+  background: #134074;
   color: #fff;
   border-color: transparent;
 }
@@ -1261,7 +1261,7 @@ ol {
   font-size: 14px;
   font-weight: 600;
   padding: 15px 30px;
-  background-color: #473BF0;
+  background-color: #134074;
   color: #fff;
   border: none;
   -webkit-transition: all 0.4s ease-in-out;
@@ -1284,7 +1284,7 @@ ol {
 }
 
 .button .btn-alt:hover {
-  background-color: #473BF0;
+  background-color: #134074;
   color: #fff;
 }
 
@@ -1333,7 +1333,7 @@ ol {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background: #473BF0;
+  background: #134074;
   -webkit-animation: preloader-fx 1.6s linear infinite;
   animation: preloader-fx 1.6s linear infinite;
 }
@@ -1413,7 +1413,7 @@ ol {
 }
 
 .sticky .navbar .navbar-nav .nav-item a.active {
-  color: #473BF0;
+  color: #134074;
 }
 
 .sticky .navbar .navbar-toggler .toggler-icon {
@@ -1555,11 +1555,11 @@ ol {
 
 .navbar-nav .nav-item a:hover,
 .navbar-nav .nav-item a.active {
-  color: #473BF0;
+  color: #134074;
 }
 
 .header .navbar-nav .dropdown-menu li a.active {
-  color: #473BF0 !important;
+  color: #134074 !important;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1691,7 +1691,7 @@ ol {
   overflow: hidden;
   position: relative;
   z-index: 2;
-  background: #473BF0;
+  background: #134074;
   font-size: 14px;
   font-weight: 600;
   -webkit-box-shadow: none;
@@ -1716,7 +1716,7 @@ ol {
   border-radius: 0px 0 8px 8px;
   margin: 0;
   border: none;
-  border-top: 3px solid #473BF0;
+  border-top: 3px solid #134074;
   padding: 15px 0;
 }
 
@@ -1732,7 +1732,7 @@ ol {
 }
 
 .header .navbar-nav .dropdown-menu li a:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .header .navbar-nav li .sub-menu li a:before {
@@ -1744,7 +1744,7 @@ ol {
 }
 
 .header .navbar-nav li .sub-menu li:hover a {
-  color: #473BF0;
+  color: #134074;
 }
 
 .header .button {
@@ -1822,7 +1822,7 @@ ol {
 }
 
 .hero-area.style2 .tns-controls button:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .hero-area.style2 .hero-inner {
@@ -1835,11 +1835,11 @@ ol {
 }
 
 .hero-area.style2 .hero-inner.style2 {
-  background-color: #473BF0 !important;
+  background-color: #134074 !important;
 }
 
 .hero-area.style2 .hero-inner.overlay::before {
-  background-color: #473BF0;
+  background-color: #134074;
   z-index: -1;
   opacity: 0.9;
 }
@@ -1869,7 +1869,7 @@ ol {
 }
 
 .hero-area.style2 .hero-inner .hero-text .button .btn:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .hero-area.style3 {
@@ -1883,8 +1883,8 @@ ol {
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#473BF0));
-  background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #473BF0 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#134074));
+  background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #134074 100%);
   z-index: -1;
   opacity: 1;
 }
@@ -1919,7 +1919,7 @@ ol {
 
 .hero-area.style3 .hero-inner .hero-text .button .btn:hover {
   background-color: #fff;
-  color: #473BF0;
+  color: #134074;
 }
 
 .hero-area .hero-text {
@@ -1928,7 +1928,7 @@ ol {
 }
 
 .hero-area .hero-text h5 {
-  color: #473BF0;
+  color: #134074;
   font-size: 14px;
   font-weight: 500;
   display: block;
@@ -2005,7 +2005,7 @@ ol {
 .hero-area .verticle-lines .vlines {
   width: 3px;
   height: 100%;
-  background: #473BF036;
+  background: #13407436;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2113,7 +2113,7 @@ ol {
   text-align: center;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  border: 1px dashed #473BF0;
+  border: 1px dashed #134074;
 }
 
 .single-service:hover {
@@ -2134,7 +2134,7 @@ ol {
 }
 
 .single-service h3 a:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .single-service .icon {
@@ -2143,7 +2143,7 @@ ol {
 
 .single-service .icon i {
   font-size: 32px;
-  color: #473BF0;
+  color: #134074;
 }
 
 .single-service p {
@@ -2197,7 +2197,7 @@ ol {
   height: 2px;
   width: 50px;
   margin-top: -1px;
-  background-color: #473BF0;
+  background-color: #134074;
 }
 
 .about-us .about-left .section-title h2 {
@@ -2234,7 +2234,7 @@ ol {
 .about-us .about-left .author .content h5 a {
   display: inline-block;
   margin-left: 5px;
-  color: #473BF0;
+  color: #134074;
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -2251,7 +2251,7 @@ ol {
 
 .about-us .about-right .project {
   color: #fff;
-  background-color: #473BF0;
+  background-color: #134074;
   padding: 45px 40px;
   display: inline-block;
   position: absolute;
@@ -2272,7 +2272,7 @@ ol {
 }
 
 .our-achievement {
-  background-color: #473BF0;
+  background-color: #134074;
   background-image: url("../images/hero/hero1-pattern.png");
 }
 
@@ -2297,7 +2297,7 @@ ol {
     Our Achievement CSS
 ========================================*/
 .our-achievement {
-  background-color: #473BF0;
+  background-color: #134074;
   background-image: url("../images/achievement/achievement-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -2445,7 +2445,7 @@ ol {
 
 .footer .call-action .inner-content .button .btn:hover {
   background-color: #fff;
-  color: #473BF0;
+  color: #134074;
 }
 
 .footer .logo {
@@ -2486,7 +2486,7 @@ ol {
 }
 
 .footer .footer-social ul li a:hover {
-  color: #473BF0;
+  color: #134074;
 }
 
 .footer .footer-middle {
@@ -2532,7 +2532,7 @@ ol {
 
 .footer .footer-bottom {
   padding: 30px 0;
-  background-color: #473BF0;
+  background-color: #134074;
 }
 
 .footer .footer-bottom .inner {
@@ -2571,7 +2571,7 @@ ol {
 
   .section-title span {
     text-transform: uppercase;
-    color: #473BF0;
+    color: #134074;
     display: inline-block;
     margin-bottom: 8px;
     font-size: 13px;
@@ -2672,7 +2672,7 @@ ol {
   }
 
   .navbar-nav .nav-item a:hover {
-    background-color: #473BF0;
+    background-color: #134074;
     color: #fff !important;
     border-color: transparent;
   }
@@ -2695,7 +2695,7 @@ ol {
   }
 
   .header .navbar-nav .dropdown-menu li a:hover {
-    background-color: #473BF0;
+    background-color: #134074;
     color: #fff !important;
     border-color: transparent;
   }
@@ -3051,7 +3051,7 @@ ol {
   }
 
   .testimonials .single-testimonial {
-    background-color: #473BF0;
+    background-color: #134074;
     position: relative;
     margin-bottom: 60px !important;
   }
@@ -3277,7 +3277,7 @@ ol {
 
   .section-title span {
     text-transform: uppercase;
-    color: #473BF0;
+    color: #134074;
     display: inline-block;
     margin-bottom: 8px;
     font-size: 12px;
@@ -3421,7 +3421,7 @@ ol {
   }
 
   .navbar-nav .nav-item a:hover {
-    background-color: #473BF0;
+    background-color: #134074;
     color: #fff !important;
     border-color: transparent;
   }
@@ -3444,7 +3444,7 @@ ol {
   }
 
   .header .navbar-nav .dropdown-menu li a:hover {
-    background-color: #473BF0;
+    background-color: #134074;
     color: #fff !important;
     border-color: transparent;
   }
@@ -3765,7 +3765,7 @@ ol {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  background-color: #473BF0;
+  background-color: #134074;
 }
 
 .free-version-banner .section-title span {
@@ -3794,5 +3794,5 @@ ol {
 
 .free-version-banner .button .btn {
   background-color: #fff;
-  color: #473BF0;
+  color: #134074;
 }
