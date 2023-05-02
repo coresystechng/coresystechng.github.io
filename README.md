@@ -1,5 +1,5 @@
-# CORE SYSTEM TECH | `building what people love! `
-
+# CORE-TECH 
+#### building what people love!
 
 
 Official Website of CORE-TECH
@@ -9,11 +9,11 @@ Official Website of CORE-TECH
 * [Bootstrap CSS](https://getbootstrap.com/)
 * [Line Icons](https://lineicons.com/)
 * [Animate CSS](https://animate.style/)
-* [Animate CSS](https://animate.style/)
 
 
 ### Contributors
 
 * [Abdulrazaq Salihu](https://github.com/abdrzqsalihu/) - (Project Lead)
+* [Collins Okoroafor](https://github.com/collinsduzzy/) - (Supervisor)
 
 
