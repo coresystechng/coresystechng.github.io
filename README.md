@@ -1,6 +1,4 @@
 # CORE-TECH 
-#### building what people love!
-
 
 Official Website of CORE-TECH
 
@@ -14,6 +12,6 @@ Official Website of CORE-TECH
 ### Contributors
 
 * [Abdulrazaq Salihu](https://github.com/abdrzqsalihu/) - (Project Lead)
-* [Collins Okoroafor](https://github.com/collinsduzzy/) - (Supervisor)
+* [Collins Okoroafor](https://github.com/collinsduzzy/) - (Code Reviewer)
 
 
