@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: cera_light;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: cera_light;
+    src: url(/fonts/Cera\ Pro\ Light.otf);
+}
+
+@font-face {
+    font-family: cera_medium;
+    src: url(/fonts/Cera\ Pro\ Medium.otf);
+}
