@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORE-TECH</title>
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <!-- icons -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- AOS (Animate On Scroll Library) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-light py-3">
+        <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
             <div class="container-fluid container">
             <a class="navbar-brand" href="index.html">CORE-TECH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,97 +24,103 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#scrollspyHeading1">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b>About us</b></a>
+                        <a class="nav-link" href="#scrollspyHeading2">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b>Services</b></a>
+                        <a class="nav-link" href="#scrollspyHeading3">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b>Contact us</b></a>
+                        <a class="nav-link" href="#scrollspyHeading4">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading5">Contact us</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success" type="submit">Get Started</button>
+                <button class="btn btn-primary" type="submit">Get Started</button>
             </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero position-relative overflow-hidden">
-
-            <img src="…your-photo.jpg…" class="w-100" style="height: auto;" />
+        <section class="hero-section position-relative overflow-hidden" id="scrollspyHeading1">
 
             <div class="position-absolute top-0 start-0 w-100 h-100" 
                 style="background: rgba(0,0,0,0.5);">
             </div>
 
-            <div class="position-absolute top-50 start-50 translate-middle w-100">
-                <div class="container text-white">
-                <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
-                <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
-                <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
-                <a href="#" class="btn btn-secondary">Learn More</a>
+            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6">
+                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+                    <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
+                    <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
+                    <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container py-5 mt-5">
+        <section id="scrollspyHeading2"><br>
+            <div class="container py-5 mt-5" data-aos="fade-up">
                 <div class="mb-4">
-                    <span class="section-title">
+                    <span class="section-title" data-aos="zoom-in">
                     <span class="dot"></span> OUR CORE THING
-                    </span>
+                    </span><br>
                 </div>
 
                 <div class="row align-items-center mb-5">
-                    <div class="col-md-6">
-                    <img src="img/hero img.png" alt="Lab" class="feature-img">
+                    <div class="col-md-6" data-aos="fade-right">
+                    <img src="img/top notch.jpg" alt="" class="feature-img">
                     </div>
-                    <div class="col-md-6">
-                    <p class="mission-text">
-                        Our mission is to empower small businesses with reliable, high-quality chemical solution that ensure the operations run smoothly and efficiently, no matter the challenge.
-                    </p>
-                    <hr>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <h1 class="mission-hd">Unique Solutions <br> for Your Business</h1>
+                        <p class="mission-text pt-2">
+                            At Core Tech, we are committed to providing top-notch IT services to individuals and businesses of all sizes. With years of experience in the industry, we have honed our expertise in a range of services, including web design, computer training, and repairs.
+                        </p>
                     </div>
-                </div>
+                </div><hr> 
 
-                <div class="row text-center">
-                    <div class="col-md-6 mb-4">
-                    <div class="icon-circle mx-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
-                        <path d="M8.21.5a.5.5 0 0 1 .58 0l6 4a.5.5 0 0 1 .21.41v6.18a.5.5 0 0 1-.21.41l-6 4a.5.5 0 0 1-.58 0l-6-4a.5.5 0 0 1-.21-.41V4.91a.5.5 0 0 1 .21-.41l6-4zm.29 1.03L2.21 5 8 8.97 13.79 5 8.5 1.53zM2 6.57v5.86L7.5 14.5V8.64L2 6.57zm12 0l-5.5 2.07v5.86L14 12.43V6.57z"/>
-                        </svg>
+                <div class="row text-center pt-5">
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/cvwrvyjv.json"
+                            trigger="loop"
+                            delay="2000"
+                            stroke="bold"
+                            colors="primary:#134074,secondary:#134074"
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                        <div class="feature-title">Reliability</div>
+                        <p class="feature-desc">We pride ourselves on our attention to detail, timely delivery, and commitment to excellence.</p>
                     </div>
-                    <div class="feature-title">Reliability</div>
-                    <p class="feature-desc">The speedy and dependable supply of chemicals ensures your business activities remain persistent.</p>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                    <div class="icon-circle mx-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.118l-4.898.696c-.441.062-.612.636-.282.95l3.523 3.356-.83 4.73z"/>
-                        </svg>
-                    </div>
-                    <div class="feature-title">Quality</div>
-                    <p class="feature-desc">We supply and transport exclusively premium chemicals, conforming to strict industry standards to aid your success.</p>
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/rxgzsafd.json"
+                            trigger="loop"
+                            delay="2000"
+                            colors="primary:#134074"
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                        <div class="feature-title">Quality</div>
+                        <p class="feature-desc">We are dedicated to providing personalized service and support, with a focus on delivering quality solutions.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container py-5">
+        <section style="background-color: #F4F7FA;" id="scrollspyHeading3"><br>
+            <div class="container py-5 mt-5">
                 <div class="row align-items-center mb-5">
-                    <div class="col-md-6">
-                    <h2 class="fw-bold">From beginners to seasoned pros, I create <span class="text-primary">custom plans</span></h2>
-                    <p class="text-muted">tailored to help you unlock your full potential and succeed in races.</p>
+                    <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                        <h2 class="fw-bold">From individuals to corporate businesses, we provide <span class="bluey">unique solutions</span></h2>
+                        <p class="text-muted">tailored to meet your specific needs.</p>
                     </div>
                     <div class="col-md-6">
-                    <img src="img/hero img.png" class="img-fluid rounded" alt="Coach Image">
+                    <img src="img/solutions.jpg" class="img-fluid feature-img" data-aos="fade-left" data-aos-delay="100" alt="">
                     </div>
                 </div>
 
-                <div class="row text-center border-top pt-4">
+                <div class="row text-center border-top pt-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-md-4">
                     <h3 class="fw-bold"><span class="counter" data-target="12">0</span>+</h3>
                     <p class="text-muted">Years of experience</p>
@@ -122,11 +130,84 @@
                     <p class="text-muted">Satisfaction rate comes from our awesome customers.</p>
                     </div>
                     <div class="col-md-4">
-                    <h3 class="fw-bold"><span class="counter" data-target="10000">0</span>+</h3>
-                    <p class="text-muted">Training hours</p>
+                    <h3 class="fw-bold"><span class="counter" data-target="15">0</span>+</h3>
+                    <p class="text-muted">Graduated students</p>
                     </div>
                 </div>
             </div>
+        </section>
+        <section id="scrollspyHeading4">
+            <div class="container">
+                <div class="row gy-5 pt-5 mt-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <span class="section-title" data-aos="zoom-in">
+                            <span class="dot"></span> SERVICES
+                            </span><br>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="300" style="width: 90% !important;">
+                            <h1 class="mission-hd">Services we offer</h1>
+                            <p class="text-secondary">
+                            We offer a range of services to meet your specific tasks and help your business succeed in today's digital landscape. Our services include: <br><br>
+                            </p>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="row gx-4 gy-4 align-items-center pt-5 mt-3">
+                            <!-- central big card -->
+                            <div class="col-md-6">
+                                <div class="achievement-card text-center">
+                                    <div class="hd">Computer Training</div>
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/yvjimpju.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#ffffff,secondary:#ffffff"
+                                        style="width:60px;height:60px">
+                                    </lord-icon>
+                                    <div class="label">We provide computer training to enhance skills and stay up-to-date with technology.</div>
+                                </div>
+                            </div>
+                            <!-- two stacked cards on right -->
+                            <div class="col-md-6">
+                                <div class="row gy-4">
+                                    <div class="col-12">
+                                        <div class="achievement-card">
+                                            <div class="hd">Repairs</div>
+                                            <lord-icon
+                                            src="https://cdn.lordicon.com/fwkrbvja.json"
+                                                trigger="loop"
+                                                delay="2000"
+                                                stroke="bold"
+                                                colors="primary:#ffffff,secondary:#ffffff"
+                                                style="width:60px;height:60px">
+                                            </lord-icon>
+                                            <div class="label">We provide reliable repairs and maintenance services for various devices.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="achievement-card">
+                                            <div class="hd">Digital Services</div>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/ogjpwrxe.json"
+                                                trigger="loop"
+                                                delay="2000"
+                                                stroke="bold"
+                                                colors="primary:#ffffff,secondary:#ffffff"
+                                                style="width:60px;height:60px">
+                                            </lord-icon>
+                                            <div class="label">We offer high-quality digital services, including website design, and SEO.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
         </section>
     </main>
 
@@ -134,10 +215,20 @@
 
     </footer>
     
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+        });
+    </script>
+    <!-- Type effect JS -->
     <script>
         const counters = document.querySelectorAll('.counter');
-        const speed = 50; // The lower the faster
+        const speed = 90; // The lower the faster
 
         const animateCounters = () => {
             counters.forEach(counter => {

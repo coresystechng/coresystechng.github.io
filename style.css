@@ -16,12 +16,14 @@
     src: url(/fonts/Cera\ Pro\ Medium.otf);
 }
 
-.btn {
+.btn-primary {
     color: #134074 !important;
     border: 1px #134074 solid !important;
+    background-color: #fff;
+    padding: .6em 1.6em .6em 1.6em;
 }
 
-.btn:hover {
+.btn-primary:hover {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
     color: #fff !important;
@@ -31,6 +33,8 @@
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
     color: #fff !important;
+    border: 1px #fff solid !important;
+    padding: .8em 2em .8em 2em;
 }
 
 .btn-secondary:hover {
@@ -39,74 +43,105 @@
     border: 1px #fff solid !important;
 }
 
-.hero {
-    position: relative;
-    background-image: url('img/hero\ img.png');
-    background-size: cover;
-    background-position: center;
+.hero-section {
     height: 100vh;
-    color: white;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
-    display: flex;
-    justify-content: left !important;
-    align-items: center;
-    text-align: left;
-    padding: 1rem;
+    background: url('img/hero\ img.png') center center/cover no-repeat;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
     display: flex;
     align-items: center;
     font-weight: 600;
-    color: #00123D;
+    color: #555;
 }
+
 .section-title .dot {
     height: 12px;
     width: 12px;
-    background-color: #007BFF;
+    background-color: #134074;
     border-radius: 50%;
     display: inline-block;
     margin-right: 10px;
 }
+
 .mission-text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #00123D;
+    font-size: 1.1rem;
+    font-weight: 600 !important;
+    font-family: cera_light;
+    color: #555;
 }
-.icon-circle {
-    background-color: #0B0C3E;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 10px;
+
+.mission-hd {
+    font-weight: 200;
+    color: #134074;
 }
+
 .feature-title {
-    font-weight: 600;
-    color: #00123D;
+    font-weight: 500;
+    font-size: larger;
+    color: #134074;
 }
+
 .feature-desc {
     color: #555;
     font-size: 0.95rem;
 }
+
 .feature-img {
     border-radius: 15px;
-    width: 100%;
+    width: 95%;
     height: auto;
 }
+
 .lead {
     width: 50% !important;
     font-family: cera_light;
     font-size: 1em !important;
+}
+
+.bluey {
+    color: #224C7D;
+}
+
+.nav-link {
+    color: #333 !important;
+}
+
+.nav-link:hover {
+    color: #134074 !important;
+}
+
+/* card styling */
+.achievement-card {
+    position: relative;
+    background-color: #081828;
+    color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* blue stripe on the right edge */
+.achievement-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: .5rem;
+    height: 100%;
+    background-color: #134074;
+}
+.achievement-card .hd {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2;
+}
+.achievement-card .label {
+    font-family: cera_light;
+    font-size: .875rem;
+    opacity: .75;
 }
