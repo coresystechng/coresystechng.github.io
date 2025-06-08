@@ -43,6 +43,19 @@
     border: 1px #fff solid !important;
 }
 
+.btn-danger {
+    background-color: #134074 !important;
+    border: 1px #134074 solid !important;
+    color: #fff !important;
+    border: 1px #fff solid !important;
+}
+
+.btn-danger:hover {
+    color: #fff !important;
+    background-color: #081828 !important;
+    border: 1px #fff solid !important;
+}
+
 .hero-section {
     height: 100vh;
     background: url('img/hero\ img.png') center center/cover no-repeat;
@@ -143,5 +156,11 @@
 .achievement-card .label {
     font-family: cera_light;
     font-size: .875rem;
-    opacity: .75;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
 }
