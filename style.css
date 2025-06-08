@@ -8,12 +8,12 @@
 
 @font-face {
     font-family: cera_light;
-    src: url(/fonts/Cera\ Pro\ Light.otf);
+    src: url(Assets/fonts/Cera\ Pro\ Light.otf);
 }
 
 @font-face {
     font-family: cera_medium;
-    src: url(/fonts/Cera\ Pro\ Medium.otf);
+    src: url(Assets/fonts/Cera\ Pro\ Medium.otf);
 }
 
 .btn-primary {
@@ -58,7 +58,7 @@
 
 .hero-section {
     height: 100vh;
-    background: url('img/hero\ img.png') center center/cover no-repeat;
+    background: url('Assets/img/hero\ img.png') center center/cover no-repeat;
     position: relative;
     z-index: 1;
 }
@@ -163,4 +163,67 @@
     bottom: 20px;
     right: 20px;
     display: none;
+}
+
+.footer-section {
+    background-color: #081828;
+    color: #eee;
+    padding: 4rem 0;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-title .bi {
+    font-size: 1.75rem;
+    color: #0d6efd;
+}
+
+.footer-text {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-credit {
+    font-size: .9rem;
+    color: #aaa;
+}
+
+.footer-nav h6 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-nav a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: .5rem;
+    transition: color .2s;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+}
+
+.footer-link a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    text-decoration: none;
+    margin-bottom: .5rem;
+    transition: color .2s;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+    color: #fff;
 }
