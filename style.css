@@ -20,10 +20,6 @@ html {
     overflow-x: hidden;
 }
 
-.active {
-    color: #134074 !important;
-}
-
 .btn-primary {
     color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -160,12 +156,15 @@ html {
 }
 
 .nav-link {
-    color: #333 !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+    outline: none;
+    padding: 10px 16px;
+    background-color: transparent !important;
+    cursor: pointer;
 }
 
-.nav-link:hover {
+.active, .nav-link:hover {
+    border-bottom: 3px #134074 solid;
+    background-color: #666;
     color: #134074 !important;
 }
 
