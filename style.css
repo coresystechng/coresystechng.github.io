@@ -16,6 +16,10 @@
     src: url(Assets/fonts/Cera\ Pro\ Medium.otf);
 }
 
+.active {
+    color: #134074 !important;
+}
+
 .btn-primary {
     color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -67,10 +71,26 @@
     display: flex;
     align-items: center;
     font-weight: 600;
-    color: #555;
+    color: #666;
+}
+
+.section-title-2 {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
 }
 
 .section-title .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #134074;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.section-title-2 .dot {
     height: 12px;
     width: 12px;
     background-color: #134074;
@@ -83,7 +103,7 @@
     font-size: 1.1rem;
     font-weight: 600 !important;
     font-family: cera_light;
-    color: #555;
+    color: #666;
 }
 
 .mission-hd {
@@ -91,15 +111,22 @@
     color: #134074;
 }
 
+.mission-hd-2 {
+    font-weight: 200;
+    color: #fff;
+}
+
 .feature-title {
     font-weight: 500;
-    font-size: larger;
+    font-size: 1.4em;
     color: #134074;
 }
 
 .feature-desc {
-    color: #555;
+    color: #666;
     font-size: 0.95rem;
+    font-weight: 600 !important;
+    font-family: cera_light;
 }
 
 .feature-img {
@@ -114,12 +141,10 @@
     font-size: 1em !important;
 }
 
-.bluey {
-    color: #224C7D;
-}
-
 .nav-link {
     color: #333 !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .nav-link:hover {
@@ -166,8 +191,8 @@
 }
 
 .footer-section {
-    background-color: #081828;
-    color: #eee;
+    background-color: #F8F9FA;
+    color: #333;
     padding: 4rem 0;
 }
 
@@ -180,11 +205,6 @@
     margin-bottom: 1rem;
 }
 
-.footer-title .bi {
-    font-size: 1.75rem;
-    color: #0d6efd;
-}
-
 .footer-text {
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -192,11 +212,11 @@
 
 .footer-credit {
     font-size: .9rem;
-    color: #aaa;
+    color: #777;
 }
 
 .footer-nav h6 {
-    color: #fff;
+    color: #134074;
     font-size: 1rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -204,14 +224,16 @@
 
 .footer-nav a {
     display: block;
-    color: #bbb;
+    color: #444;
+    padding: 0px !important;
+    width: 28% !important;
     text-decoration: none;
     margin-bottom: .5rem;
     transition: color .2s;
 }
 
 .footer-nav a:hover {
-    color: #fff;
+    color: #bbb;
 }
 
 .footer-link a {
@@ -226,4 +248,13 @@
 .footer-link a:hover {
     text-decoration: underline;
     color: #fff;
+}
+
+.text-center {
+    align-items: center !important;
+    align-content: center !important;
+}
+
+.contact-section {
+    background-color: #081828;
 }

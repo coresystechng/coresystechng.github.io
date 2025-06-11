@@ -19,7 +19,8 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
             <div class="container-fluid container">
-                <img src="Assets/img/logo.png" style="width: 12% !important;" alt="">
+                <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
+                <img src="Assets/img/logo.png" class="w-25 d-block d-md-none" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,16 +33,18 @@
                             <a class="nav-link" href="#scrollspyHeading2">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading3">Portfolio</a>
+                            <a class="nav-link" href="#scrollspyHeading3">Clients</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#scrollspyHeading4">Services</a>
+                            </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading4">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading5">Contact us</a>
+                            <a class="nav-link" href="#scrollspyHeading5">Contact Us</a>
                         </li>
                     </ul>
-                    <button class="btn btn-primary" type="submit">Get Started</button>
+                    <a href="#scrollspyHeading5">
+                        <button class="btn btn-primary" type="submit">Get Started</button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -64,7 +67,7 @@
                     <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
                     <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
                     <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
-                    <a href="#" class="btn btn-secondary">Learn More</a>
+                    <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </section>
@@ -77,8 +80,8 @@
                 </div>
 
                 <div class="row align-items-center mb-5">
-                    <div class="col-md-6" data-aos="fade-right">
-                    <img src="Assets/img/top notch.jpg" alt="" class="feature-img">
+                    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+                        <img src="Assets/img/top notch.jpg" alt="" class="feature-img">
                     </div>
                     <div class="col-md-6" data-aos="fade-left">
                         <h1 class="mission-hd">Unique Solutions <br> for Your Business</h1>
@@ -88,62 +91,78 @@
                     </div>
                 </div><hr> 
 
-                <div class="row text-center pt-5">
-                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/cvwrvyjv.json"
-                            trigger="loop"
-                            delay="2000"
-                            stroke="bold"
-                            colors="primary:#134074,secondary:#134074"
-                            style="width:50px;height:50px">
-                        </lord-icon>
-                        <div class="feature-title">Reliability</div>
-                        <p class="feature-desc">We pride ourselves on our attention to detail, timely delivery, and commitment to excellence.</p>
+                <div class="row text-center pt-5 justify-content-center">
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/cvwrvyjv.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#134074,secondary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Reliability</div>
+                                </h5>
+                                <p class="feature-desc mt-3">We value your time. We pride ourselves on our attention to detail, timely delivery, and commitment to excellence.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/rxgzsafd.json"
-                            trigger="loop"
-                            delay="2000"
-                            colors="primary:#134074"
-                            style="width:50px;height:50px">
-                        </lord-icon>
-                        <div class="feature-title">Quality</div>
-                        <p class="feature-desc">We are dedicated to providing personalized service and support, with a focus on delivering quality solutions.</p>
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/rxgzsafd.json"
+                                        trigger="loop"
+                                        delay="2000" 
+                                        colors="primary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Quality</div>
+                                </h5>
+                                <p class="feature-desc mt-3">We are dedicated to providing personalized service and support, with a focus on delivering quality solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/asyunleq.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        colors="primary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Efficiency</div>
+                                </h5>
+                                <p class="feature-desc mt-3">Our streamlined processes and proactive approach ensure fast, effective solutions without compromising quality.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section style="background-color: #F4F7FA;" id="scrollspyHeading3"><br>
+        <section style="background-color: #134074;" id="scrollspyHeading3"><br>
             <div class="container py-5 mt-5">
                 <div class="row align-items-center mb-5">
                     <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
-                        <h2 class="fw-bold">From individuals to corporate businesses, we provide <span class="bluey">unique solutions</span></h2>
-                        <p class="text-muted">tailored to meet your specific needs.</p>
+                        <h2 class="fw-bold text-white">From individuals to corporate businesses, we provide unique solutions</h2>
+                        <p class="text-white">tailored to meet your specific needs.</p>
+                        <a href="clients.html" class="btn btn-secondary">See Our Clients</a>
                     </div>
                     <div class="col-md-6">
                     <img src="Assets/img/solutions.jpg" class="img-fluid feature-img" data-aos="fade-left" data-aos-delay="100" alt="">
                     </div>
                 </div>
 
-                <div class="row text-center border-top pt-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-md-4">
-                    <h3 class="fw-bold"><span class="counter" data-target="12">0</span>+</h3>
-                    <p class="text-muted">Years of experience</p>
-                    </div>
-                    <div class="col-md-4">
-                    <h3 class="fw-bold"><span class="counter" data-target="98">0</span>%</h3>
-                    <p class="text-muted">Satisfaction rate comes from our awesome customers.</p>
-                    </div>
-                    <div class="col-md-4">
-                    <h3 class="fw-bold"><span class="counter" data-target="20">0</span>+</h3>
-                    <p class="text-muted">Graduated students</p>
-                    </div>
-                </div>
             </div>
         </section>
-        <section id="scrollspyHeading4">
+        <!-- <section id="scrollspyHeading4">
             <div class="container">
                 <div class="row gy-5 pt-5 mt-3">
                     <div class="col-md-6">
@@ -154,71 +173,190 @@
                         </div>
                         <div data-aos="fade-left" data-aos-delay="300" style="width: 90% !important;">
                             <h1 class="mission-hd">Services we offer</h1>
-                            <p class="text-secondary">
-                            We offer a range of services to meet your specific tasks and help your business succeed in today's digital landscape. Our services include: <br><br>
-                            </p>
+                            
                             <hr class="my-4">
                         </div>
                     </div>
+                </div>
+            </div><br><br>
+        </section> -->
+        <section class="bg-light">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="mt-5">
+                    <div class="mb-4">
+                        <span class="section-title" data-aos="zoom-in">
+                            <span class="dot"></span> SERVICES
+                        </span><br>
+                    </div>
+                    <div data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="mission-hd">Services we offer</h1>
+                        <p class="text-secondary">
+                        We offer a range of services to meet your specific tasks and help your business succeed in today's digital landscape. Our services include: <br><br>
+                        </p>
+                    </div>
+                </div>
+                </div>
 
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="row gx-4 gy-4 align-items-center pt-5 mt-3">
-                            <!-- central big card -->
-                            <div class="col-md-6">
-                                <div class="achievement-card text-center">
-                                    <div class="hd">Computer Training</div>
+                <div class="row text-center justify-content-center">
+                <!-- Service Card 1 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/ogjpwrxe.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#134074,secondary:#134074"
+                                        style="width:60px;height:60px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Digital Services</div>
+                                </h5>
+                                <p class="feature-desc mt-3">We offer high-quality digital services, including website design, and SEO.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Service Card 2 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fwkrbvja.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#134074,secondary:#134074"
+                                        style="width:60px;height:60px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Repairs</div>
+                                </h5>
+                                <p class="feature-desc mt-3">We provide reliable repairs and maintenance services for various devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Service Card 3 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
                                     <lord-icon
                                         src="https://cdn.lordicon.com/yvjimpju.json"
                                         trigger="loop"
                                         delay="2000"
                                         stroke="bold"
-                                        colors="primary:#ffffff,secondary:#ffffff"
+                                        colors="primary:#134074,secondary:#134074"
                                         style="width:60px;height:60px">
                                     </lord-icon>
-                                    <div class="label">We provide computer training to enhance skills and stay up-to-date with technology.</div>
-                                </div>
-                            </div>
-                            <!-- two stacked cards on right -->
-                            <div class="col-md-6">
-                                <div class="row gy-4">
-                                    <div class="col-12">
-                                        <div class="achievement-card">
-                                            <div class="hd">Repairs</div>
-                                            <lord-icon
-                                            src="https://cdn.lordicon.com/fwkrbvja.json"
-                                                trigger="loop"
-                                                delay="2000"
-                                                stroke="bold"
-                                                colors="primary:#ffffff,secondary:#ffffff"
-                                                style="width:60px;height:60px">
-                                            </lord-icon>
-                                            <div class="label">We provide reliable repairs and maintenance services for various devices.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="achievement-card">
-                                            <div class="hd">Digital Services</div>
-                                            <lord-icon
-                                                src="https://cdn.lordicon.com/ogjpwrxe.json"
-                                                trigger="loop"
-                                                delay="2000"
-                                                stroke="bold"
-                                                colors="primary:#ffffff,secondary:#ffffff"
-                                                style="width:60px;height:60px">
-                                            </lord-icon>
-                                            <div class="label">We offer high-quality digital services, including website design, and SEO.</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div class="feature-title fw-semibold">Computer Training</div>
+                                </h5>
+                                <p class="feature-desc mt-3">We provide computer training to enhance skills and stay up-to-date with technology.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><br><br>
+                <div class="text-center pb-5 pt-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="services.html" class="btn btn-primary">See All Services</a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Us Section -->
+        <section class="py-5 contact-section" id="scrollspyHeading5"><br><br>
+            <div class="container">
+                <!-- Header -->
+                <div class="text-start mb-5 pb-2">
+                    <div class="mb-4">
+                        <span class="section-title-2" data-aos="zoom-in">
+                            <span class="dot"></span> CONTACT
+                        </span><br>
+                    </div>
+                    <h1 class="mission-hd-2">Contact Us</h1>
+                    <p class="text-white">Got a question or a project you’d like to discuss? Our team is standing by to help you find the perfect solution. Whether you’d like to chat by phone, send us an email, or drop by our office in Kubwa, we’re here to support your next big idea.</p>
+                </div>
+
+                <!-- Get In Touch + Form -->
+                <div class="row g-4 align-items-start">
+                <!-- Left Column: Info -->
+                <div class="col-lg-7">
+
+                    <div class="row text-center justify-content-center">
+                <!-- Service Card 1 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/onmwuuox.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#134074,secondary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Address</div>
+                                </h5>
+                                <p class="feature-desc mt-3">Shop 5, Kubwa General Hospital, Abuja</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Service Card 2 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/wtywrnoz.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        colors="primary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Phone</div>
+                                </h5>
+                                <p class="feature-desc mt-3">+234 567 8910 <br> +234 567 8911</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Service Card 3 -->
+                    <div class="col-md-4 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm rounded-4 border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-column align-items-center gap-2">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/ozlkyfxg.json"
+                                        trigger="loop"
+                                        delay="2000"
+                                        stroke="bold"
+                                        colors="primary:#134074,secondary:#134074"
+                                        style="width:50px;height:50px">
+                                    </lord-icon>
+                                    <div class="feature-title fw-semibold">Email</div>
+                                </h5>
+                                <p class="feature-desc mt-3">coresytech@gmail.com <br> coreinftech@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                    <div class="col-lg-5">
+                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.965113474307!2d7.336996975020456!3d9.157619790908937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104dd936bb985317%3A0xa70cbf973db189d2!2sCORE-TECH!5e0!3m2!1sen!2sng!4v1749627181690!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="pt-5 mt-5" id="scrollspyHeading5">
+    <footer>
         <section class="footer-section">
             <div class="container">
                 <div class="row gx-5">
@@ -230,48 +368,6 @@
                         <p class="footer-text">
                             We're here to help! Our team of experts is dedicated to providing you with the support and resources you need to make your project a success.
                         </p>
-                        <!-- <div class="row pb-3">
-                            <div class="col footer-link">
-                                <a href="">
-                                    <span>
-                                        <div class="d-inline-flex gap-0">
-                                            <div class="col-sm-6">
-                                                <lord-icon
-                                                    src="https://cdn.lordicon.com/jfhecnmz.json"
-                                                    trigger="loop"
-                                                    delay="2000"
-                                                    colors="primary:#ffffff"
-                                                    style="width:40px;height:40px">
-                                                </lord-icon> 
-                                            </div>
-                                            <div class="col-sm-6 text-nowrap">
-                                                coreinfotech@gmail.com
-                                            </div>
-                                        </div>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col footer-link">
-                                <a href="">
-                                    <span>
-                                        <div class="d-inline-flex gap-0">
-                                            <div class="col-sm-6">
-                                                <lord-icon
-                                                    src="https://cdn.lordicon.com/wtywrnoz.json"
-                                                    trigger="loop"
-                                                    delay="2000"
-                                                    colors="primary:#ffffff"
-                                                    style="width:40px;height:40px">
-                                                </lord-icon> 
-                                            </div>
-                                            <div class="col-sm-6 text-nowrap">
-                                                +234 456 7890
-                                            </div>
-                                        </div>
-                                    </span>
-                                </a>
-                            </div>
-                        </div> -->
                         <div class="footer-credit">
                             &copy; 2025 CORE-TECH. All Rights Reserved
                         </div>
@@ -285,8 +381,8 @@
                                 <h6>Sections</h6>
                                 <a href="#scrollspyHeading1">Home</a>
                                 <a href="#scrollspyHeading2">About us</a>
-                                <a href="#scrollspyHeading3">Portfolio</a>
-                                <a href="#scrollspyHeading4">Services</a>
+                                <a href="clients.html">Clients</a>
+                                <a href="services.html">Services</a>
                             </div>
                             <!-- Socials & Buttons -->
                             <div class="col-sm-6">
