@@ -75,19 +75,22 @@
 
     <main>
 
-        <section class="hero-section-3 position-relative overflow-hidden" id="scrollspyHeading1">
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);">
-            </div>
-
-            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6" >
-                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+        <section id="scrollspyHeading1">
+            <div class="hero">
+                <div class="background-lines" id="background-lines"></div>
+                <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
                     <!-- <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small> -->
                     <h1 class="display-4"><b>Meet Our Clients</b></h1>
                     <p class="lead">We’ve had the privilege of working with a diverse range of clients—from startups to established enterprises. At CORE-TECH, we value long-term partnerships and are proud to support the growth of businesses across industries.</p>
+                    <div class="scroll-indicator">
+                        <div class="mouse">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
                     <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
                 </div>
             </div>
-        </section>
+        </section><br>
 
         <section>
             <div class="container my-5" data-aos="fade-up" data-aos-delay="100">
@@ -335,6 +338,22 @@
             setTimeout(() => pre.remove(), 600);
             }, remain);
         });
+    </script>
+    <script>
+        const container = document.getElementById("background-lines");
+        const numLines = 60;
+
+        for (let i = 0; i < numLines; i++) {
+        const line = document.createElement("div");
+        line.classList.add("line");
+        const height = 80 + Math.random() * 120;
+        line.style.height = `${height}px`;
+        line.style.left = `${Math.random() * 100}%`;
+        line.style.top = `-${height}px`;
+        line.style.animationDuration = `${2 + Math.random() * 3}s`;
+        line.style.animationDelay = `${Math.random() * 5}s`;
+        container.appendChild(line);
+        }
     </script>
 </body>
 </html>

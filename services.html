@@ -74,20 +74,23 @@
     </button>
 
     <main>
-
-        <section class="hero-section-2 position-relative overflow-hidden" id="scrollspyHeading1">
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);">
-            </div>
-
-            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6">
-                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+        <section id="scrollspyHeading1">
+            <div class="hero">
+                <div class="background-lines" id="background-lines"></div>
+                <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
                     <small class="text-uppercase">OUR SERVICES</small>
                     <h1 class="display-4"><b>What We Do</b></h1>
                     <p class="lead">At CORE-TECH, we provide a wide range of digital solutions to help you stay ahead in today's fast-paced world. Whether it's web design, IT support, or training, our services are tailored to meet your unique needs.</p>
+                    <div class="scroll-indicator">
+                        <div class="mouse">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
                     <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
                 </div>
             </div>
-        </section>
+        </section><br>
+
         <section class="bg-light pb-5">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -234,7 +237,7 @@
         </section>
         
         <section class="bg-primary">
-            <div class="row text-center pt-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="row text-center pt-4" data-aos="fade-left" data-aos-delay="100">
                 <div class="col-md-4">
                 <h1 class="fw-bold"><span class="counter" data-target="12">0</span>+</h1>
                 <p class="text-white">Years of experience</p>
@@ -392,6 +395,22 @@
             setTimeout(() => pre.remove(), 600);
             }, remain);
         });
+    </script>
+    <script>
+        const container = document.getElementById("background-lines");
+        const numLines = 60;
+
+        for (let i = 0; i < numLines; i++) {
+        const line = document.createElement("div");
+        line.classList.add("line");
+        const height = 80 + Math.random() * 120;
+        line.style.height = `${height}px`;
+        line.style.left = `${Math.random() * 100}%`;
+        line.style.top = `-${height}px`;
+        line.style.animationDuration = `${2 + Math.random() * 3}s`;
+        line.style.animationDelay = `${Math.random() * 5}s`;
+        container.appendChild(line);
+        }
     </script>
 </body>
 </html>

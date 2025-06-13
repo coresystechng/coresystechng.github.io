@@ -75,20 +75,23 @@
     </button>
 
     <main>
-        <section class="hero-section position-relative overflow-hidden" id="scrollspyHeading1">
-
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);">
-            </div>
-
-            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6">
-                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+        <section id="scrollspyHeading1">
+            <div class="hero">
+                <div class="background-lines" id="background-lines"></div>
+                <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
                     <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
-                    <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
+                    <h1 class="display-4"><b>Enabling Digital Solutions.</b></h1>
                     <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
-                    <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a>
+                    <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
+                    <div class="scroll-indicator">
+                        <div class="mouse">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section><br>
+
         <section id="scrollspyHeading2" class="mt-5"><br>
             <div class="container py-5 mt-5" data-aos="fade-up">
                 <div class="mb-4">
@@ -165,6 +168,7 @@
                 </div>
             </div>
         </section>
+
         <section style="background-color: #134074;" id="scrollspyHeading3"><br><br><br>
             <div class="container py-5 mt-5">
                 <div class="row align-items-center mb-5">
@@ -264,6 +268,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Contact Us Section -->
         <section class="py-5 contact-section" id="scrollspyHeading5"><br><br>
             <div class="container">
@@ -364,6 +369,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -542,6 +548,22 @@
         // …and once on load so the right link is active if you land in the middle
         updateActiveOnScroll();
     });
+    </script>
+    <script>
+        const container = document.getElementById("background-lines");
+        const numLines = 60;
+
+        for (let i = 0; i < numLines; i++) {
+        const line = document.createElement("div");
+        line.classList.add("line");
+        const height = 80 + Math.random() * 120;
+        line.style.height = `${height}px`;
+        line.style.left = `${Math.random() * 100}%`;
+        line.style.top = `-${height}px`;
+        line.style.animationDuration = `${2 + Math.random() * 3}s`;
+        line.style.animationDelay = `${Math.random() * 5}s`;
+        container.appendChild(line);
+        }
     </script>
 </body>
 </html>
