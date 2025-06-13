@@ -17,15 +17,28 @@
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <lord-icon
+            src="https://cdn.lordicon.com/ljpehpdr.json"
+            trigger="loop"
+            state="loop-triangle"
+            colors="primary:#134074"
+            style="width:100px;height:100px">
+        </lord-icon>
+    </div>
+
     <header>
         <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
             <div class="container-fluid container">
-                <a href="index.html">
-                    <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
-                </a>
-                <a href="index.html">
-                    <img src="Assets/img/logo.png" class="w-25 d-block d-md-none" alt="">
-                </a>
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
+                    </a>
+                    <a href="index.html">
+                        <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -252,7 +265,7 @@
                         <p class="footer-text">
                             We're here to help! Our team of experts is dedicated to providing you with the support and resources you need to make your project a success.
                         </p>
-                        <div class="footer-credit">
+                        <div class="footer-credit   mb-4 mb-md-0 ">
                             &copy; 2025 CORE-TECH. All Rights Reserved
                         </div>
                     </div>
@@ -364,6 +377,23 @@
         }, options);
 
         observer.observe(document.querySelector('.counter'));
+    </script>
+
+    <script>
+        // Minimum display time in milliseconds
+        const MIN_DISPLAY = 2500;
+        const start = Date.now();
+
+        window.addEventListener('load', () => {
+            const pre = document.getElementById('preloader');
+            const elapsed = Date.now() - start;
+            const remain = Math.max(0, MIN_DISPLAY - elapsed);
+
+            setTimeout(() => {
+            pre.classList.add('fade-out');
+            setTimeout(() => pre.remove(), 600);
+            }, remain);
+        });
     </script>
 
 </body>
