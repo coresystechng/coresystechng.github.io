@@ -44,15 +44,15 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#scrollspyHeading1">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#scrollspyHeading2">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="clients.html">Clients</a>
+                            <a class="nav-link" href="#scrollspyHeading3">Clients</a>
                             <li class="nav-item">
-                                <a class="nav-link" href="services.html">Services</a>
+                                <a class="nav-link" href="#scrollspyHeading4">Services</a>
                             </li>
                         </li>
                         <li class="nav-item">
@@ -64,6 +64,8 @@
                     </a>
                 </div>
             </div>
+            <!-- Underline element -->
+            <div class="nav-underline"></div>
         </nav>
     </header>
 
@@ -86,8 +88,8 @@
                     <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
-        </section>
-        <section id="scrollspyHeading2"><br>
+        </section><br>
+        <section id="scrollspyHeading2" class="mt-5"><br>
             <div class="container py-5 mt-5" data-aos="fade-up">
                 <div class="mb-4">
                     <span class="section-title" data-aos="zoom-in">
@@ -163,7 +165,7 @@
                 </div>
             </div>
         </section>
-        <section style="background-color: #134074;" id="scrollspyHeading3"><br>
+        <section style="background-color: #134074;" id="scrollspyHeading3"><br><br><br>
             <div class="container py-5 mt-5">
                 <div class="row align-items-center mb-5">
                     <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
@@ -175,8 +177,7 @@
                     <img src="Assets/img/solutions.jpg" class="img-fluid feature-img" data-aos="fade-left" data-aos-delay="100" alt="">
                     </div>
                 </div>
-
-            </div>
+            </div><br><br>
         </section>
 
         <section class="bg-light" id="scrollspyHeading4">
@@ -258,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center pb-5 pt-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center pb-5 pt-4" data-aos="fade-left" data-aos-delay="100">
                     <a href="services.html" class="btn btn-primary">See All Services</a>
                 </div>
             </div>
@@ -506,6 +507,41 @@
             setTimeout(() => pre.remove(), 600);
             }, remain);
         });
+    </script>
+
+    <!-- nav anime -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        function updateActiveOnScroll() {
+        const scrollPos = window.pageYOffset;
+        let currentSectionId = "";
+
+        // Find the last section whose top is <= scroll position
+        sections.forEach(section => {
+            const offsetTop = section.offsetTop;
+            // tweak this if you have a fixed header: e.g. offsetTop - headerHeight
+            if (scrollPos >= offsetTop - 10) {
+            currentSectionId = section.id;
+            }
+        });
+
+        // Update link classes
+        navLinks.forEach(link => {
+            link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${currentSectionId}`
+            );
+        });
+        }
+
+        // Run on scroll…
+        window.addEventListener("scroll", updateActiveOnScroll);
+        // …and once on load so the right link is active if you land in the middle
+        updateActiveOnScroll();
+    });
     </script>
 </body>
 </html>

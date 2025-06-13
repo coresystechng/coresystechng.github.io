@@ -158,17 +158,32 @@ html {
     font-size: 1em !important;
 }
 
-.nav-link {
-    outline: none;
-    padding: 10px 16px;
-    background-color: transparent !important;
-    cursor: pointer;
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    font-family: cera_light;
 }
 
-.active, .nav-link:hover {
-    border-bottom: 3px #134074 solid;
-    background-color: #666;
-    color: #134074 !important;
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    bottom: 6px;
+    width: 0;
+    height: 2.6px;
+    background-color: #134074; 
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 50%;
+}
+
+nav ul li a.active::after {
+    width: 50%;
 }
 
 /* card styling */
