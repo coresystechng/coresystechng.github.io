@@ -509,26 +509,27 @@
 
     <!-- Three.js (required) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    
-    <!-- Vanta.clouds.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
+    <!-- Vanta Rings effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
 
     <script>
-        VANTA.CLOUDS({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        skyColor: 0x68b8d7,
-        cloudColor: 0xadc1de,
-        cloudShadowColor: 0x183550,
-        sunColor: 0xff9919,
-        sunGlareColor: 0xff6633,
-        sunlightColor: 0xff9933,
-        speed: 1.0
-        });
+        if (window.innerWidth > 768) {
+            VANTA.RINGS({
+            el: "#vanta-bg",
+            backgroundAlpha: 1.0,
+            backgroundColor: 0x202428,  // decimal 2106408 → hex 0x202428
+            color: 0x134074,            // hex #134074
+            gyroControls: false,
+            mouseControls: false,
+            touchControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+            });
+        } else {
+            document.getElementById("vanta-bg").style.background = "#134074"; // fallback
+        }    
     </script>
 </body>
 </html>

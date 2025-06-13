@@ -344,21 +344,25 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
 
     <script>
-        VANTA.CLOUDS({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        skyColor: 0x68b8d7,
-        cloudColor: 0xadc1de,
-        cloudShadowColor: 0x183550,
-        sunColor: 0xff9919,
-        sunGlareColor: 0xff6633,
-        sunlightColor: 0xff9933,
-        speed: 1.0
-        });
+        if (window.innerWidth > 768) {
+            VANTA.CLOUDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            skyColor: 0x68b8d7,
+            cloudColor: 0xadc1de,
+            cloudShadowColor: 0x183550,
+            sunColor: 0xff9919,
+            sunGlareColor: 0xff6633,
+            sunlightColor: 0xff9933,
+            speed: 1.0
+            });
+        } else {
+            document.getElementById("vanta-bg").style.background = "#87ceeb"; // fallback
+        }    
     </script>
 </body>
 </html>
