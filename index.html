@@ -73,16 +73,17 @@
     </button>
 
     <main>
-        <!-- Hero Section with Vanta Background -->
-        <section>
-            <div id="vanta-bg">
-                <div class="content">
-                    <div class="container pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
-                        <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
-                        <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
-                        <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
-                        <a href="#scrollspyHeading2" class="btn btn-secondary   ">Learn More</a>
-                    </div>
+        <section class="hero-section position-relative overflow-hidden" id="scrollspyHeading1">
+
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);">
+            </div>
+
+            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6">
+                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+                    <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
+                    <h1 class="display-4"><b>Enabling <br> Digital Solutions.</b></h1>
+                    <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
+                    <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </section>
@@ -505,38 +506,6 @@
             setTimeout(() => pre.remove(), 600);
             }, remain);
         });
-    </script>
-
-    <!-- Three.js (required) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-
-    <!-- Vanta Globe effect -->
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
-
-    <script>
-        if (window.innerWidth > 768) {
-            VANTA.GLOBE({
-                el: "#vanta-bg",
-                backgroundAlpha: 1.0,
-                backgroundColor: 0x134074,  // #134074
-                color: 0xffffff,            // main color (white)
-                color2: 0xffffff,           // secondary color (also white)
-                gyroControls: false,
-                mouseControls: true,
-                touchControls: true,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                spacing: 15.00,
-                size: 1.00,
-                maxDistance: 20.00,
-                points: 10.00,
-                showDots: true
-            });
-        } else {
-            document.getElementById("vanta-bg").style.background = "#134074"; // fallback
-        }    
     </script>
 </body>
 </html>
