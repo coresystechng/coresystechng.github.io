@@ -477,7 +477,7 @@ nav ul li a.active::after {
     box-sizing: border-box;
 }
 
-.dot {
+.dot-2 {
     width: 6px;
     height: 6px;
     background: white;
