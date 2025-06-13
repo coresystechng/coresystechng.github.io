@@ -17,7 +17,7 @@
 }
 
 html {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .btn-primary {
@@ -60,12 +60,27 @@ html {
     border: 1px #fff solid !important;
 }
 
-.hero-section {
+#vanta-bg {
+    width: 100vw;
     height: 100vh;
-    background: url('Assets/img/hero\ img.png') center center/cover no-repeat;
     position: relative;
+}
+
+#vanta-bg > .content {
+    position: absolute;
+    top: 50%;
+    left: 42.5%;
+    transform: translate(-50%, -50%);
+    color: #081828 !important;
     z-index: 1;
 }
+
+/* .hero-section {
+    height: 100vh;
+    /* background: url('Assets/img/hero\ img.png') center center/cover no-repeat; 
+    position: relative;
+    z-index: 1;
+} */
 
 .hero-section-2 {
     height: 100vh;
@@ -322,15 +337,18 @@ html {
 /* preloader code */
 /* Full-screen white overlay */
 #preloader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: #fff;
-    display: flex;
+    position: fixed;     /* fix to the viewport */
+    top: 0;              /* span from the very top */
+    left: 0;             /* and the very left */
+    width: 100vw;        /* full viewport width */
+    height: 100vh;       /* full viewport height */
+    background: #fff;    /* or whatever your loader bg is */
+    display: flex;       /* center spinner if you want */
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 9999;       /* sit above everything else */
 }
+
 
 /* Optional fade-out transition */
 #preloader.fade-out {

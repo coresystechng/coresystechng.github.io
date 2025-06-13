@@ -75,18 +75,16 @@
 
     <main>
 
-                <section class="hero-section-2 position-relative overflow-hidden" id="scrollspyHeading1">
-
-            <div class="position-absolute top-0 start-0 w-100 h-100" 
-                style="background: rgba(0,0,0,0.5);">
-            </div>
-
-            <div class="position-absolute top-50 start-50 translate-middle w-100 col-md-6">
-                <div class="container text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
-                    <small class="text-uppercase">OUR SERVICES</small>
-                    <h1 class="display-4"><b>What We Do</b></h1>
-                    <p class="lead">At CORE-TECH, we provide a wide range of digital solutions to help you stay ahead in today's fast-paced world. Whether it's web design, IT support, or training, our services are tailored to meet your unique needs.</p>
-                    <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
+        <!-- Hero Section with Vanta Background -->
+        <section>
+            <div id="vanta-bg">
+                <div class="content">
+                    <div class="container pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+                        <small class="text-uppercase">OUR SERVICES</small>
+                        <h1 class="display-4"><b>What We Do</b></h1>
+                        <p class="lead">At CORE-TECH, we provide a wide range of digital solutions to help you stay ahead in today's fast-paced world. Whether it's web design, IT support, or training, our services are tailored to meet your unique needs.</p>
+                        <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -396,5 +394,28 @@
         });
     </script>
 
+        <!-- Three.js (required) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    
+    <!-- Vanta.clouds.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
+
+    <script>
+        VANTA.CLOUDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        skyColor: 0x68b8d7,
+        cloudColor: 0xadc1de,
+        cloudShadowColor: 0x183550,
+        sunColor: 0xff9919,
+        sunGlareColor: 0xff6633,
+        sunlightColor: 0xff9933,
+        speed: 1.0
+        });
+    </script>
 </body>
 </html>
