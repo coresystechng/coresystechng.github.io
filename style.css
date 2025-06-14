@@ -177,11 +177,27 @@ nav ul li a.active::after {
 }
 
 .navbar {
-    /* position: relative; */
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: #081828;
-    display: flex;
-    color: white;
+    /* keep the blur/glass styling you already have */
+    background-color: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    
+    /* hide by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* when we add .visible, it fades in */
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 /* card styling */

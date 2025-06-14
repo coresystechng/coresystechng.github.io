@@ -27,55 +27,8 @@
         </lord-icon>
     </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
-            <div class="container-fluid container">
-                <div class="navbar-brand">
-                    <a href="index.html">
-                        <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
-                    </a>
-                    <a href="index.html">
-                        <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
-                    </a>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-4 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#aboutus">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#clients">Clients</a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#services">Services</a>
-                            </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contactus">Contact Us</a>
-                        </li>
-                    </ul>
-                    <a href="#">
-                        <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
-                    </a>
-                </div>
-            </div>
-            <!-- Underline element -->
-            <div class="nav-underline"></div>
-        </nav>
-    </header>
-
-    <!-- Back to top button -->
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="bi bi-chevron-double-up"></i>
-    </button>
-
-    <main>
-        <section id="home">
+    <header id="home">
+        <section>
             <div class="hero">
                 <div class="background-lines" id="background-lines"></div>
                 <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
@@ -85,8 +38,8 @@
                     <div class="py-1">
                         <a href="#aboutus" class="btn btn-secondary-2">Learn More</a>
                         <a href="#contactus" class="btn btn-secondary-2">Contact Us</a>
-                    </div><br>
-                    <div class="scroll-indicator">
+                    </div><br><br><br>
+                    <div class="scroll-indicator pt-5 mt-5">
                         <div class="mouse">
                             <div class="dot-2"></div>
                         </div>
@@ -94,6 +47,54 @@
                 </div>
             </div>
         </section><br>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg py-3 fixed-top">
+        <div class="container-fluid container">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
+                </a>
+                <a href="index.html">
+                    <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-4 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clients">Clients</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactus">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="#">
+                    <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
+                </a>
+            </div>
+        </div>
+        <!-- Underline element -->
+        <div class="nav-underline"></div>
+    </nav>
+
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="bi bi-chevron-double-up"></i>
+    </button>
+
+    <main>
 
         <section id="aboutus" class="mt-5"><br>
             <div class="container py-5 mt-5" data-aos="fade-up">
@@ -570,6 +571,24 @@
         line.style.animationDelay = `${Math.random() * 5}s`;
         container.appendChild(line);
         }
+    </script>
+    <!-- hero-dissappear -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav  = document.querySelector('.navbar');
+            const hero = document.getElementById('home');
+
+            console.log('NAV:', nav, 'HERO:', hero);
+
+            const io = new IntersectionObserver(
+            ([entry]) => {
+                console.log('hero intersection:', entry.isIntersecting);
+                nav.classList.toggle('visible', !entry.isIntersecting);
+            },
+            { root: null, threshold: 0 }
+            );
+            io.observe(hero);
+        });
     </script>
 </body>
 </html>

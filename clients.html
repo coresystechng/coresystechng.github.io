@@ -28,61 +28,15 @@
         </lord-icon>
     </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
-            <div class="container-fluid container">
-                <div class="navbar-brand">
-                    <a href="index.html">
-                        <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
-                    </a>
-                    <a href="index.html">
-                        <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
-                    </a>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#aboutus">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="clients.html">Clients</a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="services.html">Services</a>
-                            </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#contactus">Contact Us</a>
-                        </li>
-                    </ul>
-                    <a href="#">
-                        <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Back to top button -->
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="bi bi-chevron-double-up"></i>
-    </button>
-
-    <main>
-
-        <section id="home">
+    <header id="home">
+        <section>
             <div class="hero">
                 <div class="background-lines" id="background-lines"></div>
                 <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
                     <!-- <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small> -->
                     <h1 class="display-4"><b>Meet Our Clients</b></h1>
-                    <p class="lead">We’ve had the privilege of working with a diverse range of clients—from startups to established enterprises. At CORE-TECH, we value long-term partnerships and are proud to support the growth of businesses across industries.</p><br>
-                    <div class="scroll-indicator">
+                    <p class="lead">We’ve had the privilege of working with a diverse range of clients—from startups to established enterprises. At CORE-TECH, we value long-term partnerships and are proud to support the growth of businesses across industries.</p><br><br><br>
+                    <div class="scroll-indicator pt-5 mt-5">
                         <div class="mouse">
                             <div class="dot-2"></div>
                         </div>
@@ -91,7 +45,52 @@
                 </div>
             </div>
         </section><br>
+    </header>
 
+    <nav class="navbar navbar-expand-lg py-3 fixed-top">
+        <div class="container-fluid container">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
+                </a>
+                <a href="index.html">
+                    <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="clients.html">Clients</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contactus">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="#">
+                    <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="bi bi-chevron-double-up"></i>
+    </button>
+
+    <main>
         <section>
             <div class="container my-5" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="mb-4 display-5 text-center">Clients</h2>
@@ -315,6 +314,24 @@
         line.style.animationDelay = `${Math.random() * 5}s`;
         container.appendChild(line);
         }
+    </script>
+    <!-- hero-dissappear -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav  = document.querySelector('.navbar');
+            const hero = document.getElementById('home');
+
+            console.log('NAV:', nav, 'HERO:', hero);
+
+            const io = new IntersectionObserver(
+            ([entry]) => {
+                console.log('hero intersection:', entry.isIntersecting);
+                nav.classList.toggle('visible', !entry.isIntersecting);
+            },
+            { root: null, threshold: 0 }
+            );
+            io.observe(hero);
+        });
     </script>
 </body>
 </html>
