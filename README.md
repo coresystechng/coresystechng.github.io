@@ -6,6 +6,7 @@ Official Website of CORE-TECH
 
 * [Bootstrap CSS](https://getbootstrap.com/)
 * [Lordicon](https://lordicon.com/)
+* [AOS](https://aos.css/)
 
 
 ### Contributors
