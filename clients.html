@@ -48,7 +48,7 @@
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#scrollspyHeading2">About Us</a>
+                            <a class="nav-link" href="index.html#aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="clients.html">Clients</a>
@@ -57,10 +57,10 @@
                             </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#scrollspyHeading5">Contact Us</a>
+                            <a class="nav-link" href="index.html#contactus">Contact Us</a>
                         </li>
                     </ul>
-                    <a href="index.html#scrollspyHeading5">
+                    <a href="#">
                         <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
                     </a>
                 </div>
@@ -75,19 +75,19 @@
 
     <main>
 
-        <section id="scrollspyHeading1">
+        <section id="home">
             <div class="hero">
                 <div class="background-lines" id="background-lines"></div>
                 <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
                     <!-- <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small> -->
-                    <h1 class="display-4"><b>Meet Our Clients</b></h1>
-                    <p class="lead">We’ve had the privilege of working with a diverse range of clients—from startups to established enterprises. At CORE-TECH, we value long-term partnerships and are proud to support the growth of businesses across industries.</p>
                     <div class="scroll-indicator">
                         <div class="mouse">
-                            <div class="dot"></div>
+                            <div class="dot-2"></div>
                         </div>
-                    </div>
-                    <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
+                    </div><br>
+                    <h1 class="display-4"><b>Meet Our Clients</b></h1>
+                    <p class="lead">We’ve had the privilege of working with a diverse range of clients—from startups to established enterprises. At CORE-TECH, we value long-term partnerships and are proud to support the growth of businesses across industries.</p>
+                    <!-- <a href="#aboutus" class="btn btn-secondary">Learn More</a> -->
                 </div>
             </div>
         </section><br>
@@ -99,19 +99,19 @@
                 <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
                 <div class="logo-carousel">
                     <div class="logo-track">
-                    <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
-                    <!-- Repeat the same logos to create seamless scrolling -->
-                    <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
-                    <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
+                        <!-- Repeat the same logos to create seamless scrolling -->
+                        <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/halibiz.png" alt="Client Logo"></div>
+                        <div class="logo-item"><img src="Assets/img/BRND.png" alt="Client Logo"></div>
                     </div>
-                </div>
+                </div><br><br>
             </div>
         </section>
         <!-- Testimonial 4 - Bootstrap Brain Component -->
@@ -197,7 +197,7 @@
         </section>
     </main>
 
-    <footer id="scrollspyHeading5">
+    <footer id="contactus">
         <section class="footer-section">
             <div class="container">
                 <div class="row gx-5">
@@ -221,7 +221,7 @@
                             <div class="col-sm-6 footer-nav mb-4 mb-sm-0">
                                 <h6>Sections</h6>
                                 <a href="index.html">Home</a>
-                                <a href="index.html#scrollspyHeading2">About Us</a>
+                                <a href="index.html#aboutus">About Us</a>
                                 <a href="clients.html">Clients</a>
                                 <a href="services.html">Services</a>
                             </div>
@@ -282,47 +282,7 @@
         document.documentElement.scrollTop = 0;
         }
     </script>
-
-    <!-- Type effect JS -->
-    <script>
-        const counters = document.querySelectorAll('.counter');
-        const speed = 90; // The lower the faster
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-
-                const increment = Math.ceil(target / speed);
-
-                if (count < target) {
-                counter.innerText = count + increment;
-                setTimeout(updateCount, 20);
-                } else {
-                counter.innerText = target.toLocaleString();
-                }
-            };
-            updateCount();
-            });
-        };
-
-        const options = {
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                observer.disconnect();
-            }
-            });
-        }, options);
-
-        observer.observe(document.querySelector('.counter'));
-    </script>
-
+    <!-- preloader -->
     <script>
         // Minimum display time in milliseconds
         const MIN_DISPLAY = 2500;
@@ -339,6 +299,7 @@
             }, remain);
         });
     </script>
+    <!-- bg lines -->
     <script>
         const container = document.getElementById("background-lines");
         const numLines = 60;

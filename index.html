@@ -44,22 +44,22 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#scrollspyHeading1">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading2">About Us</a>
+                            <a class="nav-link" href="#aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading3">Clients</a>
+                            <a class="nav-link" href="#clients">Clients</a>
                             <li class="nav-item">
-                                <a class="nav-link" href="#scrollspyHeading4">Services</a>
+                                <a class="nav-link" href="#services">Services</a>
                             </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#scrollspyHeading5">Contact Us</a>
+                            <a class="nav-link" href="#contactus">Contact Us</a>
                         </li>
                     </ul>
-                    <a href="#scrollspyHeading5">
+                    <a href="#">
                         <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
                     </a>
                 </div>
@@ -75,24 +75,25 @@
     </button>
 
     <main>
-        <section id="scrollspyHeading1">
+        <section id="home">
             <div class="hero">
                 <div class="background-lines" id="background-lines"></div>
                 <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
-                    <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
-                    <h1 class="display-4"><b>Enabling Digital Solutions.</b></h1>
-                    <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
-                    <!-- <a href="#scrollspyHeading2" class="btn btn-secondary">Learn More</a> -->
                     <div class="scroll-indicator">
                         <div class="mouse">
                             <div class="dot-2"></div>
                         </div>
-                    </div>
+                    </div><br>
+                    <small class="text-uppercase">LET’S SHIFT YOUR BUSINESS</small>
+                    <h1 class="display-4"><b>Enabling Digital Solutions.</b></h1>
+                    <p class="lead">We help businesses solve real-life issues using digital tools, creating solutions that do not only thrive our client’s businesses but also help them grow their finances.</p>
+                    <a href="#aboutus" class="btn btn-secondary-2">Learn More</a>
+                    <a href="#contactus" class="btn btn-secondary-2">Contact Us</a>
                 </div>
             </div>
         </section><br>
 
-        <section id="scrollspyHeading2" class="mt-5"><br>
+        <section id="aboutus" class="mt-5"><br>
             <div class="container py-5 mt-5" data-aos="fade-up">
                 <div class="mb-4">
                     <span class="section-title" data-aos="zoom-in">
@@ -109,7 +110,7 @@
                         <p class="mission-text pt-2">
                             At CORE-TECH, we are committed to providing top-notch IT services to individuals and businesses of all sizes. With years of experience in the industry, we have honed our expertise in a range of services, including web design, computer training, and repairs.
                         </p>
-                        <a href="#" class="btn btn-secondary">Contact Us</a>
+                        <a href="#contactus" class="btn btn-secondary">Contact Us</a>
                     </div>
                 </div><hr> 
 
@@ -171,7 +172,7 @@
             </div>
         </section>
 
-        <section style="background-color: #134074;" id="scrollspyHeading3"><br><br><br>
+        <section style="background-color: #134074;" id="clients"><br><br><br>
             <div class="container py-5 mt-5">
                 <div class="row align-items-center mb-5">
                     <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
@@ -186,7 +187,7 @@
             </div><br><br>
         </section>
 
-        <section class="bg-light" id="scrollspyHeading4">
+        <section class="bg-light" id="services">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                 <div class="mt-5">
@@ -272,7 +273,7 @@
         </section>
 
         <!-- Contact Us Section -->
-        <section class="py-5 contact-section" id="scrollspyHeading5"><br><br>
+        <section class="py-5 contact-section" id="contactus"><br><br>
             <div class="container">
                 <!-- Header -->
                 <div class="text-start mb-5 pb-2">
@@ -398,7 +399,7 @@
                             <div class="col-sm-6 footer-nav mb-4 mb-sm-0">
                                 <h6>Sections</h6>
                                 <a href="index.html">Home</a>
-                                <a href="#scrollspyHeading2">About Us</a>
+                                <a href="#aboutus">About Us</a>
                                 <a href="clients.html">Clients</a>
                                 <a href="services.html">Services</a>
                             </div>
@@ -500,6 +501,7 @@
         observer.observe(document.querySelector('.counter'));
     </script>
 
+    <!-- preloader JS -->
     <script>
         // Minimum display time in milliseconds
         const MIN_DISPLAY = 2500;

@@ -47,6 +47,20 @@ html {
     border: 1px #134074 solid !important;
 }
 
+.btn-secondary-2 {
+    background-color: #081828 !important;
+    border: 1px #081828 solid !important;
+    color: #fff !important;
+    border: 1px #fff solid !important;
+    padding: .8em 2em .8em 2em;
+}
+
+.btn-secondary-2:hover {
+    color: #081828 !important;
+    background-color: #fff !important;
+    border: 1px #081828 solid !important;
+}
+
 .btn-danger {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -58,30 +72,6 @@ html {
     color: #fff !important;
     background-color: #081828 !important;
     border: 1px #fff solid !important;
-}
-
-.hero-section {
-    background-color: #134074 !important;
-    height: 100vh;
-    background: url('Assets/img/achievement-bg.png') center center/cover no-repeat; 
-    position: relative;
-    z-index: 1;
-} 
-
-.hero-section-2 {
-    background-color: #134074 !important;
-    height: 100vh;
-    background: url('Assets/img//achievement-bg.png') center center/cover no-repeat;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-section-3 {
-    background-color: #134074 !important;
-    height: 100vh;
-    background: url('Assets/img/achievement-bg.png') center center/cover no-repeat;
-    position: relative;
-    z-index: 1;
 }
 
 .section-title {
@@ -306,13 +296,13 @@ nav ul li a.active::after {
 }
 
 .logo-carousel {
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
 }
 .logo-track {
     display: flex;
     width: calc(200px * 10);
-    animation: scroll 30s linear infinite;
+    animation: scrollLogos 30s linear infinite;
 }
 .logo-item {
     flex: 0 0 auto;
@@ -332,7 +322,7 @@ nav ul li a.active::after {
     filter: grayscale(0%);
 }
 
-@keyframes scroll {
+@keyframes scrollLogos {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
