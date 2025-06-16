@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: cera_medium;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     scroll-behavior: smooth;
 }
 
@@ -16,7 +16,8 @@
     src: url(Assets/fonts/Cera\ Pro\ Medium.otf);
 }
 
-html {
+html, body {
+    max-width: 100% !important;
     overflow-x: hidden !important;
 }
 
@@ -624,5 +625,37 @@ nav ul li a.active::after {
 .btn-coretech:hover {
     background-color: #fff;
     border: 2px #134074 solid;
+    color: #134074;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    color: #134074;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-bg {
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 40px;
+}
+
+.btn-coretech {
+    background-color: #134074;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-coretech:hover {
+    border: 1px #134074 solid;
+    background-color: #fff;
     color: #134074;
 }
