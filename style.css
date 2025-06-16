@@ -659,3 +659,7 @@ nav ul li a.active::after {
     background-color: #fff;
     color: #134074;
 }
+
+.img-fluid {
+    width: 400px !important;
+}
