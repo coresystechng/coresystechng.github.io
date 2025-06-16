@@ -27,9 +27,22 @@ html {
     padding: .6em 1.6em .6em 1.6em;
 }
 
+.btn-primary-2 {
+    color: #081828 !important;
+    border: 1px #134074 solid !important;
+    background-color: #fff;
+    padding: .8em 2em .8em 2em;
+}
+
 .btn-primary:hover {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
+    color: #fff !important;
+}
+
+.btn-primary-2:hover {
+    background-color: #081828 !important;
+    border: 1px #fff solid !important;
     color: #fff !important;
 }
 
@@ -121,6 +134,18 @@ html {
 .mission-hd-2 {
     font-weight: 200;
     color: #fff;
+}
+
+.feature-title {
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #134074;
+}
+
+.feature-title-2 {
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #134074;
 }
 
 .feature-title {
@@ -308,6 +333,14 @@ nav ul li a.active::after {
     background-color: #081828;
 }
 
+.contact-section-2 {
+    background-color: #f8f8f8 !important;
+}
+
+.contact-section-2 {
+    background-color: #fff;
+}
+
 .bg-primary {
     background-color: #134074 !important;
     color: #fff !important;
@@ -357,8 +390,8 @@ nav ul li a.active::after {
     position: fixed;     /* fix to the viewport */
     top: 0;              /* span from the very top */
     left: 0;             /* and the very left */
-    width: 100vw;        /* full viewport width */
-    height: 100vh;       /* full viewport height */
+    width: 100vw !important;        /* full viewport width */
+    height: 100vh !important;       /* full viewport height */
     background: #fff;    /* or whatever your loader bg is */
     display: flex;       /* center spinner if you want */
     align-items: center;
@@ -516,4 +549,80 @@ nav ul li a.active::after {
     opacity: 0;
     top: 40px;
     }
+}
+
+.back-to-top {
+    position: fixed !important;
+    cursor: pointer;
+    /* pull it above everything else */
+    z-index: 99 !important;   
+    /* add a little shadow so it floats */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-info .info-block:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.contact-info .info-text {
+    margin-left: 1rem;
+}
+
+@media (max-width: 767px) {
+    .contact-card {
+    margin: 2rem 1rem;
+    }
+}
+
+.bluey {
+    color: #134074 !important;
+}
+
+.c-box {
+    margin-left: 17% !important;
+}
+
+.card {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+}
+
+.form-wrapper {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+    font-family: cera_light;
+    font-weight: 800 !important;
+}
+
+.btn-coretech {
+    background-color: #134074;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-weight: 400;
+}
+
+.btn-coretech:hover {
+    background-color: #fff;
+    border: 2px #134074 solid;
+    color: #134074;
 }
