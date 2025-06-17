@@ -660,6 +660,10 @@ nav ul li a.active::after {
     color: #134074;
 }
 
-.img-fluid {
+.img-fluid-2 {
     width: 400px !important;
+}
+
+.rounded {
+    border-radius: 50% !important;
 }
