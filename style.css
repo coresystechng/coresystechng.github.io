@@ -661,7 +661,8 @@ nav ul li a.active::after {
 }
 
 .img-fluid-2 {
-    width: 350px !important;
+    width: 600px !important;
+    border-radius: 8px;
 }
 
 .rounded {
