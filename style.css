@@ -691,3 +691,7 @@ nav ul li a.active::after {
 .rounded {
     border-radius: 50% !important;
 }
+
+.bg-blue {
+    background-color: #134074 !important;
+}
