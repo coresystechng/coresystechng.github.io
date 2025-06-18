@@ -297,32 +297,26 @@ nav ul li a.active::after {
     text-transform: uppercase;
 }
 
+.footer-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 0.5rem;        /* space between links */
+}
+
 .footer-nav a {
-    display: block;
-    color: #444;
-    padding: 0px !important;
-    width: 28% !important;
+    display: inline-block;        /* confines the clickable area to the text */
+    width: auto;                  
+    padding: 0.25rem 0;           /* tiny hit‐area for easier tapping on mobile */
     text-decoration: none;
-    margin-bottom: .5rem;
-    transition: color .2s;
+    color: #333;
+    transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-    color: #bbb;
-}
-
-.footer-link a {
-    display: block;
-    color: #bbb;
-    text-decoration: none;
-    text-decoration: none;
-    margin-bottom: .5rem;
-    transition: color .2s;
-}
-
-.footer-link a:hover {
-    text-decoration: underline;
-    color: #fff;
+    color: #aaa;
 }
 
 .text-center {
