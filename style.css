@@ -102,6 +102,13 @@ html, body {
     color: #fff;
 }
 
+.section-title-3 {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+}
+
 .section-title .dot {
     height: 12px;
     width: 12px;
@@ -115,6 +122,15 @@ html, body {
     height: 12px;
     width: 12px;
     background-color: #134074;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.section-title-3 .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
     border-radius: 50%;
     display: inline-block;
     margin-right: 10px;
@@ -325,7 +341,7 @@ nav ul li a.active::after {
 }
 
 .contact-section {
-    background-color: #081828;
+    background-color: #134074;
 }
 
 .contact-section-2 {
