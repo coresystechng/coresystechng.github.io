@@ -624,7 +624,7 @@ nav ul li a.active::after {
 }
 
 .form-wrapper {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 60px auto;
     background-color: #fff;
     border-radius: 8px;
