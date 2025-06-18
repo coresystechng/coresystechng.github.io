@@ -266,7 +266,7 @@ nav ul li a.active::after {
 }
 
 .footer-section {
-    background-color: #F8F9FA;
+    background-color: #ccc;
     color: #333;
     padding: 4rem 0;
 }
