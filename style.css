@@ -35,6 +35,13 @@ html, body {
     padding: .8em 2em .8em 2em;
 }
 
+.btn-primary-3 {
+    color: #fff !important;
+    border: 1px #134074 solid !important;
+    background-color: #134074;
+    padding: .8em 2em .8em 2em;
+}
+
 .btn-primary:hover {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -45,6 +52,12 @@ html, body {
     background-color: #081828 !important;
     border: 1px #fff solid !important;
     color: #fff !important;
+}
+
+.btn-primary-3:hover {
+    background-color: #fff !important;
+    border: 1px #134074 solid !important;
+    color: #134074 !important;
 }
 
 .btn-secondary {
@@ -282,8 +295,8 @@ nav ul li a.active::after {
 }
 
 .footer-section {
-    background-color: #ccc;
-    color: #333;
+    background-color: #000;
+    color: #fff;
     padding: 4rem 0;
 }
 
@@ -327,12 +340,12 @@ nav ul li a.active::after {
     width: auto;                  
     padding: 0.25rem 0;           /* tiny hit‐area for easier tapping on mobile */
     text-decoration: none;
-    color: #333;
+    color: #aaa;
     transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-    color: #aaa;
+    color: #fff;
 }
 
 .text-center {
