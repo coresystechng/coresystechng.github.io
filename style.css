@@ -718,3 +718,21 @@ nav ul li a.active::after {
 .bg-blue {
     background-color: #134074 !important;
 }
+
+.client-card {
+    height: 200px;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+    transition: transform 0.3s;
+    border: 1px #bbb solid;
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-card > img {
+    max-width: 100%;
+    max-height: 80%;
+}
