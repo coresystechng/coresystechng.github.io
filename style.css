@@ -35,6 +35,13 @@ html, body {
     padding: .8em 2em .8em 2em;
 }
 
+.btn-primary-3 {
+    color: #fff !important;
+    border: 1px #134074 solid !important;
+    background-color: #134074;
+    padding: .8em 2em .8em 2em;
+}
+
 .btn-primary:hover {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -45,6 +52,12 @@ html, body {
     background-color: #081828 !important;
     border: 1px #fff solid !important;
     color: #fff !important;
+}
+
+.btn-primary-3:hover {
+    background-color: #fff !important;
+    border: 1px #134074 solid !important;
+    color: #134074 !important;
 }
 
 .btn-secondary {
@@ -102,6 +115,13 @@ html, body {
     color: #fff;
 }
 
+.section-title-3 {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+}
+
 .section-title .dot {
     height: 12px;
     width: 12px;
@@ -115,6 +135,15 @@ html, body {
     height: 12px;
     width: 12px;
     background-color: #134074;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.section-title-3 .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
     border-radius: 50%;
     display: inline-block;
     margin-right: 10px;
@@ -266,8 +295,8 @@ nav ul li a.active::after {
 }
 
 .footer-section {
-    background-color: #F8F9FA;
-    color: #333;
+    background-color: #000;
+    color: #fff;
     padding: 4rem 0;
 }
 
@@ -297,31 +326,25 @@ nav ul li a.active::after {
     text-transform: uppercase;
 }
 
+.footer-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 0.5rem;        /* space between links */
+}
+
 .footer-nav a {
-    display: block;
-    color: #444;
-    padding: 0px !important;
-    width: 28% !important;
+    display: inline-block;        /* confines the clickable area to the text */
+    width: auto;                  
+    padding: 0.25rem 0;           /* tiny hit‐area for easier tapping on mobile */
     text-decoration: none;
-    margin-bottom: .5rem;
-    transition: color .2s;
+    color: #aaa;
+    transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-    color: #bbb;
-}
-
-.footer-link a {
-    display: block;
-    color: #bbb;
-    text-decoration: none;
-    text-decoration: none;
-    margin-bottom: .5rem;
-    transition: color .2s;
-}
-
-.footer-link a:hover {
-    text-decoration: underline;
     color: #fff;
 }
 
@@ -331,7 +354,7 @@ nav ul li a.active::after {
 }
 
 .contact-section {
-    background-color: #081828;
+    background-color: #134074;
 }
 
 .contact-section-2 {
@@ -624,7 +647,7 @@ nav ul li a.active::after {
 }
 
 .form-wrapper {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 60px auto;
     background-color: #fff;
     border-radius: 8px;
@@ -690,4 +713,26 @@ nav ul li a.active::after {
 
 .rounded {
     border-radius: 50% !important;
+}
+
+.bg-blue {
+    background-color: #134074 !important;
+}
+
+.client-card {
+    height: 200px;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+    transition: transform 0.3s;
+    border: 1px #bbb solid;
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-card > img {
+    max-width: 100%;
+    max-height: 80%;
 }
