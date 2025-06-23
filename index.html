@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORE-TECH</title>
-    <link rel="shortcut icon" href="Assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/images/rel_icon.png">
     <!-- css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
@@ -16,250 +17,112 @@
 </head>
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <lord-icon
-            src="https://cdn.lordicon.com/ljpehpdr.json"
-            trigger="loop"
-            state="loop-triangle"
-            colors="primary:#134074"
-            style="width:100px;height:100px">
-        </lord-icon>
-    </div>
-
-    <header id="home">
-        <section>
-            <div class="hero">
-                <div class="background-lines" id="background-lines"></div>
-                <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/psyssele.json"
-                        trigger="hover"
-                        colors="primary:#f1ab10,secondary:#f1ab10"
-                        style="width:150px;height:150px">
-                    </lord-icon>
-                    <p style="margin-top: .5rem; font-size: 1.5rem; text-transform: uppercase;">WEBSITE LAUNCHING IN</p>
-                    <div id="countdown" style="display: flex; justify-content: center; gap: 5rem;">
-                        <div class="time-box">
-                            <div style="font-size: 4.5rem;" class="number" id="days">00</div>
-                            <div class="label">days</div>
-                        </div>
-                        <div class="time-box">
-                            <div style="font-size: 4.5rem;" class="number" id="hours">00</div>
-                            <div class="label">hours</div>
-                        </div>
-                        <div class="time-box">
-                            <div style="font-size: 4.5rem;" class="number" id="minutes">00</div>
-                            <div class="label">minutes</div>
-                        </div>
-                        <div class="time-box">
-                            <div style="font-size: 4.5rem;" class="number" id="seconds">00</div>
-                            <div class="label">seconds</div>
-                        </div>
-                    </div><br>
-                    <!-- <div class="py-1">
-                        <a href="#aboutus" style="text-decoration: none;">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/tgyvxauj.json"
-                                trigger="hover"
-                                colors="primary:#fff,secondary:#fff"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                        </a>
-                        <a href="#contactus" style="text-decoration: none;">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/yizwahhw.json"
-                                trigger="hover"
-                                colors="primary:#fff,secondary:#fff"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                        </a>
-                        <a href="#contactus" style="text-decoration: none;">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/qgebwute.json"
-                                trigger="hover"
-                                colors="primary:#ffffff,secondary:#ffffff"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                        </a>
-                    </div><br><br> -->
-                </div>
-            </div>
-        </section>
-    </header>
+  <main>
+    <section>
+      <div class="hero">
+          <div class="background-lines" id="background-lines"></div>
+          <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
+              <lord-icon
+                  src="https://cdn.lordicon.com/psyssele.json"
+                  trigger="loop-on-hover"
+                  stroke="bold"
+                  state="loop-cycle"
+                  colors="primary:#f1ab10,secondary:#f1ab10"
+                  style="width:100px;height:100px">
+              </lord-icon>
+              <br>
+              <p class="my-3 fs-6 text-uppercase">WEBSITE LAUNCHING IN</p>
+              <div id="countdown" class="d-lg-flex justify-content-center gap-lg-5">
+                  <div class="time-box">
+                      <div class="number" id="days">00</div>
+                      <div class="label">days</div>
+                  </div>
+                  <div class="time-box">
+                      <div class="number" id="hours">00</div>
+                      <div class="label">hours</div>
+                  </div>
+                  <div class="time-box">
+                      <div class="number" id="minutes">00</div>
+                      <div class="label">minutes</div>
+                  </div>
+                  <div class="time-box">
+                      <div class="number" id="seconds">00</div>
+                      <div class="label">seconds</div>
+                  </div>
+              </div>
+              <br><br>
+              <p class="small text-uppercase text-white-50">&COPY; 2025 CORE-TECH. All Rights Reserved.</p>
+          </div>
+      </div>
+    </section>
+  </main>
     
-    <nav class="navbar navbar-expand-lg py-3 fixed-top">
-        <div class="container-fluid container">
-            <div class="navbar-brand">
-                <a href="index.html">
-                    <img src="Assets/img/logo.png" class="d-none d-md-block" style="width: 150px !important;" alt="">
-                </a>
-                <a href="index.html">
-                    <img src="Assets/img/logo.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-4 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="clients.html">Clients</a>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
-                        </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactus.html">Contact Us</a>
-                    </li>
-                </ul>
-                <a href="https://coresystech.ng/clnsdzyleague/" target="_blank">
-                    <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
-                </a>
-            </div>
-        </div>
-        <!-- Underline element -->
-        <div class="nav-underline"></div>
-    </nav>
-
-
-    <!-- <main>
-
-        
-
-    </main> -->
-
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 900,
-            once: true,
-        });
-    </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init({
+          duration: 900,
+          once: true,
+      });
+  </script>
 
-    <!-- preloader JS -->
-    <script>
-        // Minimum display time in milliseconds
-        const MIN_DISPLAY = 2500;
-        const start = Date.now();
+  <!-- Background Lines Animation -->
+  <script>
+      const container = document.getElementById("background-lines");
+      const numLines = 60;
 
-        window.addEventListener('load', () => {
-            const pre = document.getElementById('preloader');
-            const elapsed = Date.now() - start;
-            const remain = Math.max(0, MIN_DISPLAY - elapsed);
+      for (let i = 0; i < numLines; i++) {
+      const line = document.createElement("div");
+      line.classList.add("line");
+      const height = 80 + Math.random() * 120;
+      line.style.height = `${height}px`;
+      line.style.left = `${Math.random() * 100}%`;
+      line.style.top = `-${height}px`;
+      line.style.animationDuration = `${2 + Math.random() * 3}s`;
+      line.style.animationDelay = `${Math.random() * 5}s`;
+      container.appendChild(line);
+      }
+  </script>
 
-            setTimeout(() => {
-            pre.classList.add('fade-out');
-            setTimeout(() => pre.remove(), 600);
-            }, remain);
-        });
-    </script>
+  <!-- === Countdown Script === -->
+  <script>
+    (function() {
+      // Set deadline to 15th of July, 2025 at 9:00 AM
+      const target = new Date(2025, 6, 15, 9, 0, 0).getTime(); // Month is 0-indexed: 6 = July
 
-    <!-- nav anime -->
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("nav ul li a");
+      const df = {
+        days:    document.getElementById('days'),
+        hours:   document.getElementById('hours'),
+        minutes: document.getElementById('minutes'),
+        seconds: document.getElementById('seconds')
+      };
 
-        function updateActiveOnScroll() {
-        const scrollPos = window.pageYOffset;
-        let currentSectionId = "";
+      function updateCountdown() {
+        const now = Date.now();
+        let diff = Math.max(0, target - now);
 
-        // Find the last section whose top is <= scroll position
-        sections.forEach(section => {
-            const offsetTop = section.offsetTop;
-            // tweak this if you have a fixed header: e.g. offsetTop - headerHeight
-            if (scrollPos >= offsetTop - 10) {
-            currentSectionId = section.id;
-            }
-        });
-        }
-    });
-    </script>
+        const sec = 1000;
+        const min = sec * 60;
+        const hr  = min * 60;
+        const day = hr  * 24;
 
-    <script>
-        const container = document.getElementById("background-lines");
-        const numLines = 60;
+        const d = Math.floor(diff / day);      diff %= day;
+        const h = Math.floor(diff / hr);       diff %= hr;
+        const m = Math.floor(diff / min);      diff %= min;
+        const s = Math.floor(diff / sec);
 
-        for (let i = 0; i < numLines; i++) {
-        const line = document.createElement("div");
-        line.classList.add("line");
-        const height = 80 + Math.random() * 120;
-        line.style.height = `${height}px`;
-        line.style.left = `${Math.random() * 100}%`;
-        line.style.top = `-${height}px`;
-        line.style.animationDuration = `${2 + Math.random() * 3}s`;
-        line.style.animationDelay = `${Math.random() * 5}s`;
-        container.appendChild(line);
-        }
-    </script>
+        df.days.textContent    = String(d).padStart(2,'0');
+        df.hours.textContent   = String(h).padStart(2,'0');
+        df.minutes.textContent = String(m).padStart(2,'0');
+        df.seconds.textContent = String(s).padStart(2,'0');
+      }
 
-    <!-- === Countdown Script === -->
-    <script>
-        (function() {
-            // find the next Monday at 9:00 AM
-            function getNextMondayNine() {
-            const now = new Date();
-            const day = now.getDay(); // 0 = Sunday, 1 = Monday...
-            const daysUntilNextMonday = (8 - day) % 7; // if Monday today → 0, else difference
-            const nextMon = new Date(
-                now.getFullYear(),
-                now.getMonth(),
-                now.getDate() + daysUntilNextMonday,
-                9, 0, 0  // 9:00:00 AM
-            );
-            // if it's already past 9am on Monday, jump one more week
-            if (nextMon <= now) {
-                nextMon.setDate(nextMon.getDate() + 7);
-            }
-            return nextMon;
-            }
-
-            const target = getNextMondayNine().getTime();
-
-            // update countdown every second
-            const df = {
-            days:   document.getElementById('days'),
-            hours:  document.getElementById('hours'),
-            minutes:document.getElementById('minutes'),
-            seconds:document.getElementById('seconds')
-            };
-
-            function updateCountdown() {
-            const now = Date.now();
-            let diff = Math.max(0, target - now);
-
-            const sec = 1000;
-            const min = sec * 60;
-            const hr  = min * 60;
-            const day = hr  * 24;
-
-            const d = Math.floor(diff / day);      diff %= day;
-            const h = Math.floor(diff / hr);       diff %= hr;
-            const m = Math.floor(diff / min);      diff %= min;
-            const s = Math.floor(diff / sec);
-
-            df.days.textContent    = String(d).padStart(2,'0');
-            df.hours.textContent   = String(h).padStart(2,'0');
-            df.minutes.textContent = String(m).padStart(2,'0');
-            df.seconds.textContent = String(s).padStart(2,'0');
-            }
-
-            // kick off
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
-    </script>
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
