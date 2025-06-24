@@ -215,7 +215,7 @@ nav ul li a {
 nav ul li a::after {
     content: '';
     position: absolute;
-    left: 18px;
+    left: 9px;
     bottom: 6px;
     width: 0;
     height: 2.6px;
@@ -224,11 +224,11 @@ nav ul li a::after {
 }
 
 nav ul li a:hover::after {
-    width: 50px;
+    width: 35px;
 }
 
 nav ul li a.active::after {
-    width: 50px;
+    width: 35px;
 }
 
 .navbar {
