@@ -223,7 +223,12 @@ html, body {
 .navbar .nav-link.navbar-link:hover,
 .navbar .nav-link.nav-drop:hover,
 .nav-link.nav-drop.dropdown-toggle.active {
-    color: #081828 !important;
+    color: #134074 !important;
+}
+
+.dropdown-item.hover-drop.active{
+    background-color: #134074 !important;
+    color: #fff !important;
 }
 
 .navbar .nav-link.navbar-link::after {
@@ -233,7 +238,7 @@ html, body {
     height: 2px;
     bottom: 0px;
     left: 50%;
-    background-color: #081828;
+    background-color: #134074;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
