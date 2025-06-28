@@ -219,33 +219,49 @@ html, body {
     font-size: 1.1em !important;
 }
 
-nav ul li a {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 18px !important;
-    font-weight: 800 !important;
-    font-family: cera_light;
+.navbar .nav-link.navbar-link.active, 
+.navbar .nav-link.navbar-link:hover,
+.navbar .nav-link.nav-drop:hover,
+.nav-link.nav-drop.dropdown-toggle.active {
+    color: #081828 !important;
 }
 
-nav ul li a::after {
+.navbar .nav-link.navbar-link::after {
     content: '';
     position: absolute;
-    left: 9px;
-    bottom: 6px;
     width: 0;
-    height: 2.6px;
-    background-color: #134074; 
-    transition: width 0.3s ease;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    background-color: #081828;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-nav ul li a:hover::after {
-    width: 35px;
+.navbar .nav-link.navbar-link:hover::after, 
+.navbar .nav-link.navbar-link.active::after {
+    width: 80%;
 }
 
-nav ul li a.active::after {
-    width: 35px;
+
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .navbar .btn {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        }
+    }
+
+    .navbar .nav-link.navbar-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
+
 
 .navbar {
     position: fixed;

@@ -60,27 +60,36 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="aboutus.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="clients.html">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contactus.html">Contact Us</a>
-                    </li>
-                </ul>
-                <a href="https://coresystech.ng/clnsdzyleague/" target="_blank">
-                    <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
-                </a>
-            </div>
+              <ul class="navbar-nav mx-auto mb-4 mb-md-0">
+                  <li class="nav-item mx-md-2">
+                      <a class="nav-link navbar-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item mx-md-2">
+                      <a class="nav-link navbar-link" href="aboutus.html">About Us</a>
+                  </li>
+                  <li class="nav-item dropdown text-center">
+                    <a class="nav-link nav-drop active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" aria-current="page" href="#">All Services</a></li>
+                      <li><a class="dropdown-item" href="#">Cloud Technology</a></li>
+                      <li><a class="dropdown-item" href="#">Digital Services</a></li>
+                      <li><a class="dropdown-item" href="#">IT Training</a></li>
+                      <li><a class="dropdown-item" href="#">PC Fixes</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item mx-md-2">
+                      <a class="nav-link navbar-link" href="clients.html">Clients</a>
+                  </li>
+                  <li class="nav-item mx-md-2">
+                      <a class="nav-link navbar-link" href="contactus.html">Contact Us</a>
+                  </li>
+              </ul>
+              <a href="https://coresystech.ng/clnsdzyleague/" target="_blank" class="text-decoration-none">
+                  <button class="btn glow-on-hover" type="submit">Check Our FPL</button>
+              </a>
+          </div>
         </div>
     </nav>
 
@@ -114,39 +123,82 @@
         <!-- Services Section -->
         <section class="mt-5 py-5">
           <div class="container">
-            <div class="row">
-              <div class="col-12">
-                  <h2 class="fw-bold mb-3">Our Core Services</h2>
-                  <p class="lead text-muted">
-                    At CORE-TECH, we deliver a comprehensive suite of digital and technology solutions tailored to your needs. Explore our main offerings below.
-                  </p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+              <!-- Cloud Technology for SME's -->
+              <div class="col" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-sm border-1 border-opacity-50">
+                  <div class="card-body text-center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/kikjlzqr.json"
+                        trigger="hover"
+                        stroke="regular"
+                        colors="primary:#134074"
+                        style="width:100px;height:100px">
+                    </lord-icon>
+                    <h5 class="card-title mt-3 bluey">Cloud Technology for SMEs</h5>
+                    <p class="card-text text-muted">
+                      Empower your business with secure, scalable cloud solutions. We help SMEs migrate and optimize their operations in the cloud for improved performance.
+                    </p>
+                    <a href="cloud-services.html" class="btn btn-primary mt-3">Learn More</a>
+                  </div>
                 </div>
-                <ul class="list-group list-group-flush shadow rounded-4">
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-globe2 me-2 text-primary"></i> Digital Services</h5>
-                    <p class="mb-0 text-muted">Website design, SEO, and digital solutions to boost your online presence.</p>
-                  </li>
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-tools me-2 text-primary"></i> Repairs & Maintenance</h5>
-                    <p class="mb-0 text-muted">Reliable repairs and maintenance for computers and digital devices.</p>
-                  </li>
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-mortarboard me-2 text-primary"></i> IT Training</h5>
-                    <p class="mb-0 text-muted">Computer and tech training to help you stay ahead in the digital world.</p>
-                  </li>
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-brush me-2 text-primary"></i> Graphics Design</h5>
-                    <p class="mb-0 text-muted">Professional graphics design, branding, and creative services.</p>
-                  </li>
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-hdd-network me-2 text-primary"></i> Software Installation</h5>
-                    <p class="mb-0 text-muted">Operating system setup, driver installation, and software maintenance.</p>
-                  </li>
-                  <li class="list-group-item py-4">
-                    <h5 class="mb-1 fw-semibold"><i class="bi bi-printer me-2 text-primary"></i> Printing Services</h5>
-                    <p class="mb-0 text-muted">High-quality printing for business cards, posters, and more.</p>
-                  </li>
-                </ul>
+              </div>
+              <!-- Digital Services -->
+              <div class="col" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-sm border-1 border-opacity-50">
+                  <div class="card-body text-center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/ogjpwrxe.json"
+                        trigger="hover"
+                        stroke="regular"
+                        colors="primary:#134074,secondary:#134074"
+                        style="width:100px;height:100px">
+                    </lord-icon>
+                    <h5 class="card-title mt-3 bluey">Digital Services</h5>
+                    <p class="card-text text-muted">
+                      From website design to digital marketing, we offer a full suite of digital services to boost your online presence and connect you with your target audience.
+                    </p>
+                    <a href="cloud-services.html" class="btn btn-primary mt-3">Learn More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Computer Training -->
+              <div class="col" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-sm border-1 border-opacity-50">
+                  <div class="card-body text-center">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/vqhlecvy.json"
+                      trigger="hover"
+                      stroke="regular"
+                      colors="primary:#134074,secondary:#00aaff"
+                      style="width:100px;height:100px">
+                    </lord-icon>
+                    <h5 class="card-title mt-3 bluey">Computer Training</h5>
+                    <p class="card-text text-muted">
+                      Learn essential IT skills with our hands-on training programs. We offer beginner to advanced courses for individuals and teams, tailored to your learning goals.
+                    </p>
+                    <a href="cloud-services.html" class="btn btn-primary mt-3">Learn More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- PC Maintenance & Repairs -->
+              <div class="col" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 shadow-sm border-1 border-opacity-50">
+                  <div class="card-body text-center">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/fwkrbvja.json"
+                      trigger="hover"
+                      stroke="regular"
+                      colors="primary:#134074,secondary:#134074"
+                      style="width:100px;height:100px">
+                    </lord-icon>
+                    <h5 class="card-title mt-3 bluey">PC Maintenance & Repairs</h5>
+                    <p class="card-text text-muted">
+                      Keep your computers running smoothly. Our experts provide fast diagnostics, repairs, and regular maintenance for desktops and laptops, minimizing downtime.
+                    </p>
+                    <a href="cloud-services.html" class="btn btn-primary mt-3">Learn More</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
