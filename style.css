@@ -96,6 +96,19 @@ html, body {
     border: 1px #081828 solid !important;
 }
 
+.btn-secondary-3 {
+    background-color: #f0a500 !important;
+    border: 1px #f0a500 solid !important;
+    color: #fff !important;
+    padding: .8em 2em .8em 2em;
+}
+
+.btn-secondary-3:hover {
+    color: #f0a500 !important;
+    background-color: #fff !important;
+    border: 1px #f0a500 solid !important;
+}
+
 .btn-danger {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
@@ -290,8 +303,14 @@ html, body {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+  }
+  
+  .glass {
+    background-color: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    -webkit-backdrop-filter: blur(10px);
 }
-
 /* card styling */
 .achievement-card {
     position: relative;
@@ -757,8 +776,21 @@ html, body {
     border: 1px #bbb solid;
 }
 
+.gentle-hover-shake:hover {
+  animation: tilt-shaking 0.25s infinite;
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .client-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    background-color: #fafafa;
 }
 
 .client-card > img {
