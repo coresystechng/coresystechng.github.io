@@ -420,6 +420,21 @@ html, body {
     background-image: url(Assets/img/achievement-bg.png);
 }
 
+.bg-primary-2 {
+    background-color: #081828 !important;
+    color: #fff !important;
+    padding: 90px 0px 90px 0px;
+    background-image: url(Assets/img/achievement-bg.png);
+}
+
+.bg-hero {
+  background-color: #081828 !important;
+}
+
+.text-hero {
+  color: #081828 !important;
+}
+
 .text-muted {
     color: #F8F9FA;
 }
