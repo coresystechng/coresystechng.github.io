@@ -16,11 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Write Save Query
     $save_query = 
-    "INSERT INTO 
-    `contact_tb`
-    (`first_name`, `last_name`, `email`, `phone`, `subject`, `message`)
-    VALUES
-    ('$first_name', '$last_name', '$email', '$phone', '$subject', '$message')";
+    "INSERT INTO `contact_tb` (`first_name`, `last_name`, `email`, `phone`, `subject`, `message`) VALUES ('$first_name', '$last_name', '$email', '$phone', '$subject', '$message')";
 
     // Send Query to server
     $send_query = mysqli_query($connect, $save_query);
