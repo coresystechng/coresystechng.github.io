@@ -232,34 +232,35 @@
                   <form method="POST" action="send_email.php">
                   <div class="row mb-3">
                       <div class="col-md-6 text-start">
-                          <label for="firstName" class="form-label">First Name</label>
-                          <input type="text" class="form-control" id="first_name">
+                          <label for="first_name" class="form-label">First Name<span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="first_name" name="first_name">
                       </div>
                       <div class="col-md-6 text-start">
-                          <label for="lastName" class="form-label">Last Name</label>
-                          <input type="text" class="form-control" id="last_name">
+                          <label for="last_mame" class="form-label">Last Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="last_name" name="last_name">
                       </div>
                   </div>
 
                   <div class="row mb-3">
                       <div class="col-md-6 text-start mb-4 mb-md-0">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email">
+                          <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                          <input type="email" class="form-control" id="email" name="email">
                       </div>
                       <div class="col-md-6 text-start">
-                          <label for="phone" class="form-label">Phone (Optional)</label>
-                          <input type="text" class="form-control" id="phone">
+                          <label for="phone" class="form-label">Phone</label>
+                          <input type="text" class="form-control" id="phone" name="phone">
                       </div>
                   </div>
 
                   <div class="mb-3 text-start">
                       <label for="subject" class="form-label">Subject</label>
-                      <input type="text" class="form-control" id="subject">
+                      <input type="text" class="form-control" id="subject" name="subject">
                   </div>
 
                   <div class="mb-4 text-start">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea class="form-control" id="message" rows="5"></textarea>
+                      <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                      <textarea class="form-control" id="message" rows="5" name="message"></textarea>
+                      <small><span class="text-danger">*</span> required fields</small>
                   </div>
 
                   <div class="text-center">
