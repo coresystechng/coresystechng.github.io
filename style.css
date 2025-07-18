@@ -817,3 +817,16 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+a:hover {
+color:inherit;
+}
+
+.vr{
+    height: 190px;
+    color: beige;
+}
+
+#card-header{
+    color: #134074;
+}
