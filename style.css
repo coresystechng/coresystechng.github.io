@@ -827,6 +827,7 @@ color:inherit;
     color: beige;
 }
 
-#card-header{
-    color: #134074;
+#card-list {
+    justify-content: left;
+    text-align: left;
 }
