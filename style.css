@@ -1,11 +1,11 @@
 @font-face {
     font-family: cera_light;
-    src: url("Assets/fonts/Cera\ Pro\ Light.otf");
+    src: url("./assets/fonts/Cera\ Pro\ Light.otf");
 }
 
 @font-face {
     font-family: cera_medium;
-    src: url("Assets/fonts/Cera\ Pro\ Medium.otf");
+    src: url("./assets/fonts/Cera\ Pro\ Medium.otf");
 }
 
 * {
