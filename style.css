@@ -827,6 +827,10 @@ color:inherit;
     color: beige;
 }
 
+#black {
+    background-color: black;
+}
+
 #card-list {
     justify-content: left;
     text-align: left;
