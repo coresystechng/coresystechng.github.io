@@ -76,8 +76,8 @@
             <div class="hero">
                 <div class="background-lines" id="background-lines"></div>
                 <div class="container text-center text-white pt-5 mt-3" data-aos="fade-up" data-aos-delay="300">
-                    <h1 class="display-4 text-secondary"><b>Fullstack Development</b></h1>
-                    <p class="lead">The all rounder of every web page.</p>
+                    <h1 class="display-4 text-secondary"><b></b></h1>
+                    <p class="lead">The first step into the world of tech.</p>
                     <div class="scroll-indicator pt-5 mt-5">
                         <div class="mouse">
                             <div class="dot-2"></div>
@@ -149,85 +149,102 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <h5 class="display-6 mt-3">🔁 Overview of Full Stack Development</h5>
+                        <h5 class="display-6 mt-3"></h5>
                         <p class="lead mt-4">
-                            Full Stack Development refers to the ability to work on both the frontend (client-side) and backend (server-side) of a web application. A Full Stack Developer builds, connects, and manages the complete flow of data and interaction from the user interface down to the database and server logic.
-                        </p>                        <!-- <a href="/assets/docs/CORE - Courses.pdf" class="btn btn-primary mt-3">View Course Outline</a> -->
+                            
+                        </p>
                     </div>
                     <div class="col-md-6 mt-2">
-                        <img src="/Assets/img/frontend_1.jpg" alt="" class="feature-img" data-aos="fade-left" data-aos-delay="300">
+                        <img src="/assets/img/microsoft_1.jpg" alt="" class="feature-img" data-aos="fade-left" data-aos-delay="300">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--What they do-->
+        <!-- Objectives -->
         <section class="bg-dark text-white py-5" data-aos="fade-up" data-aos-delay="100">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 mt-2">
-                        <img src="/assets/img/backend_1.jpg" alt="" class="feature-img" data-aos="fade-left" data-aos-delay="300">
+                        <img src="/assets/img/microsoft_2.jpg" alt="" class="feature-img" data-aos="fade-left" data-aos-delay="300">
                     </div>
                     <div class="col-md-6">
-                        <h5 class="display-6 mt-3">👨‍💻 What Fullstack Developers Do</h5>
+                        <h5 class="display-6 mt-3">🎯 Course Objective</h5>
                         <p class="lead mt-4">
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Reduced paperwork and manual errors</li> <br>
-                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time collaboration from anywhere</li> <br>
-                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Automated data backup and security</li> <br>
-                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Scalable storage and easy file sharing</li> <br>
-                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cost savings on IT infrastructure</li>
-                            </ul>
+                            This course is designed to equip learners with essential computer skills required to navigate modern digital environments. Whether for school, work, or personal use, students will gain the foundational knowledge to operate computers confidently, manage files, use the internet, and work with common software applications.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Components of fullstack -->
+        <!-- About the course -->
         <section class="bg-light py-5" data-aos="fade-up" data-aos-delay="100">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="">
-                        <h2 class="display-6 mt-3 text-center">🧱 Components of Full Stack Development  </h2>
+                        <h2 class=" mt-3 text-center">🪪 What Office Suite Development Involves</h2>
                         <div class="row text-center justify-content-center">
-                            <!-- Component 1 -->
-                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px; max-height: 440px;">
+                            <!-- about 1 -->
+                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px;">
                             <div class="card-body">
-                              <h1 class="card-title d-flex flex-column align-items-center gap-2 display-6" id="card-header">Frontend</h1>
+                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Automation</h1>
                                 <div class="feature-title fw-bold">
                                   <ul class="list-unstyled px-4" id="card-list">
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Languages: HTML, CSS, JavaScript</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Frameworks/Libraries: React, Vue, Angular, Tailwind, Bootstrap</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Focus: User interface, interactivity, responsiveness, and accessibility</li>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Automating repetitive tasks using VBA macros or Office Scripts</li><br>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generating reports, formatting documents, importing/exporting data</li><br>
                                   </ul>
                                 </div>
                             </div>
                           </div>
 
-                          <!-- Component 2 -->
-                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px; max-height: 440px;">
+                          <!-- about 2 -->
+                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px;">
                             <div class="card-body">
-                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Backend</h1>
+                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Custom Add-ins</h1>
                                 <div class="feature-title fw-bold">
                                   <ul class="list-unstyled px-4" id="card-list">
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Languages: JavaScript, PHP, Python, Java, Ruby</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Frameworks: Express(Node), Laravel(PHP), Django(Python), Spring Boot(Java)</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Focus: User interface, interactivity, responsiveness, and accessibility</li>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Creating add-ins also known as extensions using JavaScript or .NET</li><br>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Adds buttons, side panels, or dialogs within Office apps for interaction</li><br>
                                   </ul>
                                 </div>
                             </div>
                           </div>
 
-                          <!-- Component 3 -->
-                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px; max-height: 440px; min-height: 440px;">
+                          <!-- about 3 -->
+                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px;">
                             <div class="card-body">
-                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Databases</h1>
+                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Data Integration</h1>
                                 <div class="feature-title fw-bold">
                                   <ul class="list-unstyled px-4" id="card-list">
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Relational (SQL): MySQL and PostgreSQL</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Non-relational (NoSQL): MongoDB and Firebase</li><br>
-                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Responsible for storing, retrieving, and managing application data</li>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Connecting Office apps to databases, web services, or APIs</li><br>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Syncing Excel with real-time data, or generating dynamic Word reports</li><br>
+                                  </ul>
+                                </div>
+                            </div>
+                          </div>
+
+                          <!-- about 4 -->
+                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px;">
+                            <div class="card-body">
+                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Form & Template Customization</h1>
+                                <div class="feature-title fw-bold">
+                                  <ul class="list-unstyled px-4" id="card-list">
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Creating interactive forms and templates in Word or Excel</li><br>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Auto-filling data, validating inputs, or linking to data sources</li><br>
+                                  </ul>
+                                </div>
+                            </div>
+                          </div>
+
+                            <!-- about 5 -->
+                          <div class="card shadow-sm rounded-4 border-1 p-4" style="width: 25rem; margin: 16px;">
+                            <div class="card-body">
+                              <h1 class="card-title d-flex flex-column gap-2 display-6" id="card-header">Workflow Enhancements</h1>
+                                <div class="feature-title fw-bold">
+                                  <ul class="list-unstyled px-4" id="card-list">
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Streamlining business processes (e.g., approvals, alerts, calculations)</li><br>
+                                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Embedding logic into spreadsheets or documents to support decision-making</li><br>
                                   </ul>
                                 </div>
                             </div>
@@ -244,45 +261,32 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <h5 class="display-6 mt-3">🧠 Learning Outcomes</h5>
-                        <p class="mt-2 px-3">
+                        <p class="mt-2">
                             By the end of this course, students will be able to:
                         </p>
-                        <ul class="list-unstyled px-4">
-                          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Design responsive and interactive web user interfaces</li> <br>
-                          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Build backend APIs with secure server-side logic</li> <br>
-                          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Work with relational and non-relational databases</li> <br>
-                          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Connect frontend and backend through RESTful APIs</li> <br>
-                          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Implement authentication and authorization systems</li>
+                        <ul class="mt-3">
+                            <li>Write macros and scripts to automate tasks in Office</li>
+                            <li>Build custom Excel dashboards and reports</li>
+                            <li>Design interactive forms and templates in Word</li>
+                            <li>Develop and deploy Office Add-ins using JavaScript</li>
+                            <li>Integrate Office applications with external data sources and APIs</li>
+                            <li>Understand and use Office development platforms like VBA, Office Scripts, and .NET/VSTO</li>
                         </ul>    
                     </div>
                     
-                    <div class="col-md-1 align-self-center">
+                    <div class="col-md-1 large-screen-only align-self-center">
                         <div class="vr"></div>
                     </div>
 
                     <div class="col-md-5">
                         <h5 class="display-6 mt-3">🕒 Course Duration</h5>
                         <p class="lead mt-4">
-                            12–16 weeks (adjustable for bootcamps, semesters, or self-paced formats)
+                            
                         </p>
                     </div>
                 </div>
             </div>
         </section>            
-        <div class="row mt-4 bg-light">
-            <div class="col-md-6" id="pre-con">
-                <a href="/computer_training/backend_development.html" class="pgc">
-                    <i class="bi bi-arrow-left-square display-5 fw-bold" id="arrow"></i>
-                    <h3 id="pgl-text">Backend Development</h3>
-                </a>
-            </div>
-            <div class="col-md-6" id="nxt-con">
-                <a href="/computer_training/custom_training.html" class="pgc">
-                    <i class="bi bi-arrow-right-square display-5 fw-bold" id="arrow"></i>
-                    <h3 id="pgr-text">Custom & Coperate Training</h3>
-                </a>
-            </div>
-        </div>
     </main>
 
        

@@ -835,3 +835,80 @@ color:inherit;
     justify-content: left;
     text-align: left;
 }
+
+#pre-con{
+    text-align: left;
+}
+
+#nxt-con{
+    text-align: right;
+}
+
+#arrow {
+
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.pgc {
+    /* text-align: right; */
+    color: #134074;
+    margin-right: 55px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 55
+    px;
+    transition: width 0.3s ease-out;
+
+}
+
+.pgc:hover {
+    width: 60px;
+    overflow: visible;
+}
+
+.pgc:hover #pgl-text{
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.pgc:hover #pgr-text{
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+#pgl-text {
+    color: #134074;
+    position: absolute;
+    transition: ease-in;
+    left: 70px;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    pointer-events: none;
+}
+
+#pgr-text {
+    color: #134074;
+    position: absolute;
+    transition: ease-in;
+    right: 80px;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    pointer-events: none;
+}
