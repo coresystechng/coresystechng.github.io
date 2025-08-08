@@ -87,9 +87,11 @@
                     <h1 class="display-4 text-secondary"><b>Who We Are</b></h1>
                     <p class="lead">We are a dynamic IT company, driven by innovation and creativity.</p><br><br>
                     <div class="scroll-indicator pt-5 mt-5">
+                        <a href="#mouse-target">
                         <div class="mouse">
                             <div class="dot-2"></div>
                         </div>
+                        </a>
                     </div>
                     <!-- <a href="#aboutus" class="btn btn-secondary">Learn More</a> -->
                 </div>
@@ -152,6 +154,7 @@
     <button type="button" class="btn btn-danger btn-floating btn-lg back-to-top" id="btn-back-to-top">
         <i class="bi bi-chevron-double-up"></i>
     </button>
+    <span id="mouse-target"></span>
 
     <main>
       <!-- Introduction Section -->
@@ -612,7 +615,7 @@
                 <!-- LEFT COLUMN -->
                 <div class="col-md-5">
                     <div class="footer-title">
-                        <img src="./assets/img/logo.png" style="width: 35% !important;" alt="coretechlogo" 
+                        <img src="./assets/img/logo.png" style="width: 35% !important;" alt="coretechlogo">
                     </div>
                     <p class="footer-text text-muted">
                         Enabling Digital Solutions for you and your business.
@@ -699,8 +702,6 @@
             once: true,
         });
     </script>
-
-    <!-- Back to top -->
     <script>
         //Get the button
         let mybutton = document.getElementById("btn-back-to-top");
@@ -720,13 +721,14 @@
             mybutton.style.display = "none";
         }
         }
-        // When the user clicks on the button, scroll to the top of the document
+         // When the user clicks on the button, scroll to the top of the document
         mybutton.addEventListener("click", backToTop);
 
         function backToTop() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
+
     </script>
     <!-- preloader -->
     <script>
