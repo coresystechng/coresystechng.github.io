@@ -29,6 +29,15 @@ $contact = mysqli_fetch_assoc($result);
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZZZBMM6GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SZZZBMM6GL');
+</script>
 <body>
 <div class="container mt-5">
     <h2 class="mb-4" data-aos="fade-down">Contact Details</h2>

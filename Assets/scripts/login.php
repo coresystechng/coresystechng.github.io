@@ -43,6 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <title>Login</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZZZBMM6GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SZZZBMM6GL');
+</script>
 <body>
   <h4>Login</h4>
   <?php if (!empty($error_msg)): ?>
