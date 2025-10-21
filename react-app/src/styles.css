@@ -1,15 +1,172 @@
-:root{
-    --bg:#f6f8fa;
-    --card:#fff;
-    --accent:#0b5fff;
+/* ----------------------------
+   Custom font: Cera Pro
+   If you host the font locally, put files in /public/fonts/
+   ---------------------------- */
+
+/* Local font (preferred):
+   Place your Cera Pro font files into react-app/public/fonts/ as:
+     - CeraPro-Regular.woff2
+     - CeraPro-Regular.woff
+     - CeraPro-Medium.woff2
+     - CeraPro-Medium.woff
+   Vite serves the `public/` folder as root, so the URLs below will resolve at runtime.
+*/
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('./Assets/fonts/Cera\ Pro\ Medium.otf') format('opentype') !important;
+  font-weight: 500;
+  font-style: normal;
 }
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg);color:#0b1726}
-.app{max-width:720px;margin:48px auto;padding:24px}
-header h1{margin:0 0 8px}
-.form{display:flex;flex-direction:column;gap:12px;max-width:420px}
-label{display:flex;flex-direction:column;font-size:14px}
-input{padding:8px;border:1px solid #dfe3e8;border-radius:6px}
-button{padding:10px 14px;background:var(--accent);color:white;border:none;border-radius:6px;cursor:pointer}
-.message{margin-top:12px;padding:10px;background:var(--card);border-radius:6px;border:1px solid #e6eefc}
-.message.success{border-color:#b4d5ff;color:#003a75}
-.message.error{border-color:#ffb4b4;color:#750000}  
+
+/* If you don't have the font files, fall back to Google Fonts (uncomment):
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+*/
+
+/* ----- variables ----- */
+:root{
+  --bg: #f6f8fa;
+  --card: #fff;
+  --accent: #0b5fff;
+  --app-font: 'Cera Pro', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ----- base ----- */
+* { box-sizing: border-box; }
+body {
+  font-family: var(--app-font) !important;
+  margin: 0;
+  background: var(--bg);
+  color: #0b1726;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* layout */
+.app {
+  max-width: 720px;
+  margin: 48px auto;
+  padding: 24px;
+}
+
+/* keep headings crisp */
+header h1 {
+  margin: 0 0 8px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* card-like container (matches your screenshot) */
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+}
+
+/* Mobile-friendly tweaks */
+@media (max-width: 992px) {
+  .w-75 { width: 100% !important; }
+  .mx-5 { margin-left: 1rem !important; margin-right: 1rem !important; }
+  .px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
+
+@media (max-width: 576px) {
+  .row.g-3.my-3.mx-5 { gap: 1rem; }
+  .card { padding: 14px; }
+  .card-body { padding: 12px; }
+  input, select, .form-control { font-size: 0.95rem; }
+  .mx-5 { margin-left: 0.5rem !important; margin-right: 0.5rem !important; }
+  .my-5 { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+}
+
+/* form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+}
+
+/* labels */
+label {
+  display: flex;
+  font-family: var(--app-font);
+  flex-direction: column;
+  font-size: 14px;
+  /* font-weight: 500; */
+  color: #1b2733;
+}
+
+.form-label {
+    font-weight: 600 !important;
+    font-family: var(--app-font) !important;
+}
+
+/* inputs/selects/textarea */
+input,
+textarea,
+select,
+.form-control {
+  padding: 10px;
+  border: 1px solid #dfe3e8;
+  border-radius: 6px;
+  font-family: inherit; /* critical: make inputs use the same font */
+  font-size: 0.95rem;
+  color: #0b1726;
+  background: #fff;
+}
+
+/* focus states */
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  outline: none;
+  border-color: rgba(11,95,255,0.6);
+  box-shadow: 0 6px 18px rgba(11,95,255,0.06);
+}
+
+/* buttons */
+button,
+.btn {
+  padding: 10px 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  text-align: center;
+  transition: transform .06s ease, box-shadow .12s ease, opacity .12s;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.98;
+  box-shadow: 0 8px 20px rgba(11,95,255,0.12);
+}
+
+/* messages */
+.message {
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--card);
+  border-radius: 6px;
+  border: 1px solid #e6eefc;
+  font-size: 0.95rem;
+}
+.message.success { border-color: #b4d5ff; color: #003a75; }
+.message.error { border-color: #ffb4b4; color: #750000; }
+
+/* small helpers */
+.small-muted { font-size: 0.85rem; color: #667580; }
+
+/* responsive */
+@media (max-width: 576px) {
+  .app { margin: 16px; padding: 16px; }
+  .card { padding: 14px; }
+  button, .btn { width: 100%; }
+}
+

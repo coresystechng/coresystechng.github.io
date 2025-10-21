@@ -39,6 +39,7 @@ html, body {
 
 .btn-primary {
     color: #134074 !important;
+    font-size: larger;
     border: 1px #134074 solid !important;
     background-color: #fff;
     padding: .6em 1.6em .6em 1.6em;
@@ -62,6 +63,7 @@ html, body {
     background-color: #134074 !important;
     border: 1px #134074 solid !important;
     color: #fff !important;
+    transition: all 0.3s ease;
 }
 
 .btn-primary-2:hover {
@@ -653,14 +655,13 @@ nav ul li a.active::after {
 }
 
 .card {
-    transition: all 0.3s ease;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
 }
 
-.card:hover {
+/* .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
-}
+} */
 
 .form-wrapper {
     max-width: 1000px;
@@ -669,11 +670,6 @@ nav ul li a.active::after {
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
-}
-
-.form-label {
-    font-family: cera_light;
-    font-weight: 800 !important;
 }
 
 .btn-coretech {
