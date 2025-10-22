@@ -85,7 +85,7 @@ function handleSubmit(e) {
 return (
     <div>
         <Header />
-        <div className="d-flex align-items-center justify-content-center border-bottom bg-light py-5">
+        <div className="d-flex align-items-center justify-content-center border-bottom bg-light py-5" style={{ marginTop: '5rem' }}>
             <div className="card shadow-sm rounded-lg" style={{ maxWidth: 900 , width: '90%' }}>
                 <div className="card-body p-4">
                     <h3 className="card-title mb-3 text-center pt-4 pb-4 bluey
