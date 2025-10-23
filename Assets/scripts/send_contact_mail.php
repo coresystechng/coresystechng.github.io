@@ -39,7 +39,7 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'New Contact Form Submission';
     $mail->Body    = 'You have received a new message from your website contact form.<br><br>' .
-                     '<button><a href="https://coresystech.ng/assets/scripts/contacts.php" target="_blank">View Now</a></button>' . '<br>' .
+                      '<button><a href="https://coresystech.ng/assets/scripts/contacts.php" target="_blank">View Now</a></button>' . '<br>' .
 
     // $mail->AltBody = 'New Contact Form';
 

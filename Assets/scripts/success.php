@@ -45,7 +45,7 @@
     <link rel="alternate" hreflang="en" href="https://coresystech.ng/assets/scripts/success.html">
     <!-- css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
@@ -77,8 +77,8 @@
   <main class="d-flex flex-column align-items-center justify-content-center">
     <section class="section py-5 mt-5">
     <div class="shadow-sm p-5 rounded-2 border border-2 text-center">
-      <h3 class="bluey mb-4">Message Sent Successfully!</h3>
-      <p class="text-muted mb-4">Thank you for contacting us. We will get back to you as soon as possible.</p>
+      <h3 class="bluey mb-4">Success!</h3>
+      <p class="text-muted mb-4">Thank you for reaching out to us. We will contact you shortly with further information.</p>
       <a href="/" class="btn btn-primary-3 mt-4">Back to Home</a>
     </div>
   </section>

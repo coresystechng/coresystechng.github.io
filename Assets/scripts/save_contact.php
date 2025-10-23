@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $send_query = mysqli_query($connect, $save_query);
 
     if($send_query) {
-      header('Location: success.html');
-      include 'mail.php'; // Include the mail script to send the email
+      header('Location: success.php');
+      include 'send_contact_mail.php'; // Include the mail script to send the email
     } else {
       echo 'error in sending contact details. Please try again';
     }
