@@ -7,11 +7,6 @@
     scroll-behavior: smooth;
 }
 
-/*
-  Font files are expected to live in: react-app/Assets/fonts/
-  The src paths below are relative to this CSS file (src/), so we use ../Assets/... .
-  Provide multiple formats where possible — fall back to the original OTF if only that exists.
-*/
 @font-face {
     font-family: 'Cera Pro';
     font-weight: 300;
@@ -27,10 +22,6 @@
     font-display: swap;
     src: url('../../Assets/fonts/Cera Pro Medium.otf') format('opentype');
 }
-
-/* Keep legacy aliases used throughout the stylesheet */
-@font-face { font-family: cera_light; src: url('../../Assets/fonts/Cera Pro Light.otf'); }
-@font-face { font-family: cera_medium; src: url('../../Assets/fonts/Cera Pro Medium.otf'); }
 
 html, body {
     max-width: 100% !important;
@@ -121,135 +112,54 @@ html, body {
     border: 1px #fff solid !important;
 }
 
-.section-title {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    color: #666;
+.navbar .nav-link.navbar-link.active, 
+.navbar .nav-link.navbar-link:hover,
+.navbar .nav-link.nav-drop:hover,
+.nav-link.nav-drop.dropdown-toggle.active {
+    color: #134074 !important;
 }
 
-.section-title-2 {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    color: #fff;
+.dropdown-item.hover-drop.active{
+    background-color: #134074 !important;
+    color: #fff !important;
 }
 
-.section-title-3 {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    color: #fff;
-}
-
-.section-title .dot {
-    height: 12px;
-    width: 12px;
-    background-color: #134074;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.section-title-2 .dot {
-    height: 12px;
-    width: 12px;
-    background-color: #134074;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.section-title-3 .dot {
-    height: 12px;
-    width: 12px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.mission-text {
-    font-size: 1.1rem;
-    font-weight: 600 !important;
-    font-family: cera_light;
-    color: #666;
-}
-
-.mission-hd {
-    font-weight: 200;
-    color: #134074;
-}
-
-.mission-hd-2 {
-    font-weight: 200;
-    color: #fff;
-}
-
-.feature-title {
-    font-weight: 500;
-    font-size: 1.2em;
-    color: #134074;
-}
-
-.feature-title-2 {
-    font-weight: 500;
-    font-size: 1.1em;
-    color: #134074;
-}
-
-.feature-title {
-    font-weight: 500;
-    font-size: 1.2em;
-    color: #134074;
-}
-
-.feature-desc {
-    color: #666;
-    font-size: 0.95rem;
-    font-weight: 600 !important;
-    font-family: cera_light;
-}
-
-.feature-img {
-    border-radius: 15px;
-    width: 95%;
-    height: auto;
-}
-
-.lead {
-    /* width: 50% !important; */
-    font-family: cera_light;
-    font-size: 1.1em !important;
-}
-
-nav ul li a {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 18px !important;
-    font-weight: 800 !important;
-    font-family: cera_light;
-}
-
-nav ul li a::after {
+.navbar .nav-link.navbar-link::after {
     content: '';
     position: absolute;
-    left: 18px;
-    bottom: 6px;
     width: 0;
-    height: 2.6px;
-    background-color: #134074; 
-    transition: width 0.3s ease;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    background-color: #134074;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-nav ul li a:hover::after {
-    width: 50px;
+.navbar .nav-link.navbar-link:hover::after, 
+.navbar .nav-link.navbar-link.active::after {
+    width: 80%;
 }
 
-nav ul li a.active::after {
-    width: 50px;
+
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .navbar .btn {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        }
+    }
+
+    .navbar .nav-link.navbar-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
+
 
 .navbar {
     position: fixed;
@@ -261,7 +171,25 @@ nav ul li a.active::after {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
     
-    z-index: 1050; /* ensure navbar floats above content */
+    /* hide by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* when we add .visible, it fades in */
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.glass {
+    background-color: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #btn-back-to-top {
@@ -427,136 +355,9 @@ nav ul li a.active::after {
     100% { background-position: 0 0; }
 }
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: #081828;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: sans-serif;
-    z-index: 2;
-}
-
-.background-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.line {
-    position: absolute;
-    width: 2px;
-    background: white;
-    opacity: 0.15;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    0% {
-    transform: translateY(-200px);
-    opacity: 0.3;
-    }
-    100% {
-    transform: translateY(100vh);
-    opacity: 0;
-    }
-}
-
-.scroll-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mouse {
-    width: 36px;
-    height: 60px;
-    border: 2px solid white;
-    border-radius: 18px;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.dot-2 {
-    width: 6px;
-    height: 6px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-    0% {
-    opacity: 1;
-    top: 12px;
-    }
-    50% {
-    opacity: 0.5;
-    top: 28px;
-    }
-    100% {
-    opacity: 0;
-    top: 40px;
-    }
-}
-
-.back-to-top {
-    position: fixed !important;
-    cursor: pointer;
-    /* pull it above everything else */
-    z-index: 99 !important;   
-    /* add a little shadow so it floats */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.contact-card {
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.contact-info .info-block:not(:last-child) {
-    margin-bottom: 2rem;
-}
-
-.contact-info .info-text {
-    margin-left: 1rem;
-}
-
-@media (max-width: 767px) {
-    .contact-card {
-    margin: 2rem 1rem;
-    }
-}
-
 .bluey {
     color: #134074 !important;
 }
-
-.c-box {
-    margin-left: 17% !important;
-}
-
-.card {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
-}
-
-/* .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
-} */
 
 .form-wrapper {
     max-width: 1000px;
@@ -567,20 +368,6 @@ nav ul li a.active::after {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
-.btn-coretech {
-    background-color: #134074;
-    color: white;
-    border-radius: 8px;
-    padding: 10px 30px;
-    font-weight: 400;
-}
-
-.btn-coretech:hover {
-    background-color: #fff;
-    border: 2px #134074 solid;
-    color: #134074;
-}
-
 .section {
     padding: 60px 20px;
 }
@@ -589,57 +376,4 @@ nav ul li a.active::after {
     color: #134074;
     font-weight: 700;
     margin-bottom: 20px;
-}
-
-.section-bg {
-    background-color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 40px;
-}
-
-.btn-coretech {
-    background-color: #134074;
-    color: white;
-    border-radius: 8px;
-    padding: 10px 30px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.btn-coretech:hover {
-    border: 1px #134074 solid;
-    background-color: #fff;
-    color: #134074;
-}
-
-.img-fluid-2 {
-    width: 600px !important;
-    border-radius: 8px;
-}
-
-.rounded {
-    border-radius: 50% !important;
-}
-
-.bg-blue {
-    background-color: #134074 !important;
-}
-
-.client-card {
-    height: 200px;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #fff;
-    transition: transform 0.3s;
-    border: 1px #bbb solid;
-}
-
-.client-card:hover {
-    transform: translateY(-5px);
-}
-
-.client-card > img {
-    max-width: 100%;
-    max-height: 80%;
 }

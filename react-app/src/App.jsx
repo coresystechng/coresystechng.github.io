@@ -12,6 +12,20 @@ const programs = [
     "Fullstack Development",
 ];
 
+const sessions = [
+    "Morning Session",
+    "Afternoon Session",
+    "Evening Session",
+];
+
+const relationship = [
+    "Parent",
+    "Guardian",
+    "Sibling",
+    "Relative",
+    "Other",
+];
+
 export default function App() {
   const [form, setForm] = useState({
     firstName: "",
@@ -89,13 +103,13 @@ return (
             <div className="card shadow-sm rounded-lg" style={{ maxWidth: 900 , width: '90%' }}>
                 <div className="card-body p-4">
                     <h3 className="card-title mb-3 text-center pt-4 pb-4 bluey
-                    ">REGISTRATION FORM</h3>
+                    ">Registration Form</h3>
 
                     <form onSubmit={handleSubmit}>
                         {/* PERSONAL DATA */}
                         <section className="mb-4">
                             <div className="d-flex justify-content-between align-items-center mb-3">
-                                <h5 className="mb-0 bluey">1. PERSONAL DATA</h5>
+                                <h5 className="mb-0 bluey">1. Personal Data</h5>
                             </div>
 
                             <div className="row g-3 my-3 mx-lg-5">
@@ -129,7 +143,7 @@ return (
                                     />
                                 </div>
 
-                                <div className="col-md-4">
+                                <div className="col-md-6">
                                     <label htmlFor="gender" className="form-label">
                                         Gender
                                     </label>
@@ -147,21 +161,7 @@ return (
                                     </select>
                                 </div>
 
-                                <div className="col-md-4">
-                                    <label htmlFor="phone" className="form-label">
-                                        Phone Number <span className="text-danger">*</span>
-                                    </label>
-                                    <input
-                                        id="phone"
-                                        name="phone"
-                                        value={form.phone}
-                                        onChange={handleChange}
-                                        className="form-control"
-                                        placeholder="+234..."
-                                    />
-                                </div>
-
-                                <div className="col-md-4">
+                                <div className="col-md-6">
                                     <label htmlFor="maritalStatus" className="form-label">
                                         Marital Status
                                     </label>
@@ -291,6 +291,20 @@ return (
                                 </div>
 
                                 <div className="col-md-6">
+                                    <label htmlFor="phone" className="form-label">
+                                        Phone Number <span className="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        id="phone"
+                                        name="phone"
+                                        value={form.phone}
+                                        onChange={handleChange}
+                                        className="form-control"
+                                        placeholder="+234..."
+                                    />
+                                </div>
+
+                                <div className="col-md-6">
                                     <label htmlFor="email" className="form-label">
                                         Passport <span className="text-danger">*</span>
                                     </label>
@@ -309,11 +323,11 @@ return (
 
                         {/* NEXT OF KIN */}
                         <section className="mb-4">
-                            <h5 className="mb-3 bluey">2. NEXT OF KIN DETAILS</h5>
+                            <h5 className="mb-3 bluey">2. Next of Kin Details</h5>
                             <div className="row g-3 my-3 mx-lg-5">
                                 <div className="col-md-6">
                                     <label htmlFor="kinName" className="form-label">
-                                        Emergency Contact <span className="text-danger">*</span>
+                                        Next of Kin <span className="text-danger">*</span>
                                     </label>
                                     <input
                                         id="kinName"
@@ -325,21 +339,27 @@ return (
                                     />
                                 </div>
 
-                                <div className="col-md-3">
+                                <div className="col-md-6">
                                     <label htmlFor="kinRelationship" className="form-label">
-                                        Relationship 
+                                        Relationship <span className="text-danger">*</span>
                                     </label>
-                                    <input
+                                    <select
                                         id="kinRelationship"
                                         name="kinRelationship"
-                                        placeholder="e.g. Father, Sister"
-                                        value={form.kinRelationship}
+                                        value={form.relationship}
                                         onChange={handleChange}
-                                        className="form-control"
-                                    />
+                                        className="form-select"
+                                    >
+                                        <option value="">Select Relationship</option>
+                                        {relationship.map((p) => (
+                                            <option key={p} value={p}>
+                                                {p}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
 
-                                <div className="col-md-3">
+                                <div className="col-md-6">
                                     <label htmlFor="kinPhone" className="form-label">
                                         Phone Number <span className="text-danger">*</span>
                                     </label>
@@ -356,7 +376,7 @@ return (
                         </section>
 
                         <section className="mb-4">
-                            <h5 className="mb-3 bluey">3. TRAINING DETAILS</h5>
+                            <h5 className="mb-3 bluey">3. Training Details</h5>
                             <div className="row g-3 mt-3 mb-4 mx-lg-5">
                                 <div className="col-12 col-md-6">
                                     <label htmlFor="program" className="form-label">
@@ -371,6 +391,26 @@ return (
                                     >
                                         <option value="">Select a program</option>
                                         {programs.map((p) => (
+                                            <option key={p} value={p}>
+                                                {p}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div className="col-12 col-md-6">
+                                    <label htmlFor="session" className="form-label">
+                                        Session <span className="text-danger">*</span>
+                                    </label>
+                                    <select
+                                        id="session"
+                                        name="session"
+                                        value={form.session}
+                                        onChange={handleChange}
+                                        className="form-select"
+                                    >
+                                        <option value="">Select a Session</option>
+                                        {sessions.map((p) => (
                                             <option key={p} value={p}>
                                                 {p}
                                             </option>
@@ -476,7 +516,7 @@ return (
                                                     onChange={handleChange}
                                                 />
                                                 <label className="form-check-label" htmlFor="repeatWeekly">
-                                                    Every day of the week
+                                                    Weekend
                                                 </label>
                                             </div>
                                         </div>
@@ -485,7 +525,7 @@ return (
                             </div>
                         </section>
                         <section className="mb-1">
-                            <h5 className="mb-3 bluey">4. ACKNOWLEDGEMENT</h5>
+                            <h5 className="mb-3 bluey">4. Acknowledgement</h5>
                             <div className="form-check border ps-5 pe-4 px-lg-5 py-3 mb-3">
                                 <input
                                     className="form-check-input"

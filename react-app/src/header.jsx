@@ -3,11 +3,11 @@ import logo from './Assets/img/logo.png';
 
 export default function Header({
   navLinks = [
-    { label: 'Home', href: '#home', active: true },
-    { label: 'About Us', href: '/aboutus' },
-    { label: 'Clients', href: '/clients' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact Us', href: '/contactus' },
+    { label: 'Home', href: 'https://coresystech.ng/', active: true },
+    { label: 'About Us', href: 'https://coresystech.ng/aboutus.html' },
+    { label: 'Clients', href: 'https://coresystech.ng/clients.html' },
+    { label: 'Services', href: 'https://coresystech.ng/services.html' },
+    { label: 'Contact Us', href: 'https://coresystech.ng/contactus.html' },
   ],
   cta = { label: 'Check Our FPL', href: 'https://coresystech.ng/clnsdzyleague/', external: true },
 }) {
@@ -19,12 +19,12 @@ export default function Header({
   return (
     <header>
       {/* make navbar visible by default so CSS hide-by-default rule doesn't keep it hidden */}
-      <nav className="navbar navbar-expand-lg py-3 fixed-top bg-white shadow-sm visible">
+      <nav className="navbar navbar-expand-lg py-3 fixed-top shadow-sm visible">
         <div className="container-fluid container">
 
           {/* Brand / logos (large and small) */}
           <div className="navbar-brand d-flex align-items-center">
-            <a href="/" className="d-inline-block" onClick={close}>
+            <a href="https://coresystech.ng/" className="d-inline-block" onClick={close}>
               {/* Desktop/Tablet logo */}
               <img src={logo} alt="CORE-TECH logo" style={{ width: 150 }} className="d-none d-md-block img-fluid" />
               {/* Mobile logo */}
