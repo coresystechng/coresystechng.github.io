@@ -427,6 +427,12 @@ html, body {
     background-image: url(Assets/img/achievement-bg.png);
 }
 
+.bg-primary-3 {
+    padding: 120px 0px;
+    background-image: url(Assets/img/hero-bg.webp);
+    background-size: cover;
+}
+
 .bg-hero {
   background-color: #081828 !important;
 }
