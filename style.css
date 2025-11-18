@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cera !important;
+}
+
+@font-face {
+    font-family: cera;
+    src: url(fonts/Cera\ Pro\ Medium.otf);
+}
+
+@font-face {
+    font-family: cera_light;
+    src: url(fonts/Cera\ Pro\ Light.otf);
+}
+
+.brand {
+    width: 8em !important;
+}
+
+.btn-primary {
+    background-color: #134074;
+    border: 1px #134074 solid;
+    padding: 8px 20px !important;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animate background-color and transform */
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    border: 1px #134074 solid;
+    padding: 10px 20px;
+    color: #134074 !important;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    border: 1px #134074 solid;
+    padding: 10px 20px !important;
+    color: #134074 !important;
+    transition: background-color 0.5s ease, transform 0.5s ease; /* Animate background-color and transform */
+}
+
+.btn-secondary:hover {
+    background-color: #134074;
+    border: none;
+    padding: 10px 20px;
+    color: #fff !important;
+}
+
+.blue {
+    color: #134074;
+}
+
+.bg-light {
+    background-color: #E8F0FE !important;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-credit {
+    font-size: .9rem;
+    color: #777;
+}
+
+.footer-nav h6 {
+    color: #134074;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 0.5rem;        /* space between links */
+}
+
+.footer-nav a {
+    display: inline-block;        /* confines the clickable area to the text */
+    width: auto;                  
+    padding: 0.25rem 0;           /* tiny hit‐area for easier tapping on mobile */
+    text-decoration: none;
+    color: #6c757d!important;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: black !important;
+    text-decoration: underline;   /* underline on hover for better UX */
+}

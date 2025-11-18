@@ -44,7 +44,7 @@ $contact = mysqli_fetch_assoc($result);
     <?php if ($contact): ?>
         <div class="card" data-aos="fade-up">
             <div class="card-body">
-                <h5 class="card-title"><?= htmlspecialchars($contact['first_name'] . ' ' . $contact['last_name']) ?></h5>
+                <h5 class="card-title"><?= htmlspecialchars($contact['first_name'] . ' ' . $contact['surname']) ?></h5>
                 <p><strong>Email:</strong> <?= htmlspecialchars($contact['email']) ?></p>
                 <p><strong>Phone:</strong> <?= htmlspecialchars($contact['phone']) ?></p>
                 <p><strong>Subject:</strong> <?= htmlspecialchars($contact['subject']) ?></p>

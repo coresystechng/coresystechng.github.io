@@ -2,13 +2,13 @@
 include 'connect.php';
 
 // Create blank variables
-$first_name = $last_name = $email = $phone = $subject = $message = "";
+$first_name = $surname = $email = $phone = $subject = $message = "";
 
 // When the submit button is pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check for SQL injection
     $first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
-    $last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
+    $surname = mysqli_real_escape_string($connect, $_POST['surname']);
     $email = mysqli_real_escape_string($connect, $_POST['email']);
     $phone = mysqli_real_escape_string($connect, $_POST['phone']);
     $subject = mysqli_real_escape_string($connect, $_POST['subject']);
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Write Save Query
     $save_query = 
-    "INSERT INTO `contact_tb` (`first_name`, `last_name`, `email`, `phone`, `subject`, `message`) VALUES ('$first_name', '$last_name', '$email', '$phone', '$subject', '$message')";
+    "INSERT INTO `contact_tb` (`first_name`, `surname`, `email`, `phone`, `subject`, `message`) VALUES ('$first_name', '$surname', '$email', '$phone', '$subject', '$message')";
 
     // Send Query to server
     $send_query = mysqli_query($connect, $save_query);
