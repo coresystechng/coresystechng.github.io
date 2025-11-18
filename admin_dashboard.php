@@ -21,7 +21,7 @@
     
     // Fetch admin details
     if ($username) {
-        $stmt = $connect->prepare("SELECT * FROM admin_reg WHERE username = ?"); // prepared sql statement to prevent SQL injection
+        $stmt = $connect->prepare("SELECT * FROM users_tb WHERE username = ?"); // prepared sql statement to prevent SQL injection
         $stmt->bind_param("s", $username); // 's' specifies the variable type => 'string'... "i" => integer, "d" => double, "b" => blob
         $stmt->execute(); // execute/run the query
         $result = $stmt->get_result(); // get the mysqli result of all executed query data

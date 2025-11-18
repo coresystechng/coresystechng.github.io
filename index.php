@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
         $password_raw = $_POST['password']; // raw password for verification
 
         // create sql
-        $login_query = "SELECT * FROM admin_reg WHERE username = '$username' ";
+        $login_query = "SELECT * FROM users_tb WHERE username = '$username' ";
         $login_query_run = mysqli_query($connect, $login_query);
 
         // check if user exists
@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
                         <input type="submit" name="submit" class="btn btn-primary w-100" value="Login">
                     </div>
                     <div class="text-center mt-4">
-                        <!-- <p>Don't have an account? <a href="admin_register.php" class="log">Register</a></p> -->
+                        <!-- <p>Don't have an account? <a href="users_tbister.php" class="log">Register</a></p> -->
                         &copy; 2025 <a href="https://coresystech.ng" target="_blank" class="log">CORE-TECH</a>. <span class="light" >All Rights Reserved.</span>
                     </div>
                 </form>

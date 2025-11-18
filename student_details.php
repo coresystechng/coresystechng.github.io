@@ -11,7 +11,7 @@
 
     // If we have a logged-in admin, fetch their is_super field (1 or 0)
     if ($username) {
-        $stmt = $connect->prepare("SELECT is_super FROM admin_reg WHERE username = ? LIMIT 1");
+        $stmt = $connect->prepare("SELECT is_super FROM users_tb WHERE username = ? LIMIT 1");
         if ($stmt) { // check prepare success
             $stmt->bind_param("s", $username);
             // execute the query
@@ -24,7 +24,7 @@
             }
             $stmt->close();
         } else {
-            error_log("Prepare failed (admin_reg lookup): " . $connect->error);
+            error_log("Prepare failed (users_tb lookup): " . $connect->error);
         }
     }
 
