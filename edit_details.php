@@ -68,11 +68,6 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <style>
-        *{
-            overflow-y: hidden;
-            overflow-x: hidden;
-            max-height: 100vh;
-        }
         /* :: is used to style placeholders and other attributes */
         input, textarea {
             font-weight: 600 !important;
@@ -87,58 +82,64 @@ if (isset($_POST['update'])) {
 <body class="bg-light">
 
     <main class="container">
-        <section class="justify-content-center mt-5 pt-3">
-            <div class="card p-5 border-0 shadow-sm">
-                <!-- submit to same page so the PHP above runs -->
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-                    
-                    <!-- retains the unique id -->
-                    <input type="text" hidden id="update_id" name="update_id" value="<?php echo $student_data['id'];?>">
-
-                    <div class="mb-5 text-center">
-                        <h1 class="blue">Edit student details</h1>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">First Name</label>
-                                <input type="text" name="first_name" class="form-control" value="<?php echo $student_data['first_name']; ?>">
-                            </div>
+        <section class="justify-content-center">
+            <div class="row">
+                <center>
+                    <div class="col-md-8 text-start">
+                        <div class="card p-5 mt-5 border-0 shadow-sm">
+                            <!-- submit to same page so the PHP above runs -->
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                                
+                                <!-- retains the unique id -->
+                                <input type="text" hidden id="update_id" name="update_id" value="<?php echo $student_data['id'];?>">
+            
+                                <div class="mb-5 text-center">
+                                    <h1 class="blue">Edit student details</h1>
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" name="first_name" class="form-control" value="<?php echo $student_data['first_name']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Surname</label>
+                                            <input type="text" name="surname" class="form-control" value="<?php echo $student_data['surname']; ?>">
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="emailInput" class="form-label">Email Address</label>
+                                            <input id="emailInput" type="email" value="<?php echo $student_data['email']; ?>" class="form-control" name="email" aria-describedby="emailHelp">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Phone Number</label>
+                                            <input type="text" name="phone" class="form-control" value="<?php echo $student_data['phone']; ?>">
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label class="form-label">Home Address (optional)</label>
+                                    <textarea name="home_address" rows="7" class="form-control"><?php echo $student_data['home_address']; ?></textarea>
+                                </div>
+            
+                                <div class="text-center">
+                                    <button type="submit" name="update" class="btn btn-primary mt-3">Update</button>
+                                </div>
+            
+                            </form>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Surname</label>
-                                <input type="text" name="surname" class="form-control" value="<?php echo $student_data['surname']; ?>">
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="emailInput" class="form-label">Email Address</label>
-                                <input id="emailInput" type="email" value="<?php echo $student_data['email']; ?>" class="form-control" name="email" aria-describedby="emailHelp">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Phone Number</label>
-                                <input type="text" name="phone" class="form-control" value="<?php echo $student_data['phone']; ?>">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Home Address (optional)</label>
-                        <textarea name="home_address" class="form-control"><?php echo $student_data['home_address']; ?></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" name="update" class="btn btn-primary mt-3">Update</button>
-                    </div>
-
-                </form>
+                </center>
             </div>
         </section>
     </main>
