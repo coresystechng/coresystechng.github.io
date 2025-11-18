@@ -282,8 +282,17 @@
                                                 $imagePath = $row['image_name'];
                                                 echo '<img src="uploads/' . $imagePath . '">';
                                             } else {
-                                                $imagePath = 'img/default.jpg'; // Path to default image
-                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                                
+                                                if ($row['gender'] == 'Male') {
+                                                    $imagePath = 'img/default.jpg'; // Path to default image
+                                                    echo '<img src="' . $imagePath . '" class="w-50">';
+                                                    # code...
+                                                    
+                                                } else {
+                                                    $imagePath = 'img/default_f.jpeg'; // Path to default image
+                                                    echo '<img src="' . $imagePath . '" class="w-50">';
+                                                    # code...
+                                                }
                                             }
                                         ?>
                                     </div>
