@@ -66,6 +66,10 @@
             margin-right: 1em;
             font-size: .7em;
         }
+
+        .small-5 {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -178,7 +182,7 @@
                                     <div class="col-md-7 pt-0">
                                         <p class="fs-4">Username: <span class="fs-5" ><?php echo htmlspecialchars($admin['username']); ?></span></p>
                                         <div class="d-flex">
-                                            <p class="fs-4">Email: <span class="fs-5" ><?php echo htmlspecialchars($admin['email']); ?></span></p>
+                                            <p class="fs-4">Email: <span class="small-5" ><?php echo htmlspecialchars($admin['email']); ?></span></p>
                                         </div>
                                         <p class="fs-5 text-muted">Joined: <?php echo htmlspecialchars($admin['created_at']); ?></p>
 
