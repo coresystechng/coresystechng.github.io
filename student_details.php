@@ -116,6 +116,10 @@
             margin-right: 1em;
             font-size: .7em;
         }
+        
+        .small-5 {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -219,19 +223,19 @@
                         <h2>Student Profile</h2>
                     </div>
                     <?php if($row): ?>
-                        <div class="card w-75">
+                        <div class="card w-100">
                             <div class="card-body">
                                 <!-- <p class="fs-4" >Student Details</p> -->
                                 <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-md-5 mb-md-0 mb-3">
                                         <img src="uploads/<?php echo ($row['image_name']); ?>" class="w-100 shadow-lg" alt="user_image">
                                     </div>
-                                    <div class="col-7 pt-0">
+                                    <div class="col-md-7 pt-0">
                                         <p class="fs-2" ><?php echo $row['first_name'] . ' ' . $row['surname'];?></p>
 
-                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
+                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click small-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
 
-                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
+                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click small-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
 
                                         <p class="fs-5"><i class="fa-solid fa-calendar-days fs-4"></i> <span class="small"><?php echo ($row['registration_date']); ?></span></p>
                                     </div>
