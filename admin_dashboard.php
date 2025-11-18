@@ -145,11 +145,11 @@
                         </a>
                         
                         <ul class="dropdown-menu dropdown-menu-start ps-3 ms-4" aria-labelledby="userDropdown">
-                            <li class="mb-2"><a href="./admin_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-grip fs-2 pe-2"></i> Dashboard</a></li>
-                            <li class="mb-2"><a href="./student_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-graduation-cap fs-2 pe-2"></i> Students</a></li>
-                            <li class="mb-2"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-briefcase fs-2 pe-2"></i> Staff</a></li>
-                            <li class="mb-2"><a href="./payment.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-sack-dollar fs-2 pe-2"></i> Payments</a></li>
-                            <li class="mb-2"><a href="./files.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-file-lines fs-2 pe-2"></i> Files</a></li>
+                            <li class="mt-3"><a href="./admin_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-grip fs-2 pe-2"></i> Dashboard</a></li> <hr>
+                            <li class="mb-0"><a href="./student_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-graduation-cap fs-2 pe-2"></i> Students</a></li> <hr>
+                            <li class="mb-0"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-briefcase fs-2 pe-2"></i> Staff</a></li> <hr>
+                            <li class="mb-0"><a href="./payment.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-sack-dollar fs-2 pe-2"></i> Payments</a></li> <hr>
+                            <li class="mb-3"><a href="./files.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-file-lines fs-2 pe-2"></i> Files</a></li>
                         </ul>
                     </div>
                     <div class="navbar-collapse navbar">
@@ -239,7 +239,7 @@
                             </a>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <a href="" style="text-decoration: none">
+                            <a href="./payment.php" style="text-decoration: none">
                                 <div class="card special-effects border-0 text-white bg-danger h-100">
                                     <div class="card-body">
                                         <h5 class="card-title">Payments</h5>
@@ -250,7 +250,7 @@
                             </a>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <a href="" style="text-decoration: none">
+                            <a href="./files.php" style="text-decoration: none">
                                 <div class="card special-effects border-0 text-white bg-warning h-100">
                                     <div class="card-body">
                                         <h5 class="card-title">Files</h5>
