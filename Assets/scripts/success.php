@@ -77,6 +77,13 @@
   <main class="d-flex flex-column align-items-center justify-content-center">
     <section class="section py-5 mt-5">
     <div class="shadow-sm p-5 rounded-2 border border-2 text-center">
+      <lord-icon
+          src="https://cdn.lordicon.com/ohcuigqh.json"
+          trigger="in"
+          delay="0"
+          colors="primary:#081828,secondary:#f0a500"
+          style="width:250px;height:250px">
+      </lord-icon>
       <h3 class="bluey mb-4">Success!</h3>
       <p class="text-muted mb-4">Thank you for reaching out to us. We will contact you shortly with further information.</p>
       <a href="/" class="btn btn-primary-3 mt-4">Back to Home</a>
