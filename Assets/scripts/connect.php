@@ -5,8 +5,8 @@
 // $password = "28C!fbiTb-n6";  // Use your database password
 // $database = "cohtech1_coresystechng_db"; // Use your database name
 $servername = "localhost";  // Change if your database is hosted remotely
-$username = "collins";  // Use your database username
-$password = "1234";  // Use your database password
+$username = "root";  // Use your database username
+$password = "";  // Use your database password
 $database = "coresystechng_db"; // Use your database name
 
 $connect = mysqli_connect($servername, $username, $password, $database);

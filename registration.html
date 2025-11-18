@@ -147,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <label for="other_names" class="form-label">Other Names</label>
               <input type="text" class="form-control" id="other_names" name="other_names">
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
             <select class="form-select" id="gender" name="gender" required>
               <option value="">Choose...</option>
@@ -156,11 +156,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="Other">Other</option>
             </select>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
             <input type="date" class="form-control" id="dob" name="dob">
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
               <label for="marital_status" class="form-label">Marital Status</label>
               <select class="form-select" id="marital_status" name="marital_status">
                   <option value="">Choose...</option>
@@ -170,6 +170,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <option value="Widowed">Widowed</option>
               </select>
           </div>
+
+        <div class="col-md-3">
+            <label for="passport" class="mb-2">Passport<span class="text-danger">*</span></label><br>
+            <input class="form-control" type="file" name="image_name" id="passport" accept="image/*" required>
+        </div>
+
       </div>
       <div class="row g-3 my-3">
         <span class="bluey">Contact Information</span>
@@ -306,10 +312,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label for="nok_relationship" class="form-label">Relationship <span class="text-danger">*</span></label>
             <select class="form-select" id="nok_relationship" name="nok_relationship" required>
               <option value="">Choose...</option>
-              <option value="Male">Parent</option>
-              <option value="Male">Guardian</option>
-              <option value="Female">Sibling</option>
-              <option value="Other">Relative</option>
+              <option value="Parent">Parent</option>
+              <option value="Guardian">Guardian</option>
+              <option value="Sibling">Sibling</option>
+              <option value="Relative">Relative</option>
               <option value="Other">Other</option>
             </select>
           </div>
