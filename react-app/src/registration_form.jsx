@@ -509,7 +509,7 @@ export default function RegistrationForm() {
                 <input type="hidden" name="_subject" value="New trainee registration" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value="http://localhost:5173/success.html" />
-                <input type="hidden" name="_error" value="http://localhost:5173/error.html"></input>
+                <input type="hidden" name="_error" value="http://localhost:5173/error.html" />
 
                 <div className="text-center mt-4">
                   <button type="submit" className="btn btn-secondary px-5 py-2" disabled={submitting}>
