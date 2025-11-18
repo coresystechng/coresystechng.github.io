@@ -118,7 +118,7 @@
         }
         
         .small-5 {
-            font-size: 18px;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -220,22 +220,70 @@
                     <?php endif; ?> 
                     
                     <div class="mt-3 mb-4">
-                        <h2>Student Profile</h2>
+                        <h1>Student Profile</h1>
                     </div>
                     <?php if($row): ?>
-                        <div class="card w-100">
+                        <div class="card d-none d-md-block" style="width: 70%;">
+                            <div class="card-body">
+                                <!-- <p class="fs-4" >Student Details</p> -->
+                                <div class="row gap-0 g-0">
+                                    <div class="col-md-5 mb-md-0 mb-3">
+                                        <?php
+                                            if (!empty($row['image_name'])) {
+                                                $imagePath = $row['image_name'];
+                                                echo '<img src="uploads/' . $imagePath . '">';
+                                            } else {
+                                                $imagePath = 'img/default.jpg'; // Path to default image
+                                                echo '<div class="text-center"><img src="' . $imagePath . '" class="w-75"></div>';
+                                            }
+                                        ?>
+                                    </div>
+                                    <div class="col-md-7 pt-0">
+                                        <p class="fs-2 pt-4" ><?php echo $row['first_name'] . ' ' . $row['surname'];?></p>
+
+                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click fs-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
+
+                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click fs-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
+
+                                        <p class="fs-5"><i class="fa-solid fa-calendar-days fs-4"></i> <span class="small"><?php echo ($row['registration_date']); ?></span></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 pt-4">
+                                    <a href="student_dashboard.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                                    
+                                    <!-- delete form -->
+                                    <form action="student_details.php" method="POST">
+                                        <input type="hidden" name="id_to_delete" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" name="delete" class="btn btn-danger shadow-none"><i class="fa-solid fa-trash-can"></i> Delete</button>
+                                    </form>
+                                    <?php if ($is_super): ?>
+                                        <a class="btn btn-success shadow-none" href="edit_details.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-pen-to-square pe-1"></i>Edit</a>
+                                    <?php endif; ?>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card w-100 d-block d-md-none">
                             <div class="card-body">
                                 <!-- <p class="fs-4" >Student Details</p> -->
                                 <div class="row">
                                     <div class="col-md-5 mb-md-0 mb-3">
-                                        <img src="uploads/<?php echo ($row['image_name']); ?>" class="w-100 shadow-lg" alt="user_image">
+                                        <?php
+                                            if (!empty($row['image_name'])) {
+                                                $imagePath = $row['image_name'];
+                                                echo '<img src="uploads/' . $imagePath . '">';
+                                            } else {
+                                                $imagePath = 'img/default.jpg'; // Path to default image
+                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                            }
+                                        ?>
                                     </div>
                                     <div class="col-md-7 pt-0">
                                         <p class="fs-2" ><?php echo $row['first_name'] . ' ' . $row['surname'];?></p>
 
-                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click small-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
+                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click small-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
 
-                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click small-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></p>
+                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click small-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
 
                                         <p class="fs-5"><i class="fa-solid fa-calendar-days fs-4"></i> <span class="small"><?php echo ($row['registration_date']); ?></span></p>
                                     </div>
