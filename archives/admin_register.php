@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     } else {
         $email = $_POST['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error['email'] = "Email must be a valid email address";
+            $error['email'] = "Email must be a valid email home_address";
         }
     }
 
@@ -174,8 +174,8 @@ if (isset($_POST['submit'])) {
                         <br>
                     </div>
                     <div>
-                        <label class="form-label">Email Address:</label>
-                        <input class="form-control" type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="Enter email address">
+                        <label class="form-label">Email home_address:</label>
+                        <input class="form-control" type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="Enter email home_address">
                         <br>
                     </div>
                     <div>

@@ -14,7 +14,7 @@
     }
     
     include('connect.php');
-    
+
     // Get username from session or set to 'Guest' if not available
     $username =  $_SESSION['username'] ?? 'Guest';
     
@@ -99,7 +99,7 @@
                             Dashboard
                         </a>
                     </li>
-                    <li class="reg active">
+                    <li class="reg my-1">
                         <a href="./student_dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-graduation-cap"></i>
                             Students
@@ -111,7 +111,7 @@
                             Staff
                         </a>
                     </li>
-                    <li class="reg my-1">
+                    <li class="reg active">
                         <a href="./payment.php" class="sidebar-link">
                             <i class="fa-solid fa-sack-dollar"></i>
                             Payments
@@ -183,38 +183,36 @@
                     <?php endif; ?>
 
                     <div class="mt-3 mb-4">
-                        <h1 class="blue">Students</h1>
-                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">Overview of student data</h5>
+                        <h1 class="blue">Payment</h1>
+                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">No payments yet.</h5>
                     </div>
 
-                    <div class="table-responsive-md">
-                        <table class="table table-striped">
-                            <thead>
+                    <!-- <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="blue">Id</th>
+                                <th scope="col" class="blue">Last name</th>
+                                <th scope="col" class="blue">First name</th>
+                                <th scope="col" class="blue">Email</th>
+                                <th scope="col" class="blue">gender</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+
                                 <tr>
-                                    <th scope="col" class="blue">Id</th>
-                                    <th scope="col" class="blue">Surname</th>
-                                    <th scope="col" class="blue">First name</th>
-                                    <th scope="col" class="blue">Email</th>
-                                    <th scope="col" class="blue">gender</th>
+                                    <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
+                                    <td><?php echo htmlspecialchars($row['first_name']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['surname']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['email']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['gender']); ?></td>
+                                    <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php while($row = mysqli_fetch_assoc($result)) { ?>
-    
-                                    <tr>
-                                        <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
-                                        <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['surname']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['email']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['gender']); ?></td>
-                                        <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
-                                    </tr>
-    
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                        <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p>
-                    </div>
+
+                            <?php } ?>
+                        </tbody>
+                    </table> 
+                    <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p> -->
                 </div>
             </main>
         </div>

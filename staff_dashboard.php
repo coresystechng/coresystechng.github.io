@@ -14,7 +14,7 @@
     }
     
     include('connect.php');
-    
+
     // Get username from session or set to 'Guest' if not available
     $username =  $_SESSION['username'] ?? 'Guest';
     
@@ -112,13 +112,13 @@
                         </a>
                     </li>
                     <li class="reg my-1">
-                        <a href="./student_dashboard.php" class="sidebar-link">
+                        <a href="./payment.php" class="sidebar-link">
                             <i class="fa-solid fa-sack-dollar"></i>
                             Payments
                         </a>
                     </li>
                     <li class="reg my-1">
-                        <a href="./student_dashboard.php" class="sidebar-link">
+                        <a href="./files.php" class="sidebar-link">
                             <i class="fa-solid fa-file-lines"></i>
                             Files
                         </a>
@@ -142,8 +142,8 @@
                             <li class="mb-2"><a href="./admin_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-grip fs-2 pe-2"></i> Dashboard</a></li>
                             <li class="mb-2"><a href="./student_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-graduation-cap fs-2 pe-2"></i> Students</a></li>
                             <li class="mb-2"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-briefcase fs-2 pe-2"></i> Staff</a></li>
-                            <li class="mb-2"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-sack-dollar fs-2 pe-2"></i> Payments</a></li>
-                            <li class="mb-2"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-file-lines fs-2 pe-2"></i> Files</a></li>
+                            <li class="mb-2"><a href="./payment.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-sack-dollar fs-2 pe-2"></i> Payments</a></li>
+                            <li class="mb-2"><a href="./files.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-file-lines fs-2 pe-2"></i> Files</a></li>
                         </ul>
                     </div>
                     <div class="navbar-collapse navbar">
@@ -184,10 +184,10 @@
 
                     <div class="mt-3 mb-4">
                         <h1 class="blue">Staff</h1>
-                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">Overview of staff data</h5>
+                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">No staff available.</h5>
                     </div>
 
-                    <table class="table table-striped">
+                    <!-- <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col" class="blue">Id</th>
@@ -211,8 +211,8 @@
 
                             <?php } ?>
                         </tbody>
-                    </table>
-                    <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p>
+                    </table> 
+                    <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p> -->
                 </div>
             </main>
         </div>

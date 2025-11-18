@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = mysqli_real_escape_string($connect, $_POST['gender']);
     $dob = mysqli_real_escape_string($connect, $_POST['dob']);
     $maritalStatus = mysqli_real_escape_string($connect, $_POST['marital_status']);
-    $address = mysqli_real_escape_string($connect, $_POST['home_address']);
+    $home_address = mysqli_real_escape_string($connect, $_POST['home_home_address']);
     $phone = mysqli_real_escape_string($connect, $_POST['phone']);
     $email = mysqli_real_escape_string($connect, $_POST['email']);
     $state = mysqli_real_escape_string($connect, $_POST['state_of_origin']);
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // echo $dob . ' ' . $lga;
     // print_r($availability);
 
-    $sql = "INSERT INTO `registration_tb`(`surname`, `first_name`, `other_names`, `gender`, `date_of_birth`, `marital_status`, `home_address`, `phone`, `email`, `state_of_origin`, `lga`, `course_of_study`, `session`, `days_available`, `nok_name`, `nok_tel_no`, `nok_relationship`) VALUES ('$surname','$firstName','$otherNames','$gender','$dob','$maritalStatus','$address','$phone','$email','$state','$lga','$course','$session','$availability','$nok_name','$nok_tel_no','$nok_relationship')";
+    $sql = "INSERT INTO `registration_tb`(`surname`, `first_name`, `other_names`, `gender`, `date_of_birth`, `marital_status`, `home_home_address`, `phone`, `email`, `state_of_origin`, `lga`, `course_of_study`, `session`, `days_available`, `nok_name`, `nok_tel_no`, `nok_relationship`) VALUES ('$surname','$firstName','$otherNames','$gender','$dob','$maritalStatus','$home_address','$phone','$email','$state','$lga','$course','$session','$availability','$nok_name','$nok_tel_no','$nok_relationship')";
 
     $send_query = mysqli_query($connect, $sql);
 

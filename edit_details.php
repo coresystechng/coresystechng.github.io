@@ -18,7 +18,7 @@ if ($_GET['id']) {
 
 $username =  $_SESSION['username'] ?? 'Guest';
 
-$update_id = $first_name = $surname = $email = $phone = $address = "";
+$update_id = $first_name = $surname = $email = $phone = $home_address = "";
 
 
 if (isset($_POST['update'])) {
@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $home_address = $_POST['home_address'];
 
     // sql to update student details using prepared statements
     $update_sql = "UPDATE registration_tb SET 
@@ -36,13 +36,13 @@ if (isset($_POST['update'])) {
         surname = ?,
         email = ?,
         phone = ?,
-        address = ?
+        home_address = ?
         WHERE id = ?";
 
     // prepare and bind
     $stmt = mysqli_prepare($connect, $update_sql);
     // bind parameters "sssssi" means string, string, string, string, string, integer
-    mysqli_stmt_bind_param($stmt, "sssssi", $first_name, $surname, $email, $phone, $address, $update_id);
+    mysqli_stmt_bind_param($stmt, "sssssi", $first_name, $surname, $email, $phone, $home_address, $update_id);
     // execute the prepared statement
     $send_update_query = mysqli_stmt_execute($stmt);
 
@@ -108,7 +108,7 @@ if (isset($_POST['update'])) {
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label">Last Name</label>
+                                <label class="form-label">Surname</label>
                                 <input type="text" name="surname" class="form-control" value="<?php echo $student_data['surname']; ?>">
                             </div>
                         </div>
@@ -117,7 +117,7 @@ if (isset($_POST['update'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="emailInput" class="form-label">Email address</label>
+                                <label for="emailInput" class="form-label">Email Address</label>
                                 <input id="emailInput" type="email" value="<?php echo $student_data['email']; ?>" class="form-control" name="email" aria-describedby="emailHelp">
                             </div>
                         </div>
@@ -130,8 +130,8 @@ if (isset($_POST['update'])) {
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Address (optional)</label>
-                        <textarea name="address" class="form-control"><?php echo $student_data['address']; ?></textarea>
+                        <label class="form-label">Home Address (optional)</label>
+                        <textarea name="home_address" class="form-control"><?php echo $student_data['home_address']; ?></textarea>
                     </div>
 
                     <div class="text-center">

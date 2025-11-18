@@ -29,7 +29,7 @@ try {
 
     //Recipients
     $mail->setFrom('info@coresystech.ng', 'Collins from CORE-TECH');
-    $mail->addAddress('coresystechng@gmail.com', 'CORE-TECH');     //Add a recipient
+    $mail->addhome_address('coresystechng@gmail.com', 'CORE-TECH');     //Add a recipient
 
     //Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments

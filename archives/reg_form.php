@@ -2,11 +2,11 @@
 
 include('connect.php');
 
-$email = $firstname = $lastname = $dateofbirth = $gender = $maritalstatus = $phone = $address = $image_name = '';
+$email = $firstname = $lastname = $dateofbirth = $gender = $maritalstatus = $phone = $home_address = $image_name = '';
 
 $errors = array(
     'email' => '', 'firstname' => '', 'lastname' => '', 'dateofbirth' => '',
-    'gender' => '', 'maritalstatus' => '', 'phone' => '', 'address' => '', 'image_name' => ''
+    'gender' => '', 'maritalstatus' => '', 'phone' => '', 'home_address' => '', 'image_name' => ''
 );
 
 if (isset($_POST['submit'])) {
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     } else {
         $email = $_POST['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = "Email must be a valid email address";
+            $errors['email'] = "Email must be a valid email home_address";
         }
     }
 
@@ -110,11 +110,11 @@ if (isset($_POST['submit'])) {
         $dateofbirth = mysqli_real_escape_string($connect, $_POST['dateofbirth']);
         $gender = mysqli_real_escape_string($connect, $_POST['gender']);
         $maritalstatus = mysqli_real_escape_string($connect, $_POST['marital_status']);
-        $address = mysqli_real_escape_string($connect, $_POST['address']);
+        $home_address = mysqli_real_escape_string($connect, $_POST['home_address']);
         $image_name = $_FILES['image_name']['name'];
 
         // create sql
-        $sql = "INSERT INTO registration_tb (email, first_name, surname, phone, date_of_birth, gender, marital_status, address, image_name) VALUES ('$email', '$firstname', '$lastname', '$phone', '$dateofbirth', '$gender', '$maritalstatus', '$address', '$image_name')";
+        $sql = "INSERT INTO registration_tb (email, first_name, surname, phone, date_of_birth, gender, marital_status, home_address, image_name) VALUES ('$email', '$firstname', '$lastname', '$phone', '$dateofbirth', '$gender', '$maritalstatus', '$home_address', '$image_name')";
 
         $send_query = mysqli_query($connect, $sql);
 
@@ -122,10 +122,10 @@ if (isset($_POST['submit'])) {
         $target_dir = 'uploads';
 
         // get temp file location
-        $tmp_address = $_FILES['image_name']['tmp_name'];
+        $tmp_home_address = $_FILES['image_name']['tmp_name'];
 
         // upload image to server
-        $upload_img = move_uploaded_file($tmp_address, "$target_dir/$image_name");
+        $upload_img = move_uploaded_file($tmp_home_address, "$target_dir/$image_name");
 
         if ($upload_img) {
             header('Location: success.php');
@@ -181,7 +181,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="emailInput" class="form-label">Email address</label>
+                                <label for="emailInput" class="form-label">Email home_address</label>
                                 <input id="emailInput" type="email" value="<?php echo htmlspecialchars($email); ?>" class="form-control" name="email" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
@@ -246,8 +246,8 @@ if (isset($_POST['submit'])) {
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Address (optional)</label>
-                        <textarea name="address" class="form-control"><?php echo htmlspecialchars($address); ?></textarea>
+                        <label class="form-label">home_address (optional)</label>
+                        <textarea name="home_address" class="form-control"><?php echo htmlspecialchars($home_address); ?></textarea>
                     </div>
 
                     <div class="text-center">
