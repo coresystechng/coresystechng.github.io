@@ -80,7 +80,7 @@
       <lord-icon
           src="https://cdn.lordicon.com/ohcuigqh.json"
           trigger="in"
-          delay="0"
+          delay="500"
           colors="primary:#081828,secondary:#f0a500"
           style="width:250px;height:250px">
       </lord-icon>

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $send_query = mysqli_query($connect, $sql);
 
     // set target directory
-    $target_dir = 'uploads';
+    $target_dir = 'uploads/';
 
     // get temp file location
     $tmp_address = $_FILES['image_name']['tmp_name'];
