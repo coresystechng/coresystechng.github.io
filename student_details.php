@@ -120,6 +120,48 @@
         .small-5 {
             font-size: 15px;
         }
+
+        /* Safe print-only CSS for #card_1 */
+        @media print {
+            @page { size: A4; margin: 12mm; }    /* A4 with small margins */
+
+            /* ensure page starts clean */
+            html, body { height: auto; margin: 0; padding: 0; }
+
+            /* hide everything by default (use !important to override other rules) */
+            body * { visibility: hidden !important; }
+
+            /* make the card and its children visible and printable */
+            #card_1, #card_1 * {
+                visibility: visible !important;
+                opacity: 1 !important;
+                -webkit-transform: none !important;
+                        transform: none !important;
+            }
+
+            /* ensure the card is in normal flow and fully on the printed page */
+            #card_1 {
+                position: static !important;
+                display: block !important;
+                float: none !important;
+                width: auto !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                left: auto !important;
+                top: auto !important;
+                box-shadow: none !important; /* shadows often don't print well */
+                background: #fff !important;  /* ensure a white background for readability */
+            }
+
+            /* force images/backgrounds to render better in some browsers */
+            #card_1 img {
+                -webkit-print-color-adjust: exact !important;
+                        print-color-adjust: exact !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -223,104 +265,268 @@
                         <h1>Student Profile</h1>
                     </div>
                     <?php if($row): ?>
-                        <div class="card d-none d-md-block" style="width: 70%;">
+
+                        <!-- desktop and tab view -->
+                        <div id="card_1" class="card d-none d-md-block w-100 p-3 mb-5">
                             <div class="card-body">
                                 <!-- <p class="fs-4" >Student Details</p> -->
-                                <div class="row gap-0 g-0">
-                                    <div class="col-md-5 mb-md-0 mb-3">
-                                        <?php
-                                            if (!empty($row['image_name'])) {
-                                                $imagePath = $row['image_name'];
-                                                echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-75">';
-                                            } else {
+
+                                <div class="col-md-5 mb-md-0 mb-3">
+                                    <?php
+                                        if (!empty($row['image_name'])) {
+                                            $imagePath = $row['image_name'];
+                                            echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-50">';
+                                        } else {
+                                            
+                                            if ($row['gender'] == 'Male') {
+                                                $imagePath = 'img/default.jpg'; // Path to default image
+                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                                # code...
                                                 
-                                                if ($row['gender'] == 'Male') {
-                                                    $imagePath = 'img/default.jpg'; // Path to default image
-                                                    echo '<img src="' . $imagePath . '" class="w-75">';
-                                                    # code...
-                                                    
-                                                } else {
-                                                    $imagePath = 'img/default_f.jpeg'; // Path to default image
-                                                    echo '<img src="' . $imagePath . '" class="w-75">';
-                                                    # code...
-                                                }
+                                            } else {
+                                                $imagePath = 'img/default_f.jpeg'; // Path to default image
+                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                                # code...
                                             }
-                                        ?>
-                                    </div>
-                                    <div class="col-md-7 pt-0">
-                                        <p class="fs-2 pt-4" ><?php echo $row['first_name'] . ' ' . $row['surname'];?></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click fs-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click fs-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-calendar-days fs-4"></i> <span class="small"><?php echo ($row['registration_date']); ?></span></p>
-                                    </div>
+                                        }
+                                    ?>
                                 </div>
+                                <div class="row mt-3">
+
+                                    <section class="card">
+                                        <h2 class="blue mt-4">Personal Details</h2><hr>
+                                        <div class="row mt-1 pb-4">
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Surname</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">First Name</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Other Names</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                        </div>
+                                            <hr>
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Gender</span> <br> <?php echo ($row['gender']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Date of Birth</span> <br> <?php echo ($row['date_of_birth']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Marital Status</span> <br> <?php echo ($row['marital_status']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+                                        
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Contact Information</h2><hr>
+                                        <div class="row mt-1 pb-4">
+                                            <div class="col-md-8">
+                                                <span class="blue fs-5">Home Address</span> <br> <?php echo ($row['home_address']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Phone Number</span> <br> <a href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?></a>
+                                            </div>
+                                        </div>
+                                            <hr>
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Email</span> <br> <a href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?></a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">State of Origin</span> <br> <?php echo ($row['state_of_origin']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">LGA</span> <br> <?php echo ($row['lga']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Course Details</h2><hr>
+
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Course of Study</span> <br> <?php echo ($row['course_of_study']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Session</span> <br> <?php echo ($row['session']); ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="blue fs-5">Days of Availability</span> <br> <?php echo ($row['days_available']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Next of Kin Details</h2><hr>
+
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-6">
+                                                <span class="blue fs-5">Fullname</span> <br> <?php echo ($row['nok_name']); ?>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="blue fs-5">Phone Number</span> <br> <a href="tel:<?php echo ($row['nok_tel_no']); ?>"><?php echo ($row['nok_tel_no']); ?></a>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="blue fs-5">Relationship</span> <br> <?php echo ($row['nok_relationship']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
                                 <div class="d-flex gap-3 pt-4">
                                     <a href="student_dashboard.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+                                    <a onclick="window.print()" class="btn btn-warning"><i class="fa-solid fa-print"></i> Print</a>
                                     
-                                    <!-- delete form -->
-                                    <form action="student_details.php" method="POST">
-                                        <input type="hidden" name="id_to_delete" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" name="delete" class="btn btn-danger shadow-none"><i class="fa-solid fa-trash-can"></i> Delete</button>
-                                    </form>
                                     <?php if ($is_super): ?>
+                                        <!-- delete form -->
+                                        <form action="student_details.php" method="POST">
+                                            <input type="hidden" name="id_to_delete" value="<?php echo $row['id']; ?>">
+                                            <button type="submit" name="delete" class="btn btn-danger shadow-none"><i class="fa-solid fa-trash-can"></i> Delete</button>
+                                        </form>
+                                        
                                         <a class="btn btn-success shadow-none" href="edit_details.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-pen-to-square pe-1"></i>Edit</a>
                                     <?php endif; ?>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="card w-100 d-block d-md-none">
+
+
+                        <!-- mobile view -->
+                        <div id="card_2" class="card w-100 p-1 mb-5 d-block d-md-none">
                             <div class="card-body">
                                 <!-- <p class="fs-4" >Student Details</p> -->
-                                <div class="row">
-                                    <div class="col-md-5 mb-md-0 mb-3">
-                                        <?php
-                                            if (!empty($row['image_name'])) {
-                                                $imagePath = $row['image_name'];
-                                                echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-100 rounded">';
-                                            } else {
+
+                                <div class="col-md-5 mb-md-0 mb-3">
+                                    <?php
+                                        if (!empty($row['image_name'])) {
+                                            $imagePath = $row['image_name'];
+                                            echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-50 rounded">';
+                                        } else {
+                                            
+                                            if ($row['gender'] == 'Male') {
+                                                $imagePath = 'img/default.jpg'; // Path to default image
+                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                                # code...
                                                 
-                                                if ($row['gender'] == 'Male') {
-                                                    $imagePath = 'img/default.jpg'; // Path to default image
-                                                    echo '<img src="' . $imagePath . '" class="w-50">';
-                                                    # code...
-                                                    
-                                                } else {
-                                                    $imagePath = 'img/default_f.jpeg'; // Path to default image
-                                                    echo '<img src="' . $imagePath . '" class="w-50">';
-                                                    # code...
-                                                }
+                                            } else {
+                                                $imagePath = 'img/default_f.jpeg'; // Path to default image
+                                                echo '<img src="' . $imagePath . '" class="w-50">';
+                                                # code...
                                             }
-                                        ?>
-                                    </div>
-                                    <div class="col-md-7 pt-0">
-                                        <p class="fs-2" ><?php echo $row['first_name'] . ' ' . $row['surname'];?></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-envelope fs-4"></i> <a class="click small-5" href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-phone fs-4"></i> <a class="click small-5" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></p>
-
-                                        <p class="fs-5"><i class="fa-solid fa-calendar-days fs-4"></i> <span class="small"><?php echo ($row['registration_date']); ?></span></p>
-                                    </div>
+                                        }
+                                    ?>
                                 </div>
+                                <div class="row mt-3">
+
+                                    <section class="card">
+                                        <h2 class="blue mt-4">Personal Details</h2><hr>
+                                        <div class="row mt-1 pb-4">
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Surname</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">First Name</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Other Names</span> <br> <?php echo ($row['email']); ?>
+                                            </div>
+                                        </div>
+                                            <hr>
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Gender</span> <br> <?php echo ($row['gender']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Date of Birth</span> <br> <?php echo ($row['date_of_birth']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Marital Status</span> <br> <?php echo ($row['marital_status']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+                                        
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Contact Information</h2><hr>
+                                        <div class="row mt-1 pb-4">
+                                            <div class="col-md-8 mb-2">
+                                                <span class="blue fs-5">Home Address</span> <br> <?php echo ($row['home_address']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Phone Number</span> <br> <a href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?></a>
+                                            </div>
+                                        </div>
+                                            <hr>
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Email</span> <br> <a href="mailto:<?php echo ($row['email']); ?>"><?php echo ($row['email']); ?></a>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">State of Origin</span> <br> <?php echo ($row['state_of_origin']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">LGA</span> <br> <?php echo ($row['lga']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Course Details</h2><hr>
+
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Course of Study</span> <br> <?php echo ($row['course_of_study']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Session</span> <br> <?php echo ($row['session']); ?>
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <span class="blue fs-5">Days of Availability</span> <br> <?php echo ($row['days_available']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="card mt-4">
+                                        <h2 class="blue mt-4">Next of Kin Details</h2><hr>
+
+                                        <div class="row mt-1 mb-4">
+                                            <div class="col-md-6 mb-2">
+                                                <span class="blue fs-5">Fullname</span> <br> <?php echo ($row['nok_name']); ?>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <span class="blue fs-5">Phone Number</span> <br> <a href="tel:<?php echo ($row['nok_tel_no']); ?>"><?php echo ($row['nok_tel_no']); ?></a>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <span class="blue fs-5">Relationship</span> <br> <?php echo ($row['nok_relationship']); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
                                 <div class="d-flex gap-3 pt-4">
                                     <a href="student_dashboard.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+                                    <a onclick="window.print()" class="btn btn-warning"><i class="fa-solid fa-print"></i> Print</a>
                                     
-                                    <!-- delete form -->
-                                    <form action="student_details.php" method="POST">
-                                        <input type="hidden" name="id_to_delete" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" name="delete" class="btn btn-danger shadow-none"><i class="fa-solid fa-trash-can"></i> Delete</button>
-                                    </form>
                                     <?php if ($is_super): ?>
+                                        <!-- delete form -->
+                                        <form action="student_details.php" method="POST">
+                                            <input type="hidden" name="id_to_delete" value="<?php echo $row['id']; ?>">
+                                            <button type="submit" name="delete" class="btn btn-danger shadow-none"><i class="fa-solid fa-trash-can"></i> Delete</button>
+                                        </form>
+                                        
                                         <a class="btn btn-success shadow-none" href="edit_details.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-pen-to-square pe-1"></i>Edit</a>
                                     <?php endif; ?>
                                 </div>
 
                             </div>
                         </div>
+
                     <?php else: ?>
 
                         <h1 class="mb-4">Error 404: User Not Found</h1>

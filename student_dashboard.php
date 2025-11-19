@@ -192,10 +192,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="blue">Id</th>
-                                    <th scope="col" class="blue">Surname</th>
-                                    <th scope="col" class="blue">First&nbspname</th>
+                                    <th scope="col" class="blue">Fullname</th>
                                     <th scope="col" class="blue">Email</th>
-                                    <th scope="col" class="blue">gender</th>
+                                    <th scope="col" class="blue">Phone</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -203,10 +202,9 @@
     
                                     <tr>
                                         <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
-                                        <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['surname']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['email']); ?></td>
-                                        <td><?php echo htmlspecialchars($row['gender']); ?></td>
+                                        <td><?php echo htmlspecialchars($row['first_name']); ?>&nbsp<?php echo htmlspecialchars($row['surname']); ?></td>
+                                        <td><a href="mailto:<?php echo ($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></td>
+                                        <td><a href="tel:<?php echo ($row['phone']); ?>"><?php echo htmlspecialchars($row['phone']); ?></a></td>
                                         <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
                                     </tr>
     
