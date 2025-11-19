@@ -231,7 +231,7 @@
                                         <?php
                                             if (!empty($row['image_name'])) {
                                                 $imagePath = $row['image_name'];
-                                                echo '<img src="uploads/' . $imagePath . '">';
+                                                echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-75">';
                                             } else {
                                                 
                                                 if ($row['gender'] == 'Male') {
@@ -280,7 +280,7 @@
                                         <?php
                                             if (!empty($row['image_name'])) {
                                                 $imagePath = $row['image_name'];
-                                                echo '<img src="uploads/' . $imagePath . '">';
+                                                echo '<img src="https://coresystech.ng/assets/scripts/uploads/' . $imagePath . '" class="w-100 rounded">';
                                             } else {
                                                 
                                                 if ($row['gender'] == 'Male') {
