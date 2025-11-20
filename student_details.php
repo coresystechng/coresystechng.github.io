@@ -2,6 +2,19 @@
 
     session_start();
 
+    // server-side logout logic
+    // 5 minutes
+    $limit = 300;
+
+    if (isset($_SESSION['last_activity'])) {
+        if (time() - $_SESSION['last_activity'] > $limit) {
+            header("Location: logout.php");
+            exit();
+        }
+    }
+
+    $_SESSION['last_activity'] = time();
+
     include('connect.php');
 
     $username =  $_SESSION['username'] ?? 'Guest';
@@ -175,6 +188,21 @@
     </style>
 </head>
 <body>
+
+    <!-- inactivity modal -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-body text-center p-4">
+                    <p class="mb-2 fs-5">You will be logged out due to inactivity in <span class="blue"><strong id="logoutCount">60</strong>s.</span></p>
+                    <div class="d-flex justify-content-center gap-2 pt-2">
+                        <button id="stayBtn" class="btn btn-primary btn-sm">Stay signed in</button>
+                        <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Log out now</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
 
     <div class="wrapper">
         <aside id="sidebar" class="d-lg-block d-none">
@@ -351,12 +379,12 @@
                                         <section class="card border-0 mt-1">
                                             <h2 class="blue mt-2">Contact Information</h2><hr>
                                             <div class="row mt-1 pb-2">
-                                                <div class="col-md-8">
+                                                <div class="col-md-9">
                                                     <span class="blue fs-5">Home Address</span>
                                                     <br>
                                                     <p class="fs-4"><?php echo ($row['home_address']); ?></p>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <span class="blue fs-5">Phone Number</span>
                                                     <br>
                                                     <p class="fs-4 dark"><a class="dark" href="tel:<?php echo ($row['phone']); ?>"><?php echo ($row['phone']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-5"></i></a></p>
@@ -386,12 +414,28 @@
                                             <h2 class="blue mt-2">Course Details</h2><hr>
     
                                             <div class="row mt-1 mb-2">
-                                                <div class="col-md-4">
+                                                <div class="col-md-5">
                                                     <span class="blue fs-5">Course of Study</span>
                                                     <br>
-                                                    <p class="fs-4"><?php echo ($row['course_of_study']); ?></p>
+                                                    <p class="fs-4">
+                                                        <?php
+                                                            if ($row['course_of_study'] == 'CIT') {
+                                                                echo 'Computer Appreciation & Information Technology';
+                                                            } elseif ($row['course_of_study'] == 'GAD') {
+                                                                echo 'Graphic Design';
+                                                            } elseif ($row['course_of_study'] == 'WFE') {
+                                                                echo 'Web Development - Front End';
+                                                            } elseif ($row['course_of_study'] == 'WBE') {
+                                                                echo 'Web Development - Back End';
+                                                            } elseif ($row['course_of_study'] == 'WFS') {
+                                                                echo 'Web Development - Full Stack';
+                                                            } elseif ($row['course_of_study'] == 'AIB') {
+                                                                echo 'Artificial Intelligence - Basics';
+                                                            }
+                                                        ?>
+                                                    </p>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <span class="blue fs-5">Session</span>
                                                     <br>
                                                     <p class="fs-4"><?php echo ($row['session']); ?></p>
@@ -544,7 +588,23 @@
                                             <div class="col-md-4">
                                                 <span class="blue fs-5">Course of Study</span>
                                                 <br>
-                                                <p class="fs-4"><?php echo ($row['course_of_study']); ?></p>
+                                                <p class="fs-4">
+                                                    <?php
+                                                        if ($row['course_of_study'] == 'CIT') {
+                                                            echo 'Computer Appreciation & Information Technology';
+                                                        } elseif ($row['course_of_study'] == 'GAD') {
+                                                            echo 'Graphic Design';
+                                                        } elseif ($row['course_of_study'] == 'WFE') {
+                                                            echo 'Web Development - Front End';
+                                                        } elseif ($row['course_of_study'] == 'WBE') {
+                                                            echo 'Web Development - Back End';
+                                                        } elseif ($row['course_of_study'] == 'WFS') {
+                                                            echo 'Web Development - Full Stack';
+                                                        } elseif ($row['course_of_study'] == 'AIB') {
+                                                            echo 'Artificial Intelligence - Basics';
+                                                        }
+                                                    ?>
+                                                </p>
                                             </div>
                                             <div class="col-md-4">
                                                 <span class="blue fs-5">Session</span>
@@ -621,7 +681,101 @@
         </div>
     </div>
     
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="script.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="script.js" ></script>
+
+    <!-- inactivity timeout logic -->
+    <script>
+        (function(){
+        const INACTIVE_MIN = 5; // minutes
+        const WARN_SECS = 60;
+        const MS = 60000;
+        const logoutUrl = 'logout.php';
+
+        const modalEl = document.getElementById('logoutModal');
+        const bsModal = new bootstrap.Modal(modalEl, {backdrop:'static', keyboard:false});
+        const countEl = document.getElementById('logoutCount');
+        const stayBtn = document.getElementById('stayBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        let last = Date.now(), warnTimer = null, logoutTimer = null, tick = null;
+
+        function isModalVisible() {
+            return modalEl.classList.contains('show');
+        }
+
+        function startTimers(){
+            clearTimers();
+            const warnDelay = INACTIVE_MIN * MS - WARN_SECS * 1000;
+            warnTimer = setTimeout(showWarning, Math.max(0, warnDelay));
+            logoutTimer = setTimeout(doLogout, INACTIVE_MIN * MS);
+        }
+
+        function clearTimers(){
+            clearTimeout(warnTimer); clearTimeout(logoutTimer); clearInterval(tick);
+            try { bsModal.hide(); } catch(e){}
+        }
+
+        function showWarning(){
+            // show and start countdown
+            let remaining = Math.ceil((INACTIVE_MIN*MS - (Date.now()-last))/1000);
+            countEl.textContent = remaining;
+            bsModal.show();
+
+            tick = setInterval(()=>{
+            remaining = Math.max(0, Math.ceil((INACTIVE_MIN*MS - (Date.now()-last))/1000));
+            countEl.textContent = remaining;
+            if(remaining <= 0) clearInterval(tick);
+            }, 1000);
+        }
+
+        function doLogout(){
+            try { bsModal.hide(); } catch(e){}
+            window.location.href = logoutUrl;
+        }
+
+        // reset triggered by generic activity (but ignore events while modal shown)
+        function resetFromActivity(){
+            if (isModalVisible()) return; // DO NOT hide modal on incidental activity
+            last = Date.now();
+            startTimers();
+        }
+
+        // explicit "Stay signed in" behaviour: always renew session even if modal is visible
+        function staySignedIn(){
+            last = Date.now();
+            startTimers();
+            try { bsModal.hide(); } catch(e){}
+        }
+
+        // event listeners
+        ['mousemove','mousedown','keydown','scroll','touchstart','click'].forEach(e =>
+            window.addEventListener(e, throttle(resetFromActivity, 800), {passive:true})
+        );
+
+        stayBtn.addEventListener('click', function(e){
+            e.stopPropagation(); // ensure click won't be swallowed by other handlers
+            staySignedIn();
+        });
+
+        logoutBtn.addEventListener('click', doLogout);
+
+        const manual = document.getElementById('manual-logout');
+        if(manual) manual.addEventListener('click', e=>{ e.preventDefault(); doLogout(); });
+
+        function throttle(fn, wait){
+            let lastCall = 0;
+            return function(...a){
+            const now = Date.now();
+            if(now - lastCall > wait){ lastCall = now; fn.apply(this, a); }
+            };
+        }
+
+        // start
+        startTimers();
+        })();
+    </script>
+
+
 </body>
 </html>
