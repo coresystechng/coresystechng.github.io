@@ -318,15 +318,15 @@
 
                     <?php if($row): ?>
 
-                        <div class="card">
+                        <<div class="card p-3">
                             <div class="card-body">
-                                <h5 class="card-title"><?= htmlspecialchars($row['first_name'] . ' ' . $row['last_name']) ?></h5>
-                                <p><strong>Email:</strong> <?= htmlspecialchars($row['email']) ?></p>
-                                <p><strong>Phone:</strong> <?= htmlspecialchars($row['phone']) ?></p>
-                                <p><strong>Subject:</strong> <?= htmlspecialchars($row['subject']) ?></p>
-                                <p><strong>Message:</strong><br><?= nl2br(htmlspecialchars($row['message'])) ?></p>
-                                <p><strong>Date:</strong> <?= isset($row['date_created']) ? htmlspecialchars($row['date_created']) : '' ?></p>
-                                <a href="inquiries.php" class="btn btn-secondary mt-3">Back to List</a>
+                                <h1 class="card-title"><?= htmlspecialchars($row['first_name'] . ' ' . $row['last_name']) ?></h1>
+                                <p class="fs-5"><strong>Email:</strong> <?= htmlspecialchars($row['email']) ?></p>
+                                <p class="fs-5"><strong>Phone:</strong> <?= htmlspecialchars($row['phone']) ?></p>
+                                <p class="fs-5"><strong>Subject:</strong> <?= htmlspecialchars($row['subject']) ?></p>
+                                <p class="fs-5"><strong>Message:</strong><br><?= nl2br(htmlspecialchars($row['message'])) ?></p>
+                                <p class="fs-5"><strong>Date:</strong> <?= isset($row['date_created']) ? htmlspecialchars($row['date_created']) : '' ?></p>
+                                <a href="inquiries.php" class="btn btn-primary mt-3"><i class="fa-solid fa-arrow-left"></i> Back</a>
                             </div>
                         </div>
 
