@@ -96,7 +96,7 @@
             <aside id="sidebar" class="d-lg-block d-none">
                 <div class="h-100">
                     <div class="sidebar-logo">
-                        <a href="./admin_dashboard.php"><img src="img/core_white.png" class="p-1 my-3" style="width: 8rem !important;" alt="CORE-TECH"></a>
+                        <a href="./admin_dashboard.php"><img loading="lazy" src="img/core_white.png" class="p-1 my-3" style="width: 8rem !important;" alt="CORE-TECH"></a>
                     </div>
                     <ul class="sidebar-nav">
                         <li class="active reg">
@@ -158,13 +158,13 @@
 
                                 <!-- mobile view -->
                                 <a id="userDropdown2" class="nav-link align-items-center d-md-none d-sm-block" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
-                                    <img src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:50px;height:50px;object-fit:contain;">
+                                    <img loading="lazy" src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:50px;height:50px;object-fit:contain;">
                                 </a>
 
                                 <!-- desktop view -->
                                 <a id="userDropdown" class="nav-link align-items-center rounded-pill bg px-1 pe-0 d-none d-md-block" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
                                     <span class="px-2 mb-0">Welcome, <?php echo htmlspecialchars($username); ?></span>
-                                    <img src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:40px;height:40px;object-fit:contain;">
+                                    <img loading="lazy" src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:40px;height:40px;object-fit:contain;">
                                 </a>
 
                                 <!-- dropdown -->

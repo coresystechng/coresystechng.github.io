@@ -5,7 +5,7 @@
                 <!-- LEFT COLUMN -->
                 <div class="col-md-5">
                     <div class="footer-title">
-                        <img src="img/logo.png" style="width: 35% !important;" alt="coretechlogo">
+                        <img loading="lazy" src="img/logo.png" style="width: 35% !important;" alt="coretechlogo">
                     </div>
                     <p class="footer-text text-muted">
                         Enabling Digital Solutions for you and your business.

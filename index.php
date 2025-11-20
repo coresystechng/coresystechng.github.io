@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
         <div class="container mt-5 py-5 justify-content-center align-items-center d-flex">
             <div class="card p-5 border-0 shadow-lg" style="width: 35rem;">
                 <div class="text-center">
-                    <img src="img/logo.png" class="w-50" alt="">
+                    <img loading="lazy" src="img/logo.png" class="w-50" alt="">
                 </div>
                 <h2 class="light mb-4 fs-5 text-center" >Login to your account</h2>
 

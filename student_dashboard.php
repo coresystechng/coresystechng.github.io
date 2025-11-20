@@ -82,6 +82,15 @@
             margin-right: 1em;
             font-size: .7em;
         }
+
+        .dark {
+            color: #444;
+        }
+        
+        .dark:hover {
+            color: #000;
+            /* font-weight: 600; */
+        }
     </style>
 </head>
 <body>
@@ -90,7 +99,7 @@
         <aside id="sidebar" class="d-lg-block d-none">
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a href="./admin_dashboard.php"><img src="img/core_white.png" class="p-1 my-3" style="width: 8rem !important;" alt="CORE-TECH"></a>
+                    <a href="./admin_dashboard.php"><img loading="lazy" src="img/core_white.png" class="p-1 my-3" style="width: 8rem !important;" alt="CORE-TECH"></a>
                 </div>
                 <ul class="sidebar-nav">
                     <li class="reg my-1">
@@ -152,13 +161,13 @@
 
                                 <!-- mobile view -->
                                 <a id="userDropdown2" class="nav-link align-items-center d-md-none d-sm-block" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
-                                    <img src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:50px;height:50px;object-fit:contain;">
+                                    <img loading="lazy" src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:50px;height:50px;object-fit:contain;">
                                 </a>
 
                                 <!-- desktop view -->
                                 <a id="userDropdown" class="nav-link align-items-center rounded-pill bg px-1 pe-0 d-none d-md-block" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
                                     <span class="px-2 mb-0">Welcome, <?php echo htmlspecialchars($username); ?></span>
-                                    <img src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:40px;height:40px;object-fit:contain;">
+                                    <img loading="lazy" src="img/avatar.jpg" class="avatar img-fluid rounded-pill me-2" alt="" style="width:40px;height:40px;object-fit:contain;">
                                 </a>
 
                                 <!-- dropdown -->
@@ -192,7 +201,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="blue">Id</th>
-                                    <th scope="col" class="blue">Fullname</th>
+                                    <th scope="col" class="blue">Name</th>
                                     <th scope="col" class="blue">Email</th>
                                     <th scope="col" class="blue">Phone</th>
                                 </tr>
@@ -202,10 +211,10 @@
     
                                     <tr>
                                         <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
-                                        <td><?php echo htmlspecialchars($row['first_name']); ?>&nbsp<?php echo htmlspecialchars($row['surname']); ?></td>
+                                        <td><a href="student_details.php?id=<?php echo $row['id'] ?>" class="dark"><?php echo htmlspecialchars($row['first_name']); ?>&nbsp<?php echo htmlspecialchars($row['surname']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></td>
                                         <td><a href="mailto:<?php echo ($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></td>
                                         <td><a href="tel:<?php echo ($row['phone']); ?>"><?php echo htmlspecialchars($row['phone']); ?></a></td>
-                                        <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
+                                        
                                     </tr>
     
                                 <?php } ?>
