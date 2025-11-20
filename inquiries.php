@@ -27,7 +27,7 @@
     }
     
     include('connect.php');
-
+    
     // Get username from session or set to 'Guest' if not available
     $username =  $_SESSION['username'] ?? 'Guest';
     
@@ -43,7 +43,7 @@
         $admin = null; // no admin found
     }
 
-    $sql = "SELECT * FROM registration_tb";
+    $sql = "SELECT * FROM contact_tb";
     $result = mysqli_query($connect, $sql); 
 
 ?>
@@ -95,6 +95,15 @@
             margin-right: 1em;
             font-size: .7em;
         }
+
+        .dark {
+            color: #444;
+        }
+        
+        .dark:hover {
+            color: #000;
+            /* font-weight: 600; */
+        }
     </style>
 </head>
 <body>
@@ -113,6 +122,7 @@
                 </div>
             </div>
         </div>
+
 
     <div class="wrapper">
         <aside id="sidebar" class="d-lg-block d-none">
@@ -133,7 +143,7 @@
                             Students
                         </a>
                     </li>
-                    <li class="reg active">
+                    <li class="reg my-1">
                         <a href="./staff_dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-briefcase"></i>
                             Staff
@@ -151,7 +161,7 @@
                             Files
                         </a>
                     </li>
-                    <li class="reg my-1">
+                    <li class="reg active">
                         <a href="./inquiries.php" class="sidebar-link">
                             <i class="fa-solid fa-circle-info"></i>
                             Inquiries
@@ -218,36 +228,36 @@
                     <?php endif; ?>
 
                     <div class="mt-3 mb-4">
-                        <h1 class="blue">Staff</h1>
-                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">No staff available.</h5>
+                        <h1 class="blue">Inquiries</h1>
+                        <!-- <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">Overview of student data</h5> -->
                     </div>
 
-                    <!-- <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="blue">Id</th>
-                                <th scope="col" class="blue">Last name</th>
-                                <th scope="col" class="blue">First name</th>
-                                <th scope="col" class="blue">Email</th>
-                                <th scope="col" class="blue">gender</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while($row = mysqli_fetch_assoc($result)) { ?>
-
+                    <div class="table-responsive-md">
+                        <table class="table table-striped">
+                            <thead>
                                 <tr>
-                                    <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
-                                    <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['surname']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['email']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['gender']); ?></td>
-                                    <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
+                                    <th scope="col" class="blue">Id</th>
+                                    <th scope="col" class="blue">Name</th>
+                                    <th scope="col" class="blue">Email</th>
+                                    <th scope="col" class="blue">Phone</th>
                                 </tr>
-
-                            <?php } ?>
-                        </tbody>
-                    </table> 
-                    <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p> -->
+                            </thead>
+                            <tbody>
+                                <?php while($row = mysqli_fetch_assoc($result)) { ?>
+    
+                                    <tr>
+                                        <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
+                                        <td><a href="contact_details.php?id=<?php echo $row['id'] ?>" class="dark"><?php echo htmlspecialchars($row['first_name']); ?>&nbsp<?php echo htmlspecialchars($row['last_name']); ?><i class="fa-solid fa-up-right-from-square ps-1 fs-6"></i></a></td>
+                                        <td><a href="mailto:<?php echo ($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></td>
+                                        <td><a href="tel:<?php echo ($row['phone']); ?>"><?php echo htmlspecialchars($row['phone']); ?></a></td>
+                                        
+                                    </tr>
+    
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p>
+                    </div>
                 </div>
             </main>
         </div>
@@ -347,7 +357,6 @@
         startTimers();
         })();
     </script>
-
 
 </body>
 </html>

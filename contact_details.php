@@ -14,37 +14,68 @@
     }
 
     $_SESSION['last_activity'] = time();
-    
-    if($_SERVER['QUERY_STRING'] == 'noname') {
-        unset($_SESSION['username']);  // Log out user by unsetting username (if there is no username registered)
-    }
-    
-    // Check if user is authenticated
-    if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
-        $_SESSION['error'] = "Please log in to continue.";
-        header("Location: index.php");
-        exit;
-    }
-    
+
     include('connect.php');
 
-    // Get username from session or set to 'Guest' if not available
     $username =  $_SESSION['username'] ?? 'Guest';
-    
 
-    // Fetch admin details
+    // initialize super admin flag
+    $is_super = 0;
+
+    // If we have a logged-in admin, fetch their is_super field (1 or 0)
     if ($username) {
-        $stmt = $connect->prepare("SELECT * FROM users_tb WHERE username = ?"); // prepared sql statement to prevent SQL injection
-        $stmt->bind_param("s", $username); // 's' specifies the variable type => 'string'... "i" => integer, "d" => double, "b" => blob
-        $stmt->execute(); // execute/run the query
-        $result = $stmt->get_result(); // get the mysqli result of all executed query data
-        $admin = $result->fetch_assoc(); // fetch data as an associative array
-    } else {
-        $admin = null; // no admin found
+        $stmt = $connect->prepare("SELECT is_super FROM users_tb WHERE username = ? LIMIT 1");
+        if ($stmt) { // check prepare success
+            $stmt->bind_param("s", $username);
+            // execute the query
+            $stmt->execute();
+            // bind result variables
+            $stmt->bind_result($is_super_db);
+            if ($stmt->fetch()) {
+                // Ensure it's an int 0/1
+                $is_super = (int)$is_super_db;
+            }
+            $stmt->close();
+        } else {
+            error_log("Prepare failed (users_tb lookup): " . $connect->error);
+        }
     }
 
-    $sql = "SELECT * FROM registration_tb";
-    $result = mysqli_query($connect, $sql); 
+    // delete user details
+    if (isset($_POST['delete'])) {
+
+        $id_to_delete = mysqli_real_escape_string($connect, $_POST['id_to_delete']);
+        $sql = "DELETE FROM contact_tb WHERE id = $id_to_delete";
+
+        if (mysqli_query($connect, $sql)) {
+            // success
+            header('Location: inquiries.php');
+        } {
+            // failure
+            echo 'query error: ' . mysqli_error($connect);
+        }
+    }
+
+    // check GET request id parameter
+    if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connect, $_GET['id']); // ensure no injection of malicious script from the unique id
+
+        // make sql
+        $sql = "SELECT * FROM contact_tb WHERE id = $id";
+
+        // get the query result
+        $result = mysqli_query($connect, $sql);
+
+        // fetch the result in array format
+        $row = mysqli_fetch_assoc($result);
+
+        // free result memory
+        mysqli_free_result($result);
+        
+        // close connection
+        mysqli_close($connect);
+
+    }
 
 ?>
 
@@ -73,6 +104,9 @@
         .blue {
             color: #0e2a46ff;
         }
+        .small {
+            color: #0e2a46ff !important;
+        }
         .active {
             background-color: #0f2942ff;
             border-radius: 12px;
@@ -95,6 +129,68 @@
             margin-right: 1em;
             font-size: .7em;
         }
+        
+        .small-5 {
+            font-size: 15px;
+        }
+
+        /* Safe print-only CSS for #card_1 */
+        @media print {
+            @page { size: A4; margin: 12mm; }    /* A4 with small margins */
+
+            /* ensure page starts clean */
+            html, body { height: auto; margin: 0; padding: 0; }
+
+            /* hide everything by default (use !important to override other rules) */
+            body * { visibility: hidden !important; }
+
+            /* make the card and its children visible and printable */
+            #card_1, #card_1 * {
+                visibility: visible !important;
+                opacity: 1 !important;
+                -webkit-transform: none !important;
+                        transform: none !important;
+            }
+
+            /* ensure the card is in normal flow and fully on the printed page */
+            #card_1 {
+                position: absolute !important;
+                display: block !important;
+                float: none !important;
+                width: auto !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                left: 0 !important;
+                top: 0 !important;
+                box-shadow: none !important; /* shadows often don't print well */
+                background: #fff !important;  /* white background for readability */
+            }
+
+            /* force images/backgrounds to render better in some browsers */
+            #card_1 img {
+                -webkit-print-color-adjust: exact !important;
+                        print-color-adjust: exact !important;
+                margin-left: 0 !important;        /* ensure it sticks left */
+                max-width: 25% !important;
+            }
+            #card_1 .align-items-center,
+            #card_1 .justify-content-center {
+                text-align: left !important;
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+            }
+        }
+        
+        .dark {
+            color: #444;
+        }
+        
+        .dark:hover {
+            color: #000;
+            /* font-weight: 600; */
+        }
+
     </style>
 </head>
 <body>
@@ -105,7 +201,7 @@
                 <div class="modal-content">
                 <div class="modal-body text-center p-4">
                     <p class="mb-2 fs-5">You will be logged out due to inactivity in <span class="blue"><strong id="logoutCount">60</strong>s.</span></p>
-                    <div class="d-flex justify-content-center gap-2">
+                    <div class="d-flex justify-content-center gap-2 pt-2">
                         <button id="stayBtn" class="btn btn-primary btn-sm">Stay signed in</button>
                         <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Log out now</button>
                     </div>
@@ -118,7 +214,7 @@
         <aside id="sidebar" class="d-lg-block d-none">
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a href="./admin_dashboard.php"><img loading="lazy" src="img/core_white.png" class="p-1 my-3" style="width: 8rem !important;" alt="CORE-TECH"></a>
+                    <a href="./admin_dashboard.php"><img loading="lazy" src="img/core_white.png" class="p-1 my-3 logo" style="width: 8rem !important;" alt="CORE-TECH"></a>
                 </div>
                 <ul class="sidebar-nav">
                     <li class="reg my-1">
@@ -133,7 +229,7 @@
                             Students
                         </a>
                     </li>
-                    <li class="reg active">
+                    <li class="reg my-1">
                         <a href="./staff_dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-briefcase"></i>
                             Staff
@@ -151,7 +247,7 @@
                             Files
                         </a>
                     </li>
-                    <li class="reg my-1">
+                    <li class="reg active">
                         <a href="./inquiries.php" class="sidebar-link">
                             <i class="fa-solid fa-circle-info"></i>
                             Inquiries
@@ -207,7 +303,6 @@
                     </div>
 
                 </nav>
-
             <main class="content px-3 py-2">
                 <div class="container-fluid">
                     <?php if (!empty($_SESSION['success'])): ?>
@@ -215,39 +310,33 @@
                             <?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                    <?php endif; ?>
-
-                    <div class="mt-3 mb-4">
-                        <h1 class="blue">Staff</h1>
-                        <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">No staff available.</h5>
+                    <?php endif; ?> 
+                    
+                    <div class="mt-5 mb-4 blue">
+                        <h1>Contact Details</h1>
                     </div>
 
-                    <!-- <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="blue">Id</th>
-                                <th scope="col" class="blue">Last name</th>
-                                <th scope="col" class="blue">First name</th>
-                                <th scope="col" class="blue">Email</th>
-                                <th scope="col" class="blue">gender</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                    <?php if($row): ?>
 
-                                <tr>
-                                    <th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
-                                    <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['surname']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['email']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['gender']); ?></td>
-                                    <td><a href="student_details.php?id=<?php echo $row['id'] ?>"><i class="fa-solid fa-up-right-from-square ps-2 fs-6"></i></a></td>
-                                </tr>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= htmlspecialchars($row['first_name'] . ' ' . $row['last_name']) ?></h5>
+                                <p><strong>Email:</strong> <?= htmlspecialchars($row['email']) ?></p>
+                                <p><strong>Phone:</strong> <?= htmlspecialchars($row['phone']) ?></p>
+                                <p><strong>Subject:</strong> <?= htmlspecialchars($row['subject']) ?></p>
+                                <p><strong>Message:</strong><br><?= nl2br(htmlspecialchars($row['message'])) ?></p>
+                                <p><strong>Date:</strong> <?= isset($row['date_created']) ? htmlspecialchars($row['date_created']) : '' ?></p>
+                                <a href="inquiries.php" class="btn btn-secondary mt-3">Back to List</a>
+                            </div>
+                        </div>
 
-                            <?php } ?>
-                        </tbody>
-                    </table> 
-                    <p class="text-muted fst-italic d-md-none d-sm-block">swipe to view full table</p> -->
+                    <?php else: ?>
+
+                        <h1 class="mb-4">Error 404: Info Not Found</h1>
+                        <p>The information you are looking for does not exist.</p>
+                        <a href="admin_dashboard.php" class="btn btn-primary">Back to Dashboard</a>
+
+                    <?php endif; ?>
                 </div>
             </main>
         </div>

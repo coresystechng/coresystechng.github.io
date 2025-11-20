@@ -146,10 +146,16 @@
                             Payments
                         </a>
                     </li>
-                    <li class="reg active">
+                    <li class="reg my-1">
                         <a href="./files.php" class="sidebar-link">
                             <i class="fa-solid fa-file-lines"></i>
                             Files
+                        </a>
+                    </li>
+                    <li class="reg my-1">
+                        <a href="./inquiries.php" class="sidebar-link">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Inquiries
                         </a>
                     </li>
                 </ul>
@@ -173,6 +179,7 @@
                             <li class="mb-0"><a href="./staff_dashboard.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-briefcase fs-2 pe-2"></i> Staff</a></li> <hr>
                             <li class="mb-0"><a href="./payment.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-sack-dollar fs-2 pe-2"></i> Payments</a></li> <hr>
                             <li class="mb-3"><a href="./files.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-file-lines fs-2 pe-2"></i> Files</a></li>
+                            <li class="mb-3"><a href="./inquiries.php" class="text-dark" style="text-decoration:none;"><i class="fa-solid fa-circle-info"></i> Inquiries</a></li>
                         </ul>
                     </div>
                     <div class="navbar-collapse navbar">
