@@ -164,15 +164,21 @@
                 left: 0 !important;
                 top: 0 !important;
                 box-shadow: none !important; /* shadows often don't print well */
-                background: #fff !important;  /* ensure a white background for readability */
+                background: #fff !important;  /* white background for readability */
             }
 
             /* force images/backgrounds to render better in some browsers */
             #card_1 img {
                 -webkit-print-color-adjust: exact !important;
                         print-color-adjust: exact !important;
+                margin-left: 0 !important;        /* ensure it sticks left */
                 max-width: 25% !important;
-                height: auto !important;
+            }
+            #card_1 .align-items-center,
+            #card_1 .justify-content-center {
+                text-align: left !important;
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
             }
         }
         
