@@ -146,7 +146,7 @@
                             Payments
                         </a>
                     </li>
-                    <li class="reg my-1">
+                    <li class="reg active">
                         <a href="./files.php" class="sidebar-link">
                             <i class="fa-solid fa-file-lines"></i>
                             Files

@@ -224,7 +224,7 @@
                     <?php endif; ?>
 
                     <div class="mt-3 mb-4">
-                        <h1 class="blue">Dashboard</h1>
+                        <h1 class="blue">Admin Dashboard</h1>
                         <!-- <h5 class="mb-0 light" style="font-family: cera_light !important; font-weight: 600 !important;">Overview of student data</h5> -->
                     </div>
                     
