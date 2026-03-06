@@ -22,10 +22,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $send_query = mysqli_query($connect, $save_query);
 
     if($send_query) {
-      header('Location: success.php');
       include 'send_contact_mail.php'; // Include the mail script to send the email
+      if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => true]);
+      } else {
+        header('Location: success.php');
+      }
     } else {
-      echo 'error in sending contact details. Please try again';
+      if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false]);
+      } else {
+        echo 'error in sending contact details. Please try again';
+      }
     }
 }
 ?>
