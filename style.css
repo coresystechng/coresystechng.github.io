@@ -262,6 +262,50 @@ html, body {
 }
 
 
+/* Nav logo: show one at a time (desktop vs mobile) */
+.nav-logo-mobile { display: none; }
+.nav-logo-desktop { display: block; }
+@media (max-width: 768px) {
+    .nav-logo-desktop { display: none !important; }
+    .nav-logo-mobile { display: block !important; }
+}
+
+/* Stats bar for hero section */
+.stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    /* font-weight: 600; */
+    color: #fff;
+    /* font-size: 1rem; */
+}
+.stats-bar div {
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+/* Testimonials section */
+.testimonials .testimonial-card {
+    min-height: 180px;
+}
+
+.testimonials .testimonial-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #134074;
+    flex: 0 0 auto;
+}
+
+.testimonials .testimonial-quote {
+    font-style: italic;
+    line-height: 1.6;
+}
+
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
         margin: 0.5rem 0;
