@@ -40,12 +40,12 @@
     <!-- Defines the image to display when shared on Twitter/X -->
     <meta name="twitter:image" content="https://coresystech.ng/assets/img/rel_icon.png">
     <!-- Links to the favicon displayed in browser tabs and bookmarks -->
-    <link rel="icon" href="/assets/img/rel_icon.png" type="image/x-icon">
+    <link rel="icon" href="https://coresystech.ng/assets/img/rel_icon.png" type="image/x-icon">
     <!-- Specifies the language and region for multilingual targeting -->
     <link rel="alternate" hreflang="en" href="https://coresystech.ng/assets/scripts/success.html">
     <!-- css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://coresystech.ng/style.css">
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
