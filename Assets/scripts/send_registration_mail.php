@@ -15,7 +15,7 @@ $mail = new PHPMailer(true);
 include 'connect.php';
 
 session_start();
-$recipient = $_SESSION['mail'];
+$recipient = $_SESSION['email'];
 $course = $_SESSION['course'];
 $name = $_SESSION['name'];
 
@@ -43,7 +43,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Registration Successful - CORE-TECH';
-    $mail->Body    = 'Dear ' . $name .  ' ,thank you for registering with us. <br><br>' .
+    $mail->Body    = 'Dear ' . $name .  ' ,thank you for your interest in taking a computer course with us. <br><br>' .
                       'Course:'. '<b>'. $course . '</b><br><br>'.
                       'We will contact you shortly with further information.' .
                       'Best regards,\nCORE-TECH Team';
